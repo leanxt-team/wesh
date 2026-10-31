@@ -50,7 +50,7 @@ test('no name collides with Claude Code built-ins', () => {
 test('every wesh-* reference points at a shipped skill or agent', () => {
   const known = new Set([...names, 'wesh-scout']);
   const files = [path.join(ROOT, 'core', 'CORE.md'), ...skills.map(s => s.file)];
-  for (const f of files) for (const [ref] of read(f).matchAll(/wesh-[a-z]+/g))
+  for (const f of files) for (const [ref] of read(f).matchAll(/wesh-[a-z]+(?:-[a-z]+)*/g))
     if (!['wesh-handoff-', 'wesh-bak'].some(x => ref.startsWith(x)) && !/wesh-debt\.md/i.test(ref))
       assert.ok(known.has(ref) || ref === 'wesh-bak', `${path.basename(f)} references unknown ${ref}`);
 });
@@ -58,6 +58,32 @@ test('every wesh-* reference points at a shipped skill or agent', () => {
 test('model-invocable descriptions stay short (listing cost)', () => {
   for (const s of skills.filter(s => s.front['disable-model-invocation'] !== 'true'))
     assert.ok(s.front.description.length <= 260, `${s.front.name}: ${s.front.description.length} chars`);
+});
+
+test('wesh-security-review pack: index matches files, no offensive skills, only source skills carry codegraph', () => {
+  const dir = path.join(ROOT, 'skills', 'wesh-security-review', 'pack');
+  if (!fs.existsSync(dir)) return; // pack is optional in a trimmed checkout
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.md'));
+  assert.ok(files.length > 100, `pack has ${files.length} skills`);
+  const lines = read(path.join(dir, 'INDEX.tsv')).trim().split('\n');
+  assert.equal(lines[0], 'name\tfacing\tsubdomain\tdescription');
+  const rows = lines.slice(1).map(l => l.split('\t'));
+  assert.equal(rows.length, files.length, 'one index row per pack file');
+  // Offensive skills must never be vendored here.
+  const OFF = /^(exploiting|attacking|post-exploiting|bypassing|coercing|relaying|moving-laterally|operating-(sliver|havoc)|conducting-(.*-penetration|.*reconnaissance|.*attack)|performing-(.*-attack|.*-bypass|.*penetration|.*kerberoast|.*cracking|.*exploitation)|building-(red-team|c2)|executing-(.*-attack|phishing|red-team))/;
+  for (const [name, facing, sub] of rows) {
+    assert.ok(fs.existsSync(path.join(dir, `${name}.md`)), `${name}: file exists`);
+    assert.ok(!OFF.test(name), `${name}: offensive skill must not be in the defensive pack`);
+    const body = read(path.join(dir, `${name}.md`));
+    const front = parseSkill(path.join(dir, `${name}.md`));
+    assert.equal(front.front.name, name, `${name}: frontmatter name`);
+    assert.match(body, /upstream:.*Apache-2\.0/, `${name}: keeps upstream attribution`);
+    assert.ok(['source', 'config', 'defense'].includes(facing), `${name}: known facing (${facing})`);
+    // Codegraph guidance belongs only on source (code-editing) skills — nowhere else, so it stays signal not noise.
+    if (facing === 'source') assert.match(body, /## Codegraph \(do this first\)/, `${name}: source skill needs its codegraph recipe`);
+    else assert.doesNotMatch(body, /## Codegraph/, `${name}: ${facing} skill must not carry a codegraph block`);
+  }
+  assert.ok(rows.some(r => r[1] === 'source'), 'some source skills exist');
 });
 
 test('install both: files land, user content survives, OpenCode is not duplicated', () => {

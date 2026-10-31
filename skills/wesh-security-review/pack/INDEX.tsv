@@ -1,0 +1,699 @@
+name	facing	subdomain	description
+achieving-cmmc-level-2-compliance	defense	compliance-governance	Prepare a defense-contractor environment for CMMC Level 2 certification: scope CUI and FCI, implement the 110 
+acquiring-disk-image-with-dd-and-dcfldd	defense	digital-forensics	Create forensically sound bit-for-bit disk images with dd or dcfldd on a Linux forensic workstation, preservin
+analyzing-active-directory-acl-abuse	defense	identity-security	Detect dangerous ACL misconfigurations in Active Directory using ldap3 to identify GenericAll, WriteDACL, and 
+analyzing-android-malware-with-apktool	defense	malware-analysis	Perform static analysis of Android APK malware using apktool for resource decompilation, jadx for Java source 
+analyzing-api-gateway-access-logs	defense	security-operations	Parses API Gateway access logs (AWS API Gateway, Kong, Nginx) to detect BOLA/IDOR attacks, rate limit bypass, 
+analyzing-apt-group-with-mitre-navigator	defense	threat-intelligence	Query ATT&CK data with attackcti, mitreattack-python, and stix2, then build MITRE ATT&CK Navigator layers and 
+analyzing-azure-activity-logs-for-threats	defense	security-operations	Queries Azure Monitor activity logs and sign-in logs via azure-monitor-query to detect suspicious administrati
+analyzing-bootkit-and-rootkit-samples	defense	malware-analysis	Analyzes bootkit and advanced rootkit malware infecting the Master Boot Record (MBR), Volume Boot Record (VBR)
+analyzing-browser-forensics-with-hindsight	defense	digital-forensics	Parse Chromium-based browser databases with Hindsight to extract and correlate browsing history, downloads, co
+analyzing-campaign-attribution-evidence	defense	threat-intelligence	Systematically evaluate cyber-campaign evidence to attribute an operation to a threat actor, using the Diamond
+analyzing-certificate-transparency-for-phishing	defense	threat-intelligence	Monitor Certificate Transparency logs using crt.sh and Certstream to detect phishing domains, lookalike certif
+analyzing-cloud-storage-access-patterns	config	cloud-security	Detect abnormal access in AWS S3, GCS, and Azure Blob Storage by analyzing CloudTrail Data Events, GCS audit l
+analyzing-cobalt-strike-beacon-configuration	defense	malware-analysis	Extract and analyze Cobalt Strike beacon configuration from PE files and memory dumps to identify C2 infrastru
+analyzing-cobaltstrike-malleable-c2-profiles	defense	malware-analysis	Parse and analyze Cobalt Strike Malleable C2 profiles with dissect.cobaltstrike (profiles and beacon-payload c
+analyzing-command-and-control-communication	defense	malware-analysis	Analyzes malware C2 communication over HTTP, HTTPS, DNS, and custom protocols to reverse-engineer beacon patte
+analyzing-cyber-kill-chain	defense	threat-intelligence	Analyzes intrusion activity against the Lockheed Martin Cyber Kill Chain framework to identify which phases an
+analyzing-disk-image-with-autopsy	defense	digital-forensics	Perform comprehensive forensic analysis of raw (dd), E01, or AFF disk images with Autopsy and The Sleuth Kit, 
+analyzing-dns-logs-for-exfiltration	defense	soc-operations	Analyzes DNS query logs to detect data exfiltration via DNS tunneling, DGA domain communication, and covert C2
+analyzing-docker-container-forensics	defense	digital-forensics	Investigate compromised Docker containers by analyzing images, layers, volumes, logs, and runtime artifacts to
+analyzing-email-headers-for-phishing-investigation	defense	digital-forensics	Parse and analyze email headers (Received chain, Return-Path, Message-ID) to trace the true origin of a phishi
+analyzing-ethereum-smart-contract-vulnerabilities	config	blockchain-security	Perform static and symbolic analysis of Solidity smart contracts using Slither and Mythril to detect reentranc
+analyzing-golang-malware-with-ghidra	defense	malware-analysis	Reverse engineer Go-compiled malware in Ghidra by parsing Go buildinfo and pclntab structures, recovering stri
+analyzing-heap-spray-exploitation	defense	malware-analysis	Detect and analyze heap spray attacks in memory dumps using Volatility3 plugins to identify NOP sled patterns,
+analyzing-indicators-of-compromise	defense	threat-intelligence	Analyzes indicators of compromise (IOCs) including IP addresses, domains, file hashes, URLs, and email artifac
+analyzing-ios-app-security-with-objection	config	mobile-security	Runtime iOS app security testing with Objection (Frida): inspect keychain and filesystem data, explore app int
+analyzing-kubernetes-audit-logs	config	container-security	Parses Kubernetes API server audit logs (JSON lines) to detect exec-into-pod, secret access, RBAC modification
+analyzing-linux-audit-logs-for-intrusion	defense	incident-response	Uses the Linux Audit framework (auditd) with ausearch and aureport utilities to detect intrusion attempts, una
+analyzing-linux-elf-malware	defense	malware-analysis	Analyze malicious Linux ELF binaries — botnets, cryptominers, ransomware, and rootkits targeting Linux servers
+analyzing-linux-kernel-rootkits	defense	digital-forensics	Detect kernel-level rootkits in Linux memory dumps using Volatility3 linux plugins (check_syscall, lsmod, hidd
+analyzing-linux-system-artifacts	defense	digital-forensics	Examine Linux system artifacts (auth logs, cron/systemd persistence, shell history, SSH keys, and system confi
+analyzing-lnk-file-and-jump-list-artifacts	defense	digital-forensics	Analyze Windows LNK shortcut files and Jump List artifacts with LECmd, JLECmd, and manual Shell Link Binary Fo
+analyzing-macro-malware-in-office-documents	defense	malware-analysis	Analyzes malicious VBA macros embedded in Microsoft Office documents (Word, Excel, PowerPoint) to identify dow
+analyzing-malicious-pdf-with-peepdf	defense	malware-analysis	Perform static analysis of malicious PDF documents using peepdf, pdfid, and pdf-parser to extract embedded Jav
+analyzing-malicious-url-with-urlscan	defense	phishing-defense	URLScan.io is a free service for scanning and analyzing suspicious URLs.
+analyzing-malware-behavior-with-cuckoo-sandbox	defense	malware-analysis	Detonate malware samples in Cuckoo Sandbox to observe runtime behavior — process creation, file system and reg
+analyzing-malware-family-relationships-with-malpedia	defense	threat-intelligence	Query the Malpedia API to look up malware family aliases and naming (platform.family_name), pull community/ven
+analyzing-malware-persistence-with-autoruns	defense	malware-analysis	Use Sysinternals Autoruns to systematically enumerate and analyze malware persistence mechanisms across Window
+analyzing-malware-sandbox-evasion-techniques	defense	malware-analysis	Detect sandbox and VM evasion techniques in malware samples by analyzing timing checks, VM/hypervisor artifact
+analyzing-memory-dumps-with-volatility	defense	malware-analysis	Analyzes RAM memory dumps from compromised systems using the Volatility framework to identify malicious proces
+analyzing-memory-forensics-with-lime-and-volatility	defense	security-operations	Performs Linux memory acquisition using LiME (Linux Memory Extractor) kernel module and analysis with Volatili
+analyzing-mft-for-deleted-file-recovery	defense	digital-forensics	Analyze the NTFS Master File Table ($MFT) with MFTECmd, analyzeMFT, and X-Ways Forensics to recover metadata a
+analyzing-network-covert-channels-in-malware	defense	malware-analysis	Detect and analyze covert communication channels used by malware, including DNS tunneling, ICMP exfiltration, 
+analyzing-network-flow-data-with-netflow	defense	network-security	Parse NetFlow v9 and IPFIX records to detect volumetric anomalies, port scanning, data exfiltration, and C2 be
+analyzing-network-packets-with-scapy	defense	network-security	Use Scapy to craft, send, sniff, and dissect TCP/UDP/ICMP/DNS packets, analyze pcap files, implement SYN scans
+analyzing-network-traffic-for-incidents	defense	incident-response	Analyzes network traffic captures and flow data to identify adversary activity during security incidents, incl
+analyzing-network-traffic-of-malware	defense	malware-analysis	Analyzes network traffic generated by malware during sandbox execution or live incident response to identify C
+analyzing-network-traffic-with-wireshark	defense	network-security	Captures and analyzes network packet data using Wireshark and tshark to identify malicious traffic patterns, d
+analyzing-office365-audit-logs-for-compromise	config	cloud-security	Parse Office 365 Unified Audit Logs via Microsoft Graph API to detect email forwarding rule creation, inbox de
+analyzing-outlook-pst-for-email-forensics	defense	digital-forensics	Parse Microsoft Outlook PST and OST files using libpff and pst-utils to extract message content, headers, atta
+analyzing-packed-malware-with-upx-unpacker	defense	malware-analysis	Identifies and unpacks UPX-packed malware samples, including binaries with modified UPX magic bytes or headers
+analyzing-pdf-malware-with-pdfid	defense	malware-analysis	Analyzes malicious PDF files using PDFiD, pdf-parser, and peepdf to identify embedded JavaScript, shellcode, e
+analyzing-persistence-mechanisms-in-linux	defense	threat-hunting	Scan Linux systems for persistence mechanisms including crontab/systemd entries, LD_PRELOAD injection, shell p
+analyzing-powershell-empire-artifacts	defense	threat-hunting	Detect PowerShell Empire post-exploitation framework artifacts in Windows Script Block Logging (Event ID 4104)
+analyzing-powershell-script-block-logging	defense	security-operations	Parse Windows PowerShell Script Block Logs (Event ID 4104) from EVTX files to detect obfuscated commands, enco
+analyzing-prefetch-files-for-execution-history	defense	digital-forensics	Parse Windows Prefetch files (versions 17, 23, 26, 30) with tools like PECmd, WinPrefetchView, or python-prefe
+analyzing-ransomware-encryption-mechanisms	defense	malware-analysis	Analyzes encryption algorithms, key management, and file encryption routines used by ransomware families to as
+analyzing-ransomware-leak-site-intelligence	defense	threat-intelligence	Safely monitor ransomware group Tor-hosted data leak sites (DLS) to collect and extract structured victim post
+analyzing-ransomware-network-indicators	defense	threat-hunting	Identify ransomware-related network indicators, including C2 beaconing patterns, TOR exit node connections, da
+analyzing-ransomware-payment-wallets	defense	ransomware-defense	Traces ransomware cryptocurrency payment flows using blockchain analysis tools such as Chainalysis Reactor, Wa
+analyzing-sbom-for-supply-chain-vulnerabilities	config	supply-chain-security	Parses Software Bill of Materials (SBOM) in CycloneDX and SPDX JSON formats to identify supply chain vulnerabi
+analyzing-security-logs-with-splunk	defense	incident-response	Leverages Splunk Enterprise Security and SPL (Search Processing Language) to investigate security incidents th
+analyzing-slack-space-and-file-system-artifacts	defense	digital-forensics	Examine NTFS slack space, MFT entries, the USN Change Journal, and Alternate Data Streams (ADS) to recover hid
+analyzing-supply-chain-malware-artifacts	defense	malware-analysis	Investigate supply chain attack artifacts including trojanized software updates, compromised build pipelines, 
+analyzing-threat-actor-ttps-with-mitre-attack	defense	threat-intelligence	Systematically map threat actor behavior and observed IOCs to the MITRE ATT&CK framework, build technique cove
+analyzing-threat-actor-ttps-with-mitre-navigator	defense	threat-intelligence	Map advanced persistent threat (APT) group TTPs to the MITRE ATT&CK framework using the attackcti Python libra
+analyzing-threat-intelligence-feeds	defense	threat-intelligence	Analyzes structured and unstructured threat intelligence feeds to extract actionable indicators, adversary tac
+analyzing-threat-landscape-with-misp	defense	threat-intelligence	Query a MISP (Malware Information Sharing Platform) instance via PyMISP to compute event statistics, IOC type 
+analyzing-tls-certificate-transparency-logs	defense	security-operations	Queries Certificate Transparency logs via crt.sh and pycrtsh to detect phishing domains, unauthorized certific
+analyzing-typosquatting-domains-with-dnstwist	defense	threat-intelligence	Generate domain permutations with dnstwist and check DNS resolution to detect typosquatting, homograph phishin
+analyzing-uefi-bootkit-persistence	defense	firmware-security	Analyzes UEFI bootkit persistence (SPI flash implants, ESP modifications, Secure Boot bypass, UEFI variable ma
+analyzing-usb-device-connection-history	defense	digital-forensics	Correlate Windows registry keys (USBSTOR, MountedDevices), Event Logs, and setupapi.dev.log to reconstruct USB
+analyzing-web-server-logs-for-intrusion	defense	security-operations	Parse Apache and Nginx access logs to detect SQL injection attempts, local file inclusion, directory traversal
+analyzing-windows-amcache-artifacts	defense	digital-forensics	Parses the Windows Amcache.hve registry hive with Eric Zimmerman's AmcacheParser and Timeline Explorer to extr
+analyzing-windows-event-logs-in-splunk	defense	soc-operations	Analyzes Windows Security, System, and Sysmon event logs in Splunk to detect authentication attacks, privilege
+analyzing-windows-lnk-files-for-artifacts	defense	digital-forensics	Parse Windows LNK shortcut files to extract target paths, MAC timestamps, volume serial numbers, and machine i
+analyzing-windows-prefetch-with-python	defense	digital-forensics	Parse Windows Prefetch (.pf) files with the windowsprefetch Python library to reconstruct application executio
+analyzing-windows-registry-for-artifacts	defense	digital-forensics	Extract and analyze Windows Registry hives with tools like RegRipper and Registry Explorer to uncover user act
+analyzing-windows-shellbag-artifacts	defense	digital-forensics	Analyze Windows Shellbag (BagMRU) registry artifacts with SBECmd and Shellbags Explorer to reconstruct folder 
+assessing-vector-and-embedding-weaknesses	config	ai-security	Test RAG vector stores (Pinecone, Qdrant, Weaviate, Chroma, pgvector, FAISS) for embedding inversion, cross-te
+auditing-aws-s3-bucket-permissions	config	cloud-security	Systematically audit AWS S3 bucket permissions to identify publicly accessible buckets, overly permissive ACLs
+auditing-azure-active-directory-configuration	config	cloud-security	Auditing Microsoft Entra ID (Azure Active Directory) configuration to identify risky authentication policies, 
+auditing-cloud-with-cis-benchmarks	config	cloud-security	Audit AWS, Azure, and GCP environments against the CIS Foundations Benchmarks by running automated scans with 
+auditing-entra-id-with-aadinternals	config	identity-access-management	Drive the AADInternals PowerShell toolkit to perform Microsoft Entra ID tenant reconnaissance, access-token ac
+auditing-foundry-smart-contract-security	config	blockchain-security	Pre-deployment security audit of Solidity smart contracts in a Foundry project.
+auditing-gcp-iam-permissions	config	cloud-security	Auditing Google Cloud Platform IAM permissions to identify overly permissive bindings, primitive role usage, s
+auditing-kubernetes-cluster-rbac	config	cloud-security	Auditing Kubernetes cluster RBAC configurations to identify overly permissive roles, wildcard permissions, dan
+auditing-kubernetes-rbac-privilege-escalation	config	container-security	Finds over-permissive RBAC roles and service-account token abuse paths in a Kubernetes cluster using kubectl a
+auditing-mcp-servers-for-tool-poisoning	config	ai-security	Audit MCP servers for tool poisoning, tool shadowing, rug pulls, SSRF, and unauthenticated exposure using Inva
+auditing-terraform-infrastructure-for-security	config	cloud-security	Auditing Terraform infrastructure-as-code for security misconfigurations using Checkov, tfsec, Terrascan, and 
+auditing-tls-certificate-transparency-logs	defense	threat-intelligence	Monitors Certificate Transparency (CT) logs to detect unauthorized certificate issuance, discover subdomains v
+auditing-uefi-firmware-with-chipsec	defense	hardware-firmware-security	Use Intel CHIPSEC to assess platform firmware configuration, SPI flash write protection, BIOS lock, SMM/SMRR, 
+automating-ioc-enrichment	defense	threat-intelligence	Automates the enrichment of raw indicators of compromise with multi-source threat intelligence context using S
+benchmarking-kubernetes-with-kube-bench	config	container-security	Installs and runs the kube-bench tool against a Kubernetes cluster as a Job, DaemonSet, or standalone binary, 
+building-adversary-infrastructure-tracking-system	defense	threat-intelligence	Build an automated adversary infrastructure tracking system in Python (dnspython, python-whois, shodan, networ
+building-attack-pattern-library-from-cti-reports	defense	threat-intelligence	Parse cyber threat intelligence reports (Mandiant, CrowdStrike, Talos, Microsoft) with stix2, mitreattack-pyth
+building-automated-malware-submission-pipeline	defense	soc-operations	Builds an automated malware submission and analysis pipeline that collects suspicious files from endpoints and
+building-cloud-siem-with-sentinel	config	cloud-security	Deploy Microsoft Sentinel as a cloud-native SIEM/SOAR by configuring multi-cloud data connectors (AWS, Azure, 
+building-detection-rule-with-splunk-spl	defense	soc-operations	Build effective detection rules using Splunk Search Processing Language (SPL) correlation searches to identify
+building-detection-rules-with-sigma	defense	soc-operations	Builds vendor-agnostic detection rules using the Sigma rule format for threat detection across SIEM platforms 
+building-devsecops-pipeline-with-gitlab-ci	config	devsecops	Configure a GitLab CI/CD pipeline that embeds SAST (Semgrep, SpotBugs, Gosec, Bandit, NodeJsScan), DAST, conta
+building-identity-federation-with-saml-azure-ad	config	identity-access-management	Configure SAML 2.0 identity federation between on-premises Active Directory (via AD FS or a third-party IdP) a
+building-identity-governance-lifecycle-process	config	identity-access-management	Design identity governance and lifecycle (IGA) programs on platforms like SailPoint, Saviynt, or Entra ID Gove
+building-incident-response-dashboard	defense	soc-operations	Builds real-time incident response dashboards in Splunk, Elastic, or Grafana to provide SOC analysts and leade
+building-incident-response-playbook	defense	incident-response	Designs and documents structured incident response playbooks with step-by-step procedures per incident type, d
+building-incident-timeline-with-timesketch	defense	incident-response	Build collaborative forensic incident timelines using Timesketch to ingest, normalize, and analyze multi-sourc
+building-ioc-defanging-and-sharing-pipeline	defense	threat-intelligence	Build an automated pipeline that ingests raw IOCs (URLs, IPs, domains, emails), normalizes and deduplicates th
+building-ioc-enrichment-pipeline-with-opencti	defense	threat-intelligence	Build an automated IOC enrichment pipeline on OpenCTI (STIX 2.1 native threat intel platform) using its intern
+building-malware-incident-communication-template	defense	incident-response	Build structured communication templates for malware incidents (ransomware, wiper, trojan, worm), covering int
+building-patch-tuesday-response-process	defense	vulnerability-management	Establish a repeatable operational process for triaging, testing, and deploying Microsoft Patch Tuesday securi
+building-phishing-reporting-button-workflow	defense	phishing-defense	Implement a phishing report button (Microsoft 365 built-in Report button or third-party like KnowBe4/Cofense) 
+building-ransomware-playbook-with-cisa-framework	defense	ransomware-defense	Builds a structured ransomware incident response playbook aligned with the CISA StopRansomware Guide and NIST 
+building-role-mining-for-rbac-optimization	config	identity-access-management	Apply bottom-up and top-down role mining techniques, including clustering algorithms and formal concept analys
+building-soc-escalation-matrix	defense	soc-operations	Build a structured SOC escalation matrix defining severity tiers, response SLAs, tiered escalation paths, and 
+building-soc-metrics-and-kpi-tracking	defense	soc-operations	Builds SOC performance metrics and KPI tracking dashboards measuring Mean Time to Detect (MTTD), Mean Time to 
+building-soc-playbook-for-ransomware	defense	soc-operations	Builds a structured SOC incident response playbook for ransomware attacks covering detection, containment, era
+building-super-timelines-with-plaso	defense	digital-forensics	Generate forensic super-timelines with Plaso's log2timeline.py, pinfo.py, psort.py, and psteal.py CLI tools (f
+building-threat-actor-profile-from-osint	defense	threat-intelligence	Build threat actor profiles by collecting OSINT from vendor reports, paste sites, dark web forums, social medi
+building-threat-feed-aggregation-with-misp	defense	threat-intelligence	Deploy MISP via Docker and configure feeds from sources like abuse.ch, AlienVault OTX, and CIRCL to aggregate,
+building-threat-hunt-hypothesis-framework	defense	threat-hunting	Build a systematic threat-hunt workflow that turns threat intelligence and ATT&CK gap analysis into testable h
+building-threat-intelligence-enrichment-in-splunk	defense	soc-operations	Build automated IOC enrichment pipelines in Splunk Enterprise Security by ingesting threat feeds into KV Store
+building-threat-intelligence-feed-integration	defense	soc-operations	Builds automated threat intelligence feed integration pipelines connecting STIX/TAXII feeds, open-source threa
+building-threat-intelligence-platform	defense	threat-intelligence	Design and deploy a Threat Intelligence Platform (TIP) by integrating open-source CTI tools (MISP, OpenCTI, Th
+building-vulnerability-aging-and-sla-tracking	defense	vulnerability-management	Implement a vulnerability aging dashboard and SLA tracking system that measures time-to-remediation against se
+building-vulnerability-dashboard-with-defectdojo	defense	vulnerability-management	Deploy DefectDojo as a centralized vulnerability management dashboard that ingests findings from 200+ security
+building-vulnerability-exception-tracking-system	defense	vulnerability-management	Build a vulnerability exception and risk acceptance tracking system covering approval workflows, compensating 
+building-vulnerability-scanning-workflow	defense	soc-operations	Builds a structured vulnerability scanning workflow using tools like Nessus, Qualys, and OpenVAS to discover, 
+collecting-indicators-of-compromise	defense	incident-response	Systematically collects, categorizes, and distributes indicators of compromise (IOCs) during and after securit
+collecting-open-source-intelligence	defense	threat-intelligence	Collects and synthesizes open-source intelligence (OSINT) about threat actors, malicious infrastructure, and a
+collecting-threat-intelligence-with-misp	defense	threat-intelligence	Deploy MISP, configure threat feeds (MISP community, freetext, TAXII, CSV), and use the PyMISP API to programm
+collecting-volatile-evidence-from-compromised-host	defense	incident-response	Collect volatile forensic evidence from a compromised host by following the order of volatility, preserving me
+conducting-cloud-incident-response	defense	incident-response	Respond to security incidents in AWS, Azure, and GCP via identity-based containment, cloud-native log analysis
+conducting-cyber-risk-assessment-with-nist-800-30	defense	compliance-governance	Conduct a defensible cybersecurity risk assessment using the NIST SP 800-30 Rev 1 methodology: prepare scope a
+conducting-gdpr-compliance-assessment	defense	compliance-governance	Conduct comprehensive GDPR compliance assessments by evaluating data processing activities against EU Regulati
+conducting-malware-incident-response	defense	incident-response	Respond to malware infections across enterprise endpoints by identifying the malware family, determining infec
+conducting-memory-forensics-with-volatility	defense	incident-response	Performs memory forensics analysis using Volatility 3 to extract evidence of malware execution, process inject
+conducting-phishing-incident-response	defense	incident-response	Respond to phishing incidents by analyzing reported emails, extracting indicators, sandboxing URLs/attachments
+conducting-post-incident-lessons-learned	defense	incident-response	Facilitate structured post-incident reviews to identify root causes, document what worked and failed, and prod
+configuring-active-directory-tiered-model	config	identity-access-management	Implement Microsoft's Enhanced Security Admin Environment (ESAE) tiered administration model for Active Direct
+configuring-aws-verified-access-for-ztna	config	zero-trust-architecture	Configure AWS Verified Access to provide VPN-less zero trust network access to internal apps, combining identi
+configuring-certificate-authority-with-openssl	config	cryptography	Build a two-tier PKI Certificate Authority hierarchy (offline Root CA plus issuing Intermediate CA) using Open
+configuring-host-based-intrusion-detection	config	endpoint-security	Configures host-based intrusion detection systems (HIDS) to monitor endpoint file integrity, system calls, and
+configuring-hsm-for-key-storage	config	cryptography	Configures Hardware Security Modules for cryptographic key storage using the PKCS#11 standard interface, cover
+configuring-identity-aware-proxy-with-google-iap	config	zero-trust-architecture	Configures Google Cloud Identity-Aware Proxy (IAP) via gcloud to enforce per-request identity verification on 
+configuring-ldap-security-hardening	config	identity-access-management	Hardens LDAP directory services against credential harvesting, LDAP injection, anonymous binding, and channel-
+configuring-microsegmentation-for-zero-trust	config	zero-trust-architecture	Configures microsegmentation policies to enforce least-privilege workload-to-workload access using tools such 
+configuring-multi-factor-authentication-with-duo	config	identity-access-management	Deploys Cisco Duo multi-factor authentication across enterprise applications, VPN, RDP, and SSH access points,
+configuring-network-segmentation-with-vlans	defense	network-security	Designs and implements VLAN-based (802.1Q) network segmentation on managed switches to isolate zones such as c
+configuring-oauth2-authorization-flow	source	identity-access-management	Configures secure OAuth 2.0 authorization flows, including Authorization Code with PKCE, Client Credentials, a
+configuring-pfsense-firewall-rules	defense	network-security	Configures pfSense firewall rules, NAT policies, IPsec/OpenVPN tunnels, and traffic shaping to enforce network
+configuring-snort-ids-for-intrusion-detection	defense	network-security	Installs, configures, and tunes Snort 3 to monitor network traffic for malicious activity using custom and com
+configuring-suricata-for-network-monitoring	defense	network-security	Deploys and configures Suricata IDS/IPS with Emerging Threats rulesets, EVE JSON logging, and custom rules for
+configuring-tls-1-3-for-secure-communications	config	cryptography	Configures TLS 1.3 (RFC 8446) on servers, covering cipher suite and key-exchange group selection, and validate
+configuring-windows-defender-advanced-settings	config	endpoint-security	Configures Microsoft Defender for Endpoint (MDE) advanced protection settings including attack surface reducti
+configuring-windows-event-logging-for-detection	defense	endpoint-security	Configures Windows Event Logging with advanced audit policies to generate high-fidelity security events for th
+configuring-zscaler-private-access-for-ztna	config	zero-trust-architecture	Configures Zscaler Private Access (ZPA) to replace traditional VPN with zero trust network access by deploying
+containing-active-breach	defense	incident-response	Executes containment strategies to stop active adversary operations and prevent lateral movement during a conf
+continuous-llm-red-teaming-with-promptfoo	config	ai-security	Wires Promptfoo and DeepTeam into CI/CD for automated, repeatable red-teaming of LLM apps against OWASP LLM To
+correlating-security-events-in-qradar	defense	soc-operations	Correlates security events in IBM QRadar SIEM using AQL (Ariel Query Language), custom rules, building blocks,
+correlating-threat-campaigns	defense	threat-intelligence	Correlates disparate security incidents, IOCs, and adversary behaviors across time and organizations to identi
+defending-llms-with-guardrails	config	ai-security	Deploys Llama Guard 3 safety classification, NeMo Guardrails programmable dialogue rails, and LLM Guard input/
+deobfuscating-javascript-malware	defense	malware-analysis	Deobfuscates malicious JavaScript found in phishing pages, web skimmers, and dropper scripts by reversing enco
+deobfuscating-powershell-obfuscated-malware	defense	malware-analysis	Systematically deobfuscates multi-layer PowerShell malware using AST analysis, dynamic tracing, and tools like
+deploying-active-directory-honeytokens	defense	deception-technology	Deploys deception-based honeytokens in Active Directory including fake privileged accounts with AdminCount=1, 
+deploying-cloud-deception-with-decoy-resources	defense	deception-technology	Deploy cloud-native deception across AWS, Azure, and GCP using decoy (honey) resources whose only purpose is t
+deploying-cloudflare-access-for-zero-trust	config	zero-trust-architecture	Deploys Cloudflare Access with Cloudflare Tunnel for zero trust access to self-hosted apps, configuring identi
+deploying-decoy-files-for-ransomware-detection	defense	ransomware-defense	Deploys canary files (honeytokens) across file systems to detect ransomware encryption activity in real time.
+deploying-edr-agent-with-crowdstrike	config	endpoint-security	Deploys and configures CrowdStrike Falcon EDR agents across enterprise endpoints to enable real-time threat de
+deploying-honeytokens-and-canarytokens	defense	deception-technology	Plants Canarytokens-based decoy artifacts (honey credentials, DNS tokens, web-bug URLs, AWS keys, documents, k
+deploying-osquery-for-endpoint-monitoring	config	endpoint-security	Deploys and configures osquery for real-time endpoint monitoring using SQL-based queries to inspect running pr
+deploying-palo-alto-prisma-access-zero-trust	config	zero-trust-architecture	Deploys Palo Alto Networks Prisma Access for SASE-based zero trust network access, configuring GlobalProtect a
+deploying-ransomware-canary-files	defense	ransomware-defense	Deploys and monitors ransomware canary files using Python's watchdog library, placing decoy files mimicking hi
+deploying-software-defined-perimeter	config	zero-trust-architecture	Deploys a Software-Defined Perimeter per the CSA v2.0 specification, configuring Single Packet Authorization, 
+deploying-tailscale-for-zero-trust-vpn	config	zero-trust-architecture	Deploys and configures Tailscale (or self-hosted Headscale) as a WireGuard-based zero trust mesh VPN, setting 
+designing-adversary-engagement-with-mitre-engage	defense	deception-technology	Plan, run, and measure an adversary engagement operation using the MITRE Engage framework so that deployed dec
+detecting-ai-model-prompt-injection-attacks	config	ai-security	Detects prompt injection using regex signature matching, heuristic scoring for structural anomalies, and DeBER
+detecting-anomalies-in-industrial-control-systems	defense	ot-ics-security	Deploys anomaly detection for OT/ICS environments using machine learning on OT network baselines, physics-base
+detecting-anomalous-authentication-patterns	config	identity-access-management	Detects anomalous authentication patterns using UEBA analytics, statistical baselines, and machine learning mo
+detecting-api-enumeration-attacks	config	api-security	Detect API enumeration attacks (BOLA/IDOR, OWASP API1:2023) by writing SIEM detection rules that flag sequenti
+detecting-arp-poisoning-in-network-traffic	defense	network-security	Detect Layer 2 ARP poisoning/spoofing by deploying ARPWatch, Dynamic ARP Inspection (DAI), Wireshark packet an
+detecting-attacks-on-historian-servers	defense	ot-ics-security	Detect cyber attacks on OT historian servers (OSIsoft PI, Ignition, GE Proficy, Wonderware InSQL) using a Pyth
+detecting-attacks-on-scada-systems	defense	ot-ics-security	This skill covers detecting cyber attacks targeting Supervisory Control and Data Acquisition (SCADA) systems i
+detecting-aws-cloudtrail-anomalies	config	cloud-security	Detect unusual API call patterns in AWS CloudTrail logs using boto3, statistical baselining, and behavioral an
+detecting-aws-credential-exposure-with-trufflehog	config	cloud-security	Scan source code repositories, CI/CD pipelines, and configuration files for exposed AWS credentials using Truf
+detecting-aws-guardduty-findings-automation	config	cloud-security	Build automated AWS GuardDuty finding response pipelines using EventBridge and Lambda to trigger real-time inc
+detecting-aws-iam-privilege-escalation	config	cloud-security	Detect AWS IAM privilege escalation paths using boto3 and Cloudsplaining policy analysis to identify overly pe
+detecting-azure-lateral-movement	config	cloud-security	Detect lateral movement in Azure AD/Entra ID environments using Microsoft Graph API audit logs, Azure Sentinel
+detecting-azure-service-principal-abuse	config	cloud-security	Detect Azure service principal abuse in Microsoft Entra ID using KQL detection queries (Sentinel/Splunk) again
+detecting-azure-storage-account-misconfigurations	config	cloud-security	Audit Azure Blob and ADLS storage accounts for public access exposure, weak or long-lived SAS tokens, missing 
+detecting-beaconing-patterns-with-zeek	defense	security-operations	Performs statistical analysis of Zeek conn.log connection intervals to detect C2 beaconing patterns.
+detecting-bluetooth-low-energy-attacks	defense	wireless-security	Detects and analyzes Bluetooth Low Energy (BLE) security attacks including sniffing, replay attacks, GATT enum
+detecting-broken-object-property-level-authorization	config	api-security	Detect and test for OWASP API3:2023 Broken Object Property Level Authorization (BOPLA), covering excessive dat
+detecting-business-email-compromise	defense	phishing-defense	Detect Business Email Compromise (BEC) fraud, where attackers impersonate executives or vendors to trick emplo
+detecting-business-email-compromise-with-ai	defense	phishing-defense	Deploy AI and NLP-powered detection systems to identify business email compromise attacks by analyzing writing
+detecting-cloud-threats-with-guardduty	config	cloud-security	Deploy and operationalize Amazon GuardDuty, covering protection plans for S3, EKS, EC2 runtime monitoring, and
+detecting-command-and-control-over-dns	defense	network-security	Detect command-and-control (C2) traffic tunneled over DNS from tools like Iodine, dnscat2, dns2tcp, and Cobalt
+detecting-compromised-cloud-credentials	config	cloud-security	Detect compromised cloud credentials across AWS, Azure, and GCP by analyzing anomalous API activity, impossibl
+detecting-container-drift-at-runtime	config	container-security	Detects unauthorized runtime drift in containers by monitoring binary execution, filesystem changes, and confi
+detecting-container-escape-attempts	config	container-security	Detects container escape at runtime across tooling - namespace manipulation, capability abuse, kernel exploits
+detecting-container-escape-with-falco-rules	config	container-security	Writes and tunes Falco rule syntax for container escape detection - conditions, macros, lists, priorities, and
+detecting-container-runtime-threats-with-falco	config	container-security	Deploys and operates Falco with the modern eBPF driver in Kubernetes and Docker, covering driver selection, He
+detecting-credential-dumping-techniques	defense	threat-detection	Detect LSASS credential dumping, SAM database extraction, and NTDS.dit theft (e.g.
+detecting-cryptomining-in-cloud	config	cloud-security	This skill teaches security teams how to detect and respond to unauthorized cryptocurrency mining operations i
+detecting-data-and-model-poisoning	config	ai-security	Identify poisoned training data and backdoored ML models across the pipeline using IBM's Adversarial Robustnes
+detecting-dcsync-attack-in-active-directory	defense	threat-hunting	Detect DCSync attacks (MITRE T1003.006) where adversaries abuse Active Directory replication privileges to ext
+detecting-deepfake-audio-in-vishing-attacks	defense	social-engineering-defense	Detect AI-generated deepfake audio used in voice phishing (vishing) by extracting spectral features (MFCC, spe
+detecting-dependency-confusion	config	supply-chain-security	Detect and prevent dependency confusion (public-over-private package name resolution) in npm, PyPI, and Maven 
+detecting-dll-sideloading-attacks	defense	threat-hunting	Detect DLL side-loading and search-order hijacking (MITRE T1574) where adversaries plant malicious DLLs for le
+detecting-dnp3-protocol-anomalies	defense	ot-ics-security	Detect anomalies in DNP3 communications used in SCADA/ICS systems by monitoring unauthorized control commands,
+detecting-dns-exfiltration-with-dns-query-analysis	defense	network-security	Detect data exfiltration via DNS tunneling (tools like iodine, dnscat2, dns2tcp) by analyzing query entropy, s
+detecting-email-account-compromise	defense	incident-response	Detect compromised O365 and Google Workspace email accounts by analyzing Unified Audit Logs and Azure AD sign-
+detecting-email-forwarding-rules-attack	defense	threat-hunting	Detect malicious inbox/mail-flow forwarding rules that adversaries create to maintain persistent access to ema
+detecting-entra-offensive-tools-in-graph-logs	defense	soc-operations	Hunt AADGraphActivityLogs and MicrosoftGraphActivityLogs in Microsoft Sentinel/Log Analytics using KQL to fing
+detecting-evasion-techniques-in-endpoint-logs	config	endpoint-security	Detects defense evasion techniques used by adversaries in endpoint logs including log tampering, timestomping,
+detecting-exfiltration-over-dns-with-zeek	defense	network-security	Detect DNS-based data exfiltration by analyzing Zeek dns.log for high-entropy subdomains, oversized TXT/NULL r
+detecting-fileless-attacks-on-endpoints	config	endpoint-security	Detects fileless malware and in-memory attacks that execute entirely in RAM without writing persistent files t
+detecting-fileless-malware-techniques	defense	malware-analysis	Detects and analyzes fileless malware that operates entirely in memory using PowerShell, WMI, .NET reflection,
+detecting-golden-ticket-attacks-in-kerberos-logs	defense	threat-hunting	Detect Golden Ticket attacks in Active Directory using Splunk and KQL queries against domain controller event 
+detecting-golden-ticket-forgery	defense	threat-detection	Detect Kerberos Golden Ticket forgery (e.g.
+detecting-indirect-prompt-injection	config	ai-security	Detect and defend against indirect prompt injection hidden in web pages, documents, and images consumed by an 
+detecting-insider-data-exfiltration-via-dlp	defense	security-operations	Detects insider data exfiltration by analyzing DLP policy violations, file access patterns, upload volume anom
+detecting-insider-threat-behaviors	defense	threat-hunting	Detect insider threat behavioral indicators including unusual data access, off-hours activity, mass file downl
+detecting-insider-threat-with-ueba	defense	threat-detection	Implement User and Entity Behavior Analytics (UEBA) using Elasticsearch/OpenSearch to build behavioral baselin
+detecting-kerberoasting-attacks	defense	threat-hunting	Detect Kerberoasting attacks by monitoring for anomalous Kerberos TGS requests (Event ID 4769) targeting servi
+detecting-lateral-movement-in-network	defense	network-security	Identifies lateral movement techniques in enterprise networks by analyzing authentication logs, network flows,
+detecting-lateral-movement-with-splunk	defense	threat-hunting	Detect adversary lateral movement across networks using Splunk SPL queries against Windows authentication logs
+detecting-lateral-movement-with-zeek	defense	network-security	Detect lateral movement in network traffic using Zeek (formerly Bro) log analysis.
+detecting-living-off-the-land-attacks	defense	threat-detection	Detect abuse of legitimate Windows binaries (LOLBins) used for living off the land attacks.
+detecting-living-off-the-land-with-lolbas	defense	threat-detection	Detect Living Off the Land Binaries (LOLBins/LOLBAS) abuse including certutil, regsvr32, mshta, and rundll32 v
+detecting-malicious-npm-packages	config	supply-chain-security	Triage npm packages and lockfiles for install-script malware, credential exfiltration, and worming behavior us
+detecting-malicious-scheduled-tasks-with-sysmon	defense	threat-hunting	Detect malicious scheduled task creation and modification using Sysmon Event IDs 1 (Process Create for schtask
+detecting-mimikatz-execution-patterns	defense	threat-hunting	Detect Mimikatz credential-dumping activity via command-line pattern matching, LSASS access signatures, binary
+detecting-misconfigured-azure-storage	config	cloud-security	Audit Azure Storage accounts for public blob containers, missing encryption, overly permissive SAS tokens, dis
+detecting-mobile-malware-behavior	config	mobile-security	Detects and analyzes malicious behavior in mobile applications through behavioral analysis, permission abuse d
+detecting-modbus-command-injection-attacks	defense	ot-ics-security	Detect command injection against Modbus TCP/RTU in ICS/SCADA environments by monitoring unauthorized writes, a
+detecting-modbus-protocol-anomalies	defense	ot-ics-security	Detect anomalies in Modbus/TCP and Modbus RTU industrial traffic via function code monitoring, register range 
+detecting-model-extraction-attacks	config	ai-security	Detect MITRE ATLAS AML.T0024 attacks (model stealing, inversion, membership inference) performed via inference
+detecting-network-anomalies-with-zeek	defense	network-security	Deploy and configure Zeek (formerly Bro) to passively analyze network traffic, generate structured connection/
+detecting-network-scanning-with-ids-signatures	defense	network-security	Detect network reconnaissance and port scanning using Suricata and Snort IDS signatures, threshold-based detec
+detecting-ntlm-relay-with-event-correlation	defense	threat-hunting	Detect NTLM relay attacks (T1557.001) by correlating Windows Event 4624 LogonType 3 for IP-to-hostname mismatc
+detecting-oauth-token-theft	config	cloud-security	Detect and respond to OAuth token theft and replay in Microsoft Entra ID (Azure AD), covering access token the
+detecting-pass-the-hash-attacks	defense	threat-hunting	Detect Pass-the-Hash (T1550.002) attacks by analyzing NTLM authentication patterns, flagging Type 3 logons usi
+detecting-pass-the-ticket-attacks	defense	threat-detection	Detect Kerberos Pass-the-Ticket (PtT) attacks by analyzing Windows Event IDs 4768, 4769, and 4771 for anomalou
+detecting-port-scanning-with-fail2ban	defense	network-security	Configures Fail2ban with custom filters and actions to detect port scanning activity, SSH brute force attempts
+detecting-privilege-escalation-attempts	defense	threat-hunting	Detect privilege escalation attempts across Windows and Linux, including access token manipulation, UAC bypass
+detecting-privilege-escalation-in-kubernetes-pods	config	container-security	Detects and prevents privilege escalation inside Kubernetes pods by combining admission control (OPA policies)
+detecting-process-hollowing-technique	defense	threat-hunting	Detect process hollowing (MITRE T1055.012) by analyzing memory-mapped sections, hollowed process indicators, a
+detecting-process-injection-techniques	defense	malware-analysis	Detects and analyzes process injection techniques used by malware including classic DLL injection, process hol
+detecting-qr-code-phishing-with-email-security	defense	phishing-defense	Detect and prevent QR code phishing (quishing) attacks that embed malicious URLs inside QR code images to bypa
+detecting-ransomware-encryption-behavior	defense	ransomware-defense	Detects ransomware encryption activity in real time using entropy analysis, file system I/O monitoring (Sysmon
+detecting-ransomware-precursors-in-network	defense	ransomware-defense	Detects early-stage ransomware indicators in network traffic before encryption begins, including initial acces
+detecting-rdp-brute-force-attacks	defense	threat-detection	Detect RDP brute force attacks by parsing Windows Security Event Logs (EVTX files, via python-evtx) for failed
+detecting-rootkit-activity	defense	malware-analysis	Detects rootkit presence on compromised systems by identifying hidden processes, hooked system calls, modified
+detecting-s3-data-exfiltration-attempts	config	cloud-security	Detecting data exfiltration attempts from AWS S3 buckets by analyzing CloudTrail S3 data events, VPC Flow Logs
+detecting-secure-boot-bypass	defense	hardware-firmware-security	Detect UEFI Secure Boot bypasses and bootkits such as BlackLotus and Bootkitty by verifying Secure Boot state,
+detecting-serverless-function-injection	config	cloud-security	Detects and prevents code injection attacks targeting serverless functions (AWS Lambda, Azure Functions, Googl
+detecting-service-account-abuse	defense	threat-hunting	Detect abuse of service accounts by hunting for anomalous interactive logons, privilege escalation, and latera
+detecting-shadow-api-endpoints	config	api-security	Discover and inventory shadow API endpoints that operate outside documented OpenAPI/Swagger specs, using traff
+detecting-shadow-it-cloud-usage	config	cloud-security	Detect unauthorized SaaS and cloud service usage (shadow IT) by parsing proxy access logs, DNS query logs, and
+detecting-spearphishing-with-email-gateway	defense	phishing-defense	Detect and block spearphishing emails that use personalized, researched content to evade generic spam filters,
+detecting-sql-injection-via-waf-logs	defense	security-operations	Analyze WAF (ModSecurity/AWS WAF/Cloudflare) logs to detect SQL injection attack campaigns.
+detecting-stuxnet-style-attacks	defense	ot-ics-security	Detects sophisticated cyber-physical attacks that follow the Stuxnet pattern of modifying PLC logic while spoo
+detecting-supply-chain-attacks-in-ci-cd	defense	security-operations	Scans GitHub Actions workflows and CI/CD pipeline configurations for supply chain attack vectors including unp
+detecting-suspicious-oauth-application-consent	config	cloud-security	Detect risky OAuth application consent grants in Azure AD / Microsoft Entra ID using Microsoft Graph API, audi
+detecting-suspicious-powershell-execution	defense	threat-hunting	Hunt for suspicious PowerShell execution (T1059.001) such as encoded commands, download cradles, AMSI bypass, 
+detecting-t1003-credential-dumping-with-edr	defense	threat-hunting	Detect OS credential dumping (MITRE T1003) targeting LSASS memory, the SAM database, NTDS.dit, and cached cred
+detecting-t1055-process-injection-with-sysmon	defense	threat-hunting	Detect process injection techniques (T1055) - including DLL injection, process hollowing, and APC injection - 
+detecting-t1548-abuse-elevation-control-mechanism	defense	threat-hunting	Detect abuse of elevation control mechanisms (T1548), including Windows UAC bypass via auto-elevating binaries
+detecting-typosquatting-packages	config	supply-chain-security	Flag misspelled, brandjacked, and typosquatted package names across npm, PyPI, and crates.io before installati
+detecting-typosquatting-packages-in-npm-pypi	config	supply-chain-security	Detects typosquatting attacks in npm and PyPI package registries by analyzing package name similarity using Le
+detecting-wmi-persistence	defense	threat-hunting	Detect WMI event subscription persistence (MITRE T1546.003) by analyzing Sysmon Event IDs 19, 20, and 21 for m
+enumerating-cloud-with-cloudfox	config	cloud-security	Run CloudFox's read-only Describe/List/Get enumeration (all-checks, role-trusts, secrets, endpoints, and permi
+eradicating-malware-from-infected-systems	defense	incident-response	Systematically map and remove malware, backdoors, and attacker persistence mechanisms (registry Run keys, sche
+escaping-containers-to-host	config	container-security	Test privileged pods, host mounts, runC CVEs, and exposed Docker sockets to break out of a container and reach
+evaluating-threat-intelligence-platforms	defense	threat-intelligence	Evaluates and selects Threat Intelligence Platform (TIP) products based on organizational requirements includi
+executing-nist-rmf-authorization-to-operate	defense	compliance-governance	Drive a federal system through the NIST Risk Management Framework (SP 800-37 Rev 2) to an Authorization to Ope
+extracting-browser-history-artifacts	defense	digital-forensics	Extracts and analyzes browser history, cookies, cache, downloads, and bookmarks from Chrome, Firefox, and Edge
+extracting-config-from-agent-tesla-rat	defense	malware-analysis	Extracts embedded configuration from Agent Tesla RAT samples, including SMTP/FTP/Telegram exfiltration credent
+extracting-credentials-from-memory-dump	defense	digital-forensics	Extracts cached credentials, password hashes, Kerberos tickets, and authentication tokens from Windows memory 
+extracting-iocs-from-malware-samples	defense	malware-analysis	Extracts indicators of compromise (IOCs) from malware samples, including file hashes, network indicators (IPs,
+extracting-memory-artifacts-with-rekall	defense	security-operations	Uses Rekall memory forensics framework to analyze memory dumps for process hollowing, injected code via VAD an
+extracting-windows-event-logs-artifacts	defense	digital-forensics	Extract, parse, and analyze Windows Event Logs (EVTX) using Chainsaw, Hayabusa, and EvtxECmd to detect lateral
+fleet-hunting-with-velociraptor	defense	threat-hunting	Deploy a Velociraptor server and agents, then author VQL (Velociraptor Query Language) artifacts and run them 
+generating-and-analyzing-sboms	config	supply-chain-security	Generate CycloneDX and SPDX SBOMs from container images and filesystems with Syft, correlate them to CVEs with
+generating-forensic-timelines-with-hayabusa	defense	digital-forensics	Run Hayabusa against collected Windows EVTX files to apply Sigma detection rules and produce a prioritized, ch
+generating-threat-intelligence-reports	defense	threat-intelligence	Generates structured cyber threat intelligence reports at strategic, operational, and tactical levels tailored
+hardening-docker-containers-for-production	config	container-security	Hardens Dockerfiles, images, and per-container runtime settings against the CIS Docker Benchmark v1.8.0: non-r
+hardening-docker-daemon-configuration	config	container-security	Hardens the Docker daemon (dockerd) through /etc/docker/daemon.json with user namespace remapping, TLS client 
+hardening-linux-endpoint-with-cis-benchmark	config	endpoint-security	Hardens Linux endpoints using CIS Benchmark recommendations for Ubuntu, RHEL, and CentOS to reduce attack surf
+hardening-windows-endpoint-with-cis-benchmark	config	endpoint-security	Hardens Windows endpoints using CIS (Center for Internet Security) Benchmark recommendations to reduce attack 
+hunting-advanced-persistent-threats	defense	threat-intelligence	Proactively hunts for Advanced Persistent Threat (APT) activity within enterprise environments using hypothesi
+hunting-bootkits-in-efi-system-partition	defense	hardware-firmware-security	Baseline the EFI System Partition and hunt malicious EFI binaries such as ESPecter, BlackLotus, Bootkitty, and
+hunting-credential-stuffing-attacks	defense	security-operations	Detects credential stuffing attacks by analyzing authentication logs for login velocity anomalies, ASN diversi
+hunting-evtx-with-chainsaw	defense	threat-hunting	Run Chainsaw against collected Windows EVTX files to hunt with the SigmaHQ rule corpus, built-in detection rul
+hunting-for-anomalous-powershell-execution	defense	threat-hunting	Hunt for malicious PowerShell activity by analyzing Script Block Logging (Event 4104), Module Logging (Event 4
+hunting-for-beaconing-with-frequency-analysis	defense	threat-hunting	Identify command-and-control beaconing patterns in network traffic by applying statistical frequency analysis,
+hunting-for-cobalt-strike-beacons	defense	threat-hunting	Detect Cobalt Strike beacon command-and-control traffic using default TLS certificate signatures (serial 8BB00
+hunting-for-command-and-control-beaconing	defense	threat-hunting	Detect C2 beaconing patterns in network traffic using frequency analysis, jitter detection, and domain reputat
+hunting-for-data-exfiltration-indicators	defense	threat-hunting	Hunt for data exfiltration by analyzing Zeek and Suricata network telemetry for unusual data flows, DNS tunnel
+hunting-for-data-staging-before-exfiltration	defense	threat-hunting	Detect data-staging activity (MITRE ATT&CK T1074) by analyzing EDR/Sysmon process-creation and file-system tel
+hunting-for-dcom-lateral-movement	defense	threat-hunting	Hunt for DCOM-based lateral movement (MITRE ATT&CK T1021.003) by detecting abuse of MMC20.Application, ShellBr
+hunting-for-dcsync-attacks	defense	threat-hunting	Detect DCSync attacks (MITRE ATT&CK T1003.006) by analyzing Windows Event ID 4662 (AccessMask 0x100) for DS-Re
+hunting-for-defense-evasion-via-timestomping	defense	threat-hunting	Detect NTFS timestamp manipulation (MITRE T1070.006) by comparing $STANDARD_INFORMATION vs $FILE_NAME timestam
+hunting-for-dns-based-persistence	defense	threat-hunting	Hunts for DNS-based persistence mechanisms such as DNS hijacking, dangling CNAME records enabling subdomain ta
+hunting-for-dns-tunneling-with-zeek	defense	threat-hunting	Detects DNS tunneling and covert-channel data exfiltration by analyzing Zeek dns.log for high-entropy subdomai
+hunting-for-domain-fronting-c2-traffic	defense	threat-hunting	Detects domain fronting C2 traffic by analyzing SNI-vs-HTTP-Host-header mismatches in proxy logs and inspectin
+hunting-for-lateral-movement-via-wmi	defense	threat-hunting	Detects WMI-based lateral movement (e.g.
+hunting-for-living-off-the-cloud-techniques	defense	threat-hunting	Hunts for adversary abuse of legitimate cloud services (Azure, AWS, GCP, and SaaS platforms) for command-and-c
+hunting-for-living-off-the-land-binaries	defense	threat-hunting	Proactively hunts for adversary abuse of legitimate, signed system binaries (LOLBins) used to execute maliciou
+hunting-for-lolbins-execution-in-endpoint-logs	defense	threat-hunting	Hunts for LOLBins (Living Off the Land Binaries) abuse, mapped to MITRE T1218, by analyzing endpoint process-c
+hunting-for-ntlm-relay-attacks	defense	threat-hunting	Detects NTLM relay attacks (MITRE T1557.001) by analyzing Windows Event ID 4624 logon type 3 with NTLMSSP auth
+hunting-for-persistence-mechanisms-in-windows	defense	threat-hunting	Systematically hunts for adversary persistence mechanisms across Windows endpoints, covering registry Run/RunO
+hunting-for-persistence-via-wmi-subscriptions	defense	threat-hunting	Hunts for adversary persistence via WMI event subscriptions (MITRE T1546.003) by monitoring the creation of WM
+hunting-for-process-injection-techniques	defense	threat-hunting	Detects process injection techniques (MITRE T1055) — including CreateRemoteThread injection, process hollowing
+hunting-for-registry-persistence-mechanisms	defense	threat-hunting	Hunts for registry-based persistence mechanisms (MITRE T1547) in Windows environments, including Run/RunOnce k
+hunting-for-registry-run-key-persistence	defense	threat-hunting	Detect MITRE ATT&CK T1547.001 registry Run key persistence by analyzing Sysmon Event ID 13 logs and registry q
+hunting-for-scheduled-task-persistence	defense	threat-hunting	Runs a hypothesis-driven threat hunt for Windows Scheduled Task persistence (T1053), guiding SIEM/EDR queries 
+hunting-for-shadow-copy-deletion	defense	threat-hunting	Runs a hypothesis-driven threat hunt for Volume Shadow Copy deletion (T1490) by querying SIEM/EDR telemetry fo
+hunting-for-spearphishing-indicators	defense	threat-hunting	Hunt for spearphishing campaign indicators across email logs, endpoint telemetry, and network data to detect t
+hunting-for-startup-folder-persistence	defense	threat-hunting	Detects T1547.001 startup folder persistence by monitoring Windows startup directories for suspicious file cre
+hunting-for-supply-chain-compromise	defense	threat-hunting	Runs a hypothesis-driven threat hunt for supply-chain compromise (T1195) by querying SIEM/EDR logs for trojani
+hunting-for-suspicious-scheduled-tasks	defense	threat-hunting	Hunts for adversary persistence and execution via Windows scheduled tasks (T1053.005) by analyzing Security Ev
+hunting-for-t1098-account-manipulation	defense	threat-hunting	Hunts for MITRE ATT&CK T1098 account manipulation - shadow admin creation, SID history injection, group member
+hunting-for-unusual-network-connections	defense	threat-hunting	Runs a hypothesis-driven threat hunt for command-and-control activity (T1071) by querying SIEM/EDR network tel
+hunting-for-unusual-service-installations	defense	threat-hunting	Detects suspicious Windows service installations (MITRE ATT&CK T1543.003) by parsing System event log Event ID
+hunting-for-webshell-activity	defense	threat-hunting	Runs a hypothesis-driven threat hunt for web shell deployment (T1505.003) on internet-facing servers by analyz
+hunting-saas-sso-token-abuse	defense	soc-operations	Hunts for stolen-session and OAuth/PRT token replay (T1550.001) by correlating Microsoft Entra ID SigninLogs S
+implementing-aes-encryption-for-data-at-rest	source	cryptography	Guides implementing AES-256 encryption in GCM mode (FIPS 197) for files and data stores at rest, covering key 
+implementing-alert-fatigue-reduction	defense	soc-operations	Implements strategies to reduce SOC alert fatigue by tuning detection rules, consolidating duplicate alerts, i
+implementing-anti-phishing-training-program	defense	phishing-defense	Guides designing, deploying, and measuring an anti-phishing security awareness program - baseline phishing sim
+implementing-anti-ransomware-group-policy	defense	ransomware-defense	Configures Windows Group Policy Objects to block ransomware execution and lateral spread, covering AppLocker r
+implementing-api-abuse-detection-with-rate-limiting	config	api-security	Implements API abuse detection using token bucket, sliding window, and fixed window rate-limiting algorithms b
+implementing-api-gateway-security-controls	config	api-security	Configures API gateways such as Kong, AWS API Gateway, Azure APIM, or Apigee as a centralized security enforce
+implementing-api-key-security-controls	config	api-security	Implements secure API key generation with sufficient entropy, server-side hashing (SHA-256/bcrypt) instead of 
+implementing-api-rate-limiting-and-throttling	config	api-security	Implements API rate limiting and throttling with token bucket, sliding window, and fixed window algorithms, co
+implementing-api-schema-validation-security	source	api-security	Implements API schema validation using OpenAPI Specification and JSON Schema documents, enforced both at the A
+implementing-api-security-posture-management	config	api-security	Implements API Security Posture Management (API-SPM) to continuously discover, classify, and risk-score APIs -
+implementing-api-security-testing-with-42crunch	config	api-security	Implements API security testing on the 42Crunch platform, combining API Audit for static analysis of OpenAPI d
+implementing-api-threat-protection-with-apigee	config	api-security	Implements API threat protection using Google Apigee reverse-proxy policies, including JSON/XML threat protect
+implementing-application-whitelisting-with-applocker	defense	endpoint-security	Implements application whitelisting using Windows AppLocker to restrict unauthorized software execution on end
+implementing-aqua-security-for-container-scanning	config	devsecops	Deploy Aqua Security's Trivy scanner to detect vulnerabilities, misconfigurations, secrets, and license issues
+implementing-attack-path-analysis-with-xm-cyber	defense	vulnerability-management	Deploys XM Cyber's continuous exposure management platform to build attack graphs that chain vulnerabilities, 
+implementing-attack-surface-management	defense	offensive-security	Implements external attack surface management (EASM) using Shodan, Censys, and ProjectDiscovery tools (subfind
+implementing-aws-config-rules-for-compliance	config	cloud-security	Implements AWS Config managed and custom rules for continuous compliance monitoring of AWS resources aligned t
+implementing-aws-iam-permission-boundaries	config	identity-access-management	Configures AWS IAM permission boundaries that cap the maximum permissions an identity-based policy can grant t
+implementing-aws-macie-for-data-classification	config	cloud-security	Enable and configure Amazon Macie via AWS CLI/Terraform to discover, classify, and protect sensitive data (PII
+implementing-aws-nitro-enclave-security	config	cloud-security	Build AWS Nitro Enclave confidential computing environments using nitro-cli to create enclave images, configur
+implementing-aws-security-hub	config	cloud-security	Deploy AWS Security Hub as a centralized CSPM platform, backed by AWS Config, aggregating findings from GuardD
+implementing-aws-security-hub-compliance	config	cloud-security	Deploy AWS Security Hub, backed by AWS Config, to aggregate findings from GuardDuty, Inspector, Macie, Firewal
+implementing-azure-ad-privileged-identity-management	config	identity-access-management	Configure Microsoft Entra Privileged Identity Management (PIM) to convert standing privileged assignments into
+implementing-azure-defender-for-cloud	config	cloud-security	Enable Microsoft Defender for Cloud (CSPM + CWPP) across VMs, containers, SQL, storage, and Key Vault, using A
+implementing-beyondcorp-zero-trust-access-model	config	zero-trust-architecture	Implement Google's BeyondCorp zero trust access model using Cloud IAP, Access Context Manager, Endpoint Verifi
+implementing-bgp-security-with-rpki	defense	network-security	Implement RPKI-based BGP route origin validation by creating Route Origin Authorizations (ROAs) at RIRs (ARIN,
+implementing-browser-isolation-for-zero-trust	defense	network-security	Deploys remote browser isolation (RBI) as a core component of a Zero Trust architecture.
+implementing-canary-tokens-for-network-intrusion	defense	security-operations	Deploys DNS, HTTP, and AWS API key canary tokens across network infrastructure to detect unauthorized access a
+implementing-cisa-zero-trust-maturity-model	config	zero-trust-architecture	Assess, gap-analyze, and progressively implement the CISA Zero Trust Maturity Model v2.0 across five pillars (
+implementing-cloud-dlp-for-data-protection	config	cloud-security	Implement cloud DLP using Amazon Macie, Google Cloud DLP API, Microsoft Purview, Azure Information Protection,
+implementing-cloud-security-posture-management	config	cloud-security	Continuously monitor multi-cloud environments (AWS, Azure, GCP) for misconfigurations, compliance violations, 
+implementing-cloud-trail-log-analysis	config	cloud-security	Implementing AWS CloudTrail log analysis for security monitoring, threat detection, and forensic investigation
+implementing-cloud-vulnerability-posture-management	defense	vulnerability-management	Implement multi-cloud CSPM to detect cloud-native misconfigurations and vulnerabilities (IAM over-permissions,
+implementing-cloud-waf-rules	config	cloud-security	Deploys and tunes Web Application Firewall rules on AWS WAF, Azure WAF, and Cloudflare, covering managed rule 
+implementing-cloud-workload-protection	config	cloud-security	Implements cloud workload protection using boto3 and google-cloud APIs for runtime security monitoring, proces
+implementing-code-signing-for-artifacts	source	devsecops	Implements code signing for build artifacts (binaries, packages, containers) using GPG, Sigstore, and platform
+implementing-conditional-access-policies-azure-ad	config	identity-access-management	Configures Microsoft Entra ID (Azure AD) Conditional Access policies for zero trust access control, covering s
+implementing-conduit-security-for-ot-remote-access	defense	ot-ics-security	Implements secure conduit architecture for OT remote access under the IEC 62443 zones-and-conduits model, depl
+implementing-container-image-minimal-base-with-distroless	config	container-security	Reduces container attack surface by building application images on Google distroless base images that ship onl
+implementing-container-network-policies-with-calico	config	container-security	Uses Calico's own policy CRDs beyond the upstream Kubernetes API - GlobalNetworkPolicy, HostEndpoint, NetworkS
+implementing-continuous-security-validation-with-bas	defense	vulnerability-management	Deploys Breach and Attack Simulation (BAS) platforms such as SafeBreach, AttackIQ, Picus, Cymulate, Pentera, o
+implementing-data-loss-prevention-with-microsoft-purview	config	data-protection	Implements DLP policies using Microsoft Purview PowerShell cmdlets and the Graph API to protect data across Ex
+implementing-ddos-mitigation-with-cloudflare	defense	network-security	Configure Cloudflare DDoS protection with managed rulesets, rate limiting, WAF rules, Bot Management, and orig
+implementing-deception-based-detection-with-canarytoken	defense	deception-technology	Deploys and monitors Canary Tokens via the Thinkst Canary REST API for deception-based breach detection, progr
+implementing-delinea-secret-server-for-pam	config	identity-access-management	Implements Delinea Secret Server for privileged access management, covering secret vault configuration, role-b
+implementing-device-posture-assessment-in-zero-trust	config	zero-trust-architecture	Implements device posture assessment as a zero trust access control by integrating endpoint health signals fro
+implementing-devsecops-security-scanning	config	application-security	Integrates SAST, DAST, and SCA into CI/CD pipelines using Semgrep for SAST, Trivy for SCA and container scanni
+implementing-diamond-model-analysis	defense	threat-intelligence	The Diamond Model of Intrusion Analysis provides a structured framework for analyzing cyber intrusions by exam
+implementing-digital-signatures-with-ed25519	source	cryptography	Implements digital signatures using the Ed25519 algorithm (Curve25519), covering key-pair generation, signing,
+implementing-disk-encryption-with-bitlocker	defense	endpoint-security	Implements full disk encryption using Microsoft BitLocker on Windows endpoints to protect data at rest from un
+implementing-dmarc-dkim-spf-email-security	defense	phishing-defense	Configures SPF, DKIM, and DMARC DNS TXT records to authenticate outbound email, prevent domain spoofing, and e
+implementing-dragos-platform-for-ot-monitoring	defense	ot-ics-security	Deploys and configures Dragos Platform sensors and detection analytics for OT/ICS network monitoring, using in
+implementing-ebpf-security-monitoring	defense	security-operations	Implements eBPF-based security monitoring using Cilium Tetragon for real-time process execution tracking, netw
+implementing-email-sandboxing-with-proofpoint	defense	phishing-defense	Email sandboxing detonates suspicious attachments and URLs in isolated environments to detect zero-day malware
+implementing-end-to-end-encryption-for-messaging	source	cryptography	Implements a simplified Signal Protocol-style end-to-end encryption scheme for messaging, covering key exchang
+implementing-endpoint-detection-with-wazuh	defense	security-operations	Deploys and configures Wazuh SIEM/XDR for endpoint detection, covering agent authentication and management, cu
+implementing-endpoint-dlp-controls	config	endpoint-security	Implements endpoint Data Loss Prevention (DLP) controls to detect and prevent sensitive data exfiltration thro
+implementing-envelope-encryption-with-aws-kms	source	cryptography	Implements envelope encryption with AWS KMS, encrypting data locally with a data encryption key (DEK) and prot
+implementing-epss-score-for-vulnerability-prioritization	defense	vulnerability-management	Queries FIRST's Exploit Prediction Scoring System (EPSS) API to fetch exploitation-probability and percentile 
+implementing-file-integrity-monitoring-with-aide	defense	endpoint-security	Configures AIDE (Advanced Intrusion Detection Environment) for file integrity monitoring on Linux, covering ba
+implementing-fuzz-testing-in-cicd-with-aflplusplus	config	devsecops	Integrates AFL++ coverage-guided fuzzing into CI/CD pipelines, covering harness construction, AFL++/AddressSan
+implementing-gcp-binary-authorization	config	cloud-security	Implements GCP Binary Authorization end to end, including creating KMS-backed attestors, Container Analysis no
+implementing-gcp-organization-policy-constraints	config	cloud-security	Implements GCP Organization Policy constraints via gcloud and Terraform, such as restricting external IPs, res
+implementing-gcp-vpc-firewall-rules	config	cloud-security	Implements and audits GCP VPC firewall rules using gcloud, covering auditing overly permissive rules, creating
+implementing-gdpr-data-protection-controls	defense	compliance-governance	Implements GDPR (EU 2016/679) technical and organizational measures — privacy by design/default, DPIAs, data s
+implementing-gdpr-data-subject-access-request	defense	privacy-compliance	Automates GDPR Data Subject Access Request (DSAR) workflows including identity verification, PII discovery acr
+implementing-github-advanced-security-for-code-scanning	config	devsecops	Configures GitHub Advanced Security (code scanning with CodeQL, secret scanning, dependency review, and Depend
+implementing-google-workspace-admin-security	config	identity-access-management	Hardens a Google Workspace tenant via Admin Console configuration: phishing-resistant MFA enforcement, DLP pol
+implementing-google-workspace-phishing-protection	defense	phishing-defense	Configures Google Workspace advanced phishing and malware protection settings in the Admin Console — pre-deliv
+implementing-google-workspace-sso-configuration	config	identity-access-management	Configures SAML 2.0 single sign-on for Google Workspace against a third-party identity provider (Okta, Azure A
+implementing-hardware-security-key-authentication	config	identity-and-access-management	Builds a FIDO2/WebAuthn relying party server with the python-fido2 library, covering registration and authenti
+implementing-hashicorp-vault-dynamic-secrets	config	identity-access-management	Configures HashiCorp Vault dynamic secrets engines for database credentials, AWS IAM keys, and PKI certificate
+implementing-hipaa-security-rule-safeguards	defense	compliance-governance	Implement the HIPAA Security Rule (45 CFR Part 164 Subpart C) to protect electronic protected health informati
+implementing-honeypot-for-ransomware-detection	defense	ransomware-defense	Deploys canary files, honeypot shares, and decoy systems to detect ransomware activity at the earliest possibl
+implementing-honeytokens-for-breach-detection	defense	security-operations	Deploys canary tokens and honeytokens (fake AWS credentials, DNS canaries, document beacons, database records)
+implementing-ics-firewall-with-tofino	defense	ot-ics-security	Deploys and configures Tofino industrial firewalls (Belden/Hirschmann) to protect SCADA systems and PLCs, usin
+implementing-identity-governance-with-sailpoint	config	identity-access-management	Deploys SailPoint IdentityNow or IdentityIQ for identity governance and administration, covering identity life
+implementing-identity-verification-for-zero-trust	config	zero-trust-architecture	Implements continuous, risk-adaptive identity verification for zero trust using phishing-resistant MFA (FIDO2/
+implementing-iec-62443-security-zones	defense	ot-ics-security	Designs security zones and conduits for industrial control systems (IACS) per IEC 62443-3-2 — risk-based zone 
+implementing-image-provenance-verification-with-cosign	config	container-security	Signs and verifies container image provenance with Sigstore Cosign, covering key-based and keyless OIDC signin
+implementing-immutable-backup-with-restic	defense	ransomware-defense	Implements ransomware-resistant backups using restic with S3-compatible Object Lock (AWS S3, MinIO, Backblaze 
+implementing-infrastructure-as-code-security-scanning	config	devsecops	Implements automated security scanning for Infrastructure as Code using Checkov, tfsec, and KICS to detect mis
+implementing-iso-27001-information-security-management	defense	compliance-governance	Guides implementation of an ISO/IEC 27001:2022 Information Security Management System (ISMS) end to end: gap a
+implementing-just-in-time-access-provisioning	config	identity-access-management	Implements Just-In-Time (JIT) access provisioning to eliminate standing privileges by granting temporary, time
+implementing-jwt-signing-and-verification	source	cryptography	Implements secure JWT (RFC 7519) signing and verification using HMAC-SHA256, RSA-PSS, ES256, and EdDSA, includ
+implementing-kubernetes-network-policy-with-calico	config	container-security	Installs Calico as the cluster CNI and writes standard Kubernetes NetworkPolicy under it, covering default-den
+implementing-kubernetes-pod-security-standards	config	container-security	Chooses and applies the correct Kubernetes Pod Security Standard (Privileged, Baseline, Restricted) for a work
+implementing-llm-guardrails-for-security	source	ai-security	Implements input/output validation guardrails for LLM applications using NVIDIA NeMo Guardrails (Colang), cust
+implementing-log-forwarding-with-fluentd	defense	security-operations	Configures Fluent Bit as an endpoint log forwarder and Fluentd as the central aggregator for centralized log c
+implementing-log-integrity-with-blockchain	defense	security-operations	Builds an append-only log integrity chain using SHA-256 hash chaining, where each entry incorporates the previ
+implementing-memory-protection-with-dep-aslr	config	endpoint-security	Implements memory protection mechanisms including DEP (Data Execution Prevention), ASLR (Address Space Layout 
+implementing-microsegmentation-with-guardicore	config	zero-trust-architecture	Implements microsegmentation with Akamai Guardicore Segmentation to map application dependencies, visualize ea
+implementing-mimecast-targeted-attack-protection	defense	phishing-defense	Deploys and configures Mimecast Targeted Threat Protection (TTP) modules -- URL Protect (click-time URL rewrit
+implementing-mobile-application-management	config	mobile-security	Implements Mobile Application Management (MAM) policies to protect enterprise data on managed and unmanaged mo
+implementing-mtls-for-zero-trust-services	defense	security-operations	Configures mutual TLS (mTLS) authentication between microservices using Python cryptography library for certif
+implementing-nerc-cip-compliance-controls	defense	ot-ics-security	Implements NERC CIP controls for Bulk Electric System (BES) cyber systems: asset categorization (CIP-002), ele
+implementing-network-access-control	defense	network-security	Implements 802.1X port-based network access control using RADIUS authentication, PacketFence NAC, and switch c
+implementing-network-access-control-with-cisco-ise	defense	network-security	Deploys Cisco Identity Services Engine (ISE) as a RADIUS policy server for 802.1X wired and wireless authentic
+implementing-network-deception-with-honeypots	defense	deception-technology	Deploy and manage network honeypots using OpenCanary, T-Pot, or Cowrie to detect unauthorized access, lateral 
+implementing-network-intrusion-prevention-with-suricata	defense	network-security	Deploys and configures Suricata as an inline network intrusion prevention system, covering IPS mode setup (NFQ
+implementing-network-policies-for-kubernetes	config	container-security	Writes portable upstream Kubernetes NetworkPolicy YAML - default-deny-all, DNS egress, namespace and pod selec
+implementing-network-segmentation-for-ot	defense	ot-ics-security	Implements OT network segmentation using VLANs, OT-aware firewalls, data diodes, and IEC 62443 zone/conduit ar
+implementing-network-segmentation-with-firewall-zones	defense	network-security	Designs and implements network segmentation using firewall security zones, VLANs, inter-zone ACLs, and workloa
+implementing-network-traffic-analysis-with-arkime	defense	network-security	Queries Arkime (formerly Moloch) full packet capture via its API to search sessions, download PCAPs, detect C2
+implementing-network-traffic-baselining	defense	network-security	Builds network traffic baselines from NetFlow/IPFIX CSV or JSON exports using Python pandas, computing hourly/
+implementing-next-generation-firewall-with-palo-alto	defense	network-security	Configures and deploys Palo Alto Networks next-generation firewalls end-to-end, covering App-ID application-aw
+implementing-opa-gatekeeper-for-policy-enforcement	config	container-security	Deploys OPA Gatekeeper via Helm as a Kubernetes admission controller and writes ConstraintTemplates with Rego 
+implementing-ot-incident-response-playbook	defense	ot-ics-security	Develops OT-specific incident response playbooks using a SANS PICERL-based Python engine that classifies incid
+implementing-ot-network-traffic-analysis-with-nozomi	defense	ot-ics-security	Deploy Nozomi Networks Guardian sensors for passive OT network traffic analysis, providing asset visibility, b
+implementing-pam-for-database-access	config	identity-access-management	Deploy privileged access management for database systems including Oracle, SQL Server, PostgreSQL, and MySQL, 
+implementing-passwordless-auth-with-microsoft-entra	config	identity-access-management	Implements passwordless authentication using Microsoft Entra ID with FIDO2 security keys, Windows Hello for Bu
+implementing-passwordless-authentication-with-fido2	config	identity-access-management	Deploy FIDO2/WebAuthn passwordless authentication using security keys and platform authenticators, covering We
+implementing-patch-management-for-ot-systems	defense	ot-ics-security	Implements a structured patch management program for OT/ICS environments where IT-style patching can cause pro
+implementing-patch-management-workflow	defense	vulnerability-management	Patch management is the systematic process of identifying, testing, deploying, and verifying software updates 
+implementing-pci-dss-compliance-controls	defense	compliance-governance	Implements PCI DSS 4.0.1's 12 requirements across 6 control objectives for organizations that store, process, 
+implementing-pod-security-admission-controller	config	container-security	Configures and operates the Kubernetes Pod Security Admission (PSA) controller that enforces Pod Security Stan
+implementing-policy-as-code-with-open-policy-agent	config	devsecops	Implements policy-as-code enforcement with Open Policy Agent (OPA) and Gatekeeper for Kubernetes and CI/CD pip
+implementing-privileged-access-management-with-cyberark	config	identity-access-management	Deploy CyberArk Privileged Access Management to discover, vault, rotate, and monitor privileged credentials ac
+implementing-privileged-access-workstation	config	identity-and-access-management	Design and implement Privileged Access Workstations (PAWs) using the tiered administration model, with device 
+implementing-privileged-session-monitoring	config	identity-access-management	Implements privileged session monitoring and recording using PAM solutions, focusing on CyberArk Privileged Se
+implementing-proofpoint-email-security-gateway	defense	phishing-defense	Deploy and configure Proofpoint Email Protection as a secure email gateway to detect and block phishing, malwa
+implementing-purdue-model-network-segmentation	defense	ot-ics-security	Implement network segmentation based on the Purdue Enterprise Reference Architecture (PERA) model, separating 
+implementing-ransomware-backup-strategy	defense	ransomware-defense	Designs a ransomware-resilient backup strategy using the 3-2-1-1-0 methodology (3 copies, 2 media types, 1 off
+implementing-ransomware-kill-switch-detection	defense	ransomware-defense	Analyzes ransomware kill switch mechanisms, including mutex-based execution guards, domain-based kill switches
+implementing-rapid7-insightvm-for-scanning	defense	vulnerability-management	Deploy and configure Rapid7 InsightVM Security Console and Scan Engines, including scan templates, credentiale
+implementing-rbac-hardening-for-kubernetes	config	container-security	Hardens Kubernetes RBAC by designing least-privilege Roles and ClusterRoles, auditing RoleBindings, eliminatin
+implementing-rsa-key-pair-management	source	cryptography	Generates, stores, rotates, and manages RSA key pairs following NIST SP 800-57 guidelines, covering serializat
+implementing-runtime-application-self-protection	config	application-security	Deploy Runtime Application Self-Protection (RASP) agents to detect and block attacks from within application r
+implementing-runtime-security-with-tetragon	config	container-security	Implements eBPF-based runtime observability and in-kernel enforcement in Kubernetes with Cilium Tetragon, moni
+implementing-saml-sso-with-okta	config	identity-access-management	Implement SAML 2.0 Single Sign-On using Okta as the Identity Provider, covering SP-initiated and IdP-initiated
+implementing-scim-provisioning-with-okta	config	identity-access-management	Implement automated user lifecycle provisioning and deprovisioning using the SCIM 2.0 protocol with Okta as th
+implementing-secret-scanning-with-gitleaks	config	devsecops	This skill covers implementing Gitleaks for detecting and preventing hardcoded secrets in git repositories.
+implementing-secrets-management-with-vault	config	cloud-security	Deploy HashiCorp Vault for centralized secrets management, covering dynamic secret generation for databases an
+implementing-secrets-scanning-in-ci-cd	config	devsecops	Integrate gitleaks and trufflehog into CI/CD pipelines to detect leaked secrets before deployment
+implementing-security-chaos-engineering	defense	security-operations	Implements security chaos engineering experiments that deliberately disable or degrade security controls to ve
+implementing-security-information-sharing-with-stix2	defense	threat-intelligence	Create, validate, and share STIX 2.1 threat intelligence objects (indicators, malware, campaigns, relationship
+implementing-security-monitoring-with-datadog	defense	security-operations	Implements security monitoring using Datadog Cloud SIEM, Cloud Security Management (CSM), and Workload Protect
+implementing-semgrep-for-custom-sast-rules	source	devsecops	Write custom Semgrep SAST rules in YAML to detect application-specific vulnerabilities, enforce coding standar
+implementing-siem-correlation-rules-for-apt	defense	security-operations	Write multi-event correlation rules in Splunk SPL and Sigma format that detect APT lateral movement by chainin
+implementing-siem-use-case-tuning	defense	security-operations	Tune SIEM detection rules in Splunk and Elastic to reduce false positives by analyzing alert volumes, creating
+implementing-siem-use-cases-for-detection	defense	soc-operations	Implements SIEM detection use cases by designing correlation rules, threshold alerts, and behavioral analytics
+implementing-sigstore-for-software-signing	config	supply-chain-security	Implements Sigstore-based software signing and verification using Cosign keyless signing, Rekor transparency l
+implementing-soar-automation-with-phantom	defense	soc-operations	Implements Security Orchestration, Automation, and Response (SOAR) workflows using Splunk SOAR (formerly Phant
+implementing-soar-playbook-for-phishing	defense	security-operations	Automates phishing incident response by calling the Splunk SOAR (Phantom) REST API to create containers, attac
+implementing-soar-playbook-with-palo-alto-xsoar	defense	soc-operations	Build automated incident response playbooks in Cortex XSOAR (Demisto) using its YAML playbook structure, integ
+implementing-stix-taxii-feed-integration	defense	threat-intelligence	Implements a STIX 2.1/TAXII 2.1 threat-intelligence feed consumer and producer in Python, covering TAXII serve
+implementing-supply-chain-security-with-in-toto	config	container-security	Implements supply chain integrity verification for container builds with the in-toto framework: generating sig
+implementing-syslog-centralization-with-rsyslog	defense	security-operations	Configure rsyslog for centralized log collection with TLS encryption, custom templates, and log rotation, gene
+implementing-taxii-server-with-opentaxii	defense	threat-intelligence	Deploy and configure a TAXII 2.1 server (Medallion) with Docker, publish and consume STIX 2.1 bundles across c
+implementing-threat-intelligence-lifecycle-management	defense	threat-intelligence	Build out a full CTI program around the six-phase threat intelligence lifecycle (direction, collection, proces
+implementing-ticketing-system-for-incidents	defense	soc-operations	Implements an integrated incident ticketing system connecting SIEM alerts to ServiceNow, Jira, or TheHive for 
+implementing-usb-device-control-policy	defense	endpoint-security	Implements USB device control policies to restrict unauthorized removable media access on endpoints, preventin
+implementing-velociraptor-for-ir-collection	defense	incident-response	Deploy and configure Velociraptor for scalable endpoint forensic artifact collection during incident response 
+implementing-vulnerability-management-with-greenbone	defense	vulnerability-management	Deploy and operate Greenbone/OpenVAS vulnerability management using the python-gvm library over the Greenbone 
+implementing-vulnerability-remediation-sla	defense	vulnerability-management	Design a vulnerability remediation SLA program covering asset tiering, a severity-based SLA matrix, exception 
+implementing-vulnerability-sla-breach-alerting	defense	vulnerability-management	Build an automated SLA breach alerting system for vulnerability remediation, including a database schema for S
+implementing-web-application-logging-with-modsecurity	config	web-application-security	Configure ModSecurity WAF with the OWASP Core Rule Set (CRS) for web application audit logging, tuning SecRule
+implementing-zero-knowledge-proof-for-authentication	config	cryptography	Implements the Schnorr identification protocol and a simplified Zero-Knowledge Password Proof (ZKPP) over the 
+implementing-zero-standing-privilege-with-cyberark	config	identity-access-management	Deploy CyberArk Secure Cloud Access (SCA) to eliminate standing privileges in AWS, Azure, and GCP by provision
+implementing-zero-trust-dns-with-nextdns	config	zero-trust-architecture	Configure NextDNS as an encrypted (DoH/DoT) zero trust DNS resolver that blocks malicious, phishing, and crypt
+implementing-zero-trust-for-saas-applications	config	zero-trust-architecture	Secures SaaS apps (Microsoft 365, Google Workspace, Salesforce, Slack) via CASB/SSPM deployment, conditional a
+implementing-zero-trust-in-cloud	config	cloud-security	Guides zero trust implementation across AWS, Azure, and GCP per NIST SP 800-207 and BeyondCorp principles, cov
+implementing-zero-trust-network-access	config	cloud-security	Configures Zero Trust Network Access (ZTNA) in AWS, Azure, and GCP using identity-aware proxies, micro-segment
+implementing-zero-trust-network-access-with-zscaler	config	zero-trust-architecture	Configures Zero Trust Network Access using Zscaler Private Access (ZPA) to broker identity-based, context-awar
+implementing-zero-trust-with-beyondcorp	config	zero-trust	Configures Google BeyondCorp Enterprise Identity-Aware Proxy (IAP) as the access enforcement point for web app
+implementing-zero-trust-with-hashicorp-boundary	config	zero-trust-architecture	Installs and configures HashiCorp Boundary as a default-deny, identity-aware proxy for infrastructure access, 
+integrating-dast-with-owasp-zap-in-pipeline	config	devsecops	Integrates OWASP ZAP (Zed Attack Proxy) into GitHub Actions and GitLab CI pipelines, covering baseline, full, 
+integrating-sast-into-github-actions-pipeline	config	devsecops	Integrates CodeQL and Semgrep SAST scanning into GitHub Actions, covering scans on pull requests/pushes, rule 
+intercepting-mobile-traffic-with-burpsuite	config	mobile-security	Intercepts and analyzes HTTP/HTTPS traffic from mobile applications using Burp Suite proxy to identify insecur
+investigating-insider-threat-indicators	defense	soc-operations	Investigates insider threat indicators including data exfiltration attempts, unauthorized access patterns, pol
+investigating-phishing-email-incident	defense	soc-operations	Investigates phishing email incidents from initial user report through header analysis, URL/attachment detonat
+investigating-ransomware-attack-artifacts	defense	digital-forensics	Forensically preserve memory and disk, collect ransom notes and encrypted file samples, and identify the ranso
+managing-cloud-identity-with-okta	config	cloud-security	Implement Okta as a centralized cloud identity provider: configure SSO with AWS, Azure, and GCP, deploy phishi
+managing-intelligence-lifecycle	defense	threat-intelligence	Manages the end-to-end cyber threat intelligence lifecycle from planning and direction through collection, pro
+managing-third-party-vendor-risk	defense	compliance-governance	Build and run a third-party/vendor risk management (TPRM) program aligned to NIST SP 800-161 C-SCRM: inventory
+migrating-to-post-quantum-cryptography	source	cryptography	Build a cryptographic inventory/CBOM with OpenSSL 3.5+, deploy hybrid post-quantum key exchange (X25519MLKEM76
+modeling-threats-with-opencti	defense	threat-intelligence	Deploy OpenCTI (Filigran) via Docker Compose and use the pycti Python client to model threat actors, intrusion
+monitoring-darkweb-sources	defense	threat-intelligence	Monitors dark web forums, marketplaces, paste sites, and ransomware leak sites for mentions of organizational 
+monitoring-scada-modbus-traffic-anomalies	defense	ot-security	Monitors Modbus TCP traffic on SCADA and ICS networks to detect anomalous function code usage, unauthorized re
+operationalizing-misp-threat-feeds	defense	threat-intelligence	Stand up MISP, enable and cache curated threat feeds (CIRCL, abuse.ch, Feodo Tracker), apply warninglists to s
+parsing-artifacts-with-eric-zimmerman-tools	defense	digital-forensics	Parse Windows forensic artifacts—$MFT/$J (MFTECmd), Prefetch (PECmd), registry hives (RECmd), shellbags, and A
+performing-access-recertification-with-saviynt	config	identity-access-management	Configure and execute access recertification campaigns in Saviynt Enterprise Identity Cloud to validate user e
+performing-access-review-and-certification	config	identity-access-management	Designs and runs access review and certification campaigns-scoping, reviewer selection, risk-based prioritizat
+performing-active-directory-compromise-investigation	defense	incident-response	Investigate Active Directory compromise by analyzing authentication logs, replication metadata, Group Policy c
+performing-active-directory-vulnerability-assessment	defense	vulnerability-management	Assess Active Directory security posture using PingCastle, BloodHound, and Purple Knight to identify misconfig
+performing-adversary-in-the-middle-phishing-detection	defense	phishing-defense	Detect and respond to Adversary-in-the-Middle (AiTM) phishing attacks that use reverse proxy kits like EvilPro
+performing-agentless-vulnerability-scanning	defense	vulnerability-management	Configure and execute agentless vulnerability scanning using network protocols, cloud snapshot analysis, and A
+performing-ai-driven-osint-correlation	defense	threat-intelligence	Use AI/LLM-based reasoning with Sherlock, theHarvester, and SpiderFoot to correlate OSINT findings—usernames, 
+performing-alert-triage-with-elastic-siem	defense	soc-operations	Perform systematic alert triage in Elastic Security SIEM—classifying, prioritizing, and investigating alerts u
+performing-android-app-static-analysis-with-mobsf	config	mobile-security	Performs automated static analysis of Android applications using Mobile Security Framework (MobSF) to identify
+performing-api-fuzzing-with-restler	config	api-security	Uses Microsoft RESTler to perform stateful REST API fuzzing: compiles an OpenAPI/Swagger spec into a RESTler g
+performing-api-inventory-and-discovery	config	api-security	Performs API inventory and discovery to identify all API endpoints in an organization's environment including 
+performing-api-security-testing-with-postman	config	api-security	Uses Postman to build structured API security test collections covering the OWASP API Security Top 10—authenti
+performing-asset-criticality-scoring-for-vulns	defense	vulnerability-management	Build a multi-factor asset criticality scoring model—incorporating data sensitivity, business function depende
+performing-authenticated-scan-with-openvas	defense	vulnerability-management	Configure and execute authenticated (credentialed) vulnerability scans using OpenVAS/Greenbone Vulnerability M
+performing-authenticated-vulnerability-scan	defense	vulnerability-management	Plan and run authenticated (credentialed) vulnerability scans with scanners such as Nessus, Qualys, OpenVAS, o
+performing-automated-malware-analysis-with-cape	defense	malware-analysis	Deploy and operate the CAPEv2 malware sandbox (a Cuckoo derivative) to run samples in a monitored Windows gues
+performing-aws-account-enumeration-with-scout-suite	config	cloud-security	Run the agentless, open-source ScoutSuite tool (via pip install and the `scout` CLI) against an AWS account to
+performing-bluetooth-security-assessment	defense	wireless-security	Assess Bluetooth Low Energy (BLE) device security using Python's bleak asyncio library to discover nearby devi
+performing-brand-monitoring-for-impersonation	defense	threat-intelligence	Monitor for brand impersonation attacks across domains, social media, mobile apps, and dark web channels to de
+performing-cloud-asset-inventory-with-cartography	config	cloud-security	Run Cartography to sync AWS, GCP, or Azure resources into a Neo4j graph database, mapping relationships such a
+performing-cloud-forensics-investigation	defense	digital-forensics	Collect and analyze cloud forensic evidence using AWS CLI, Azure CLI, or gcloud to snapshot volumes, capture i
+performing-cloud-forensics-with-aws-cloudtrail	config	cloud-security	Investigate AWS account compromise by querying CloudTrail with boto3's LookupEvents or AWS Athena SQL over S3-
+performing-cloud-incident-containment-procedures	defense	incident-response	Execute cloud-native incident containment across AWS, Azure, and GCP using platform CLIs to revoke or disable 
+performing-cloud-log-forensics-with-athena	config	cloud-security	Uses AWS Athena to query CloudTrail, VPC Flow Logs, S3 access logs, and ALB logs for forensic investigation.
+performing-cloud-native-forensics-with-falco	config	cloud-security	Uses Falco YAML rules for runtime threat detection in containers and Kubernetes, monitoring syscalls for shell
+performing-cloud-native-threat-hunting-with-aws-detective	config	cloud-security	Investigate AWS security incidents using Amazon Detective's behavior graphs, built from CloudTrail, VPC Flow L
+performing-cloud-storage-forensic-acquisition	defense	digital-forensics	Perform forensic acquisition of cloud storage services including Google Drive, OneDrive, Dropbox, and Box by p
+performing-container-escape-detection	config	container-security	Audits container and pod configuration for escape-enabling misconfiguration using the Kubernetes Python client
+performing-container-image-hardening	config	devsecops	Harden container images by minimizing attack surface, stripping unnecessary packages, implementing multi-stage
+performing-container-security-scanning-with-trivy	config	container-security	Runs Trivy across every target type it supports - container images, filesystems, Git repositories, and Kuberne
+performing-cryptographic-audit-of-application	config	cryptography	A cryptographic audit systematically reviews an application's use of cryptographic primitives, protocols, and 
+performing-cve-prioritization-with-kev-catalog	defense	vulnerability-management	Fetch and parse the CISA Known Exploited Vulnerabilities (KEV) catalog, enrich it with EPSS scores and CVSS me
+performing-dark-web-monitoring-for-threats	defense	threat-intelligence	Dark web monitoring involves systematically scanning Tor hidden services, underground forums, paste sites, and
+performing-deception-technology-deployment	defense	soc-operations	Deploys deception technology including honeypots, honeytokens, and decoy systems to detect attackers who have 
+performing-directory-traversal-testing	config	web-application-security	Test web applications for path traversal and Local/Remote File Inclusion vulnerabilities by manipulating file 
+performing-disk-forensics-investigation	defense	incident-response	Conduct disk forensics investigations using forensic imaging, file system analysis, and timeline reconstructio
+performing-dmarc-policy-enforcement-rollout	defense	phishing-defense	Execute a phased DMARC rollout by inventorying sending sources, configuring SPF/DKIM alignment, and progressin
+performing-dns-enumeration-and-zone-transfer	defense	network-security	Enumerates DNS records, attempts zone transfers, brute-forces subdomains, and maps DNS infrastructure during a
+performing-dns-tunneling-detection	defense	security-operations	Detects DNS tunneling by computing Shannon entropy of DNS query names, analyzing query length distributions, i
+performing-docker-bench-security-assessment	config	container-security	Runs Docker Bench for Security, the open-source CIS Docker Benchmark audit script, across host configuration, 
+performing-dynamic-analysis-of-android-app	config	mobile-security	Performs runtime dynamic analysis of Android applications using Frida, Objection, and Android Debug Bridge to 
+performing-dynamic-analysis-with-any-run	defense	malware-analysis	Perform interactive dynamic malware analysis using the ANY.RUN cloud sandbox to detonate samples, observe real
+performing-endpoint-forensics-investigation	config	endpoint-security	Performs digital forensics investigation on compromised endpoints including memory acquisition, disk imaging, 
+performing-endpoint-vulnerability-remediation	config	endpoint-security	Performs vulnerability remediation on endpoints by prioritizing CVEs based on risk scoring, deploying patches,
+performing-entitlement-review-with-sailpoint-iiq	config	identity-access-management	Runs entitlement review and access certification campaigns in SailPoint IdentityIQ, covering manager certifica
+performing-false-positive-reduction-in-siem	defense	soc-operations	Reduces SIEM false positives through systematic rule tuning, threshold adjustment, correlation logic refinemen
+performing-file-carving-with-foremost	defense	digital-forensics	Recovers files from disk images and unallocated space using Foremost's header-footer signature carving, extrac
+performing-firmware-extraction-with-binwalk	defense	firmware-analysis	Performs firmware image extraction and analysis using binwalk to identify embedded filesystems, compressed arc
+performing-firmware-malware-analysis	defense	malware-analysis	Analyzes firmware images for embedded malware, backdoors, and unauthorized modifications in routers, IoT devic
+performing-fuzzing-with-aflplusplus	config	application-security	Performs coverage-guided fuzzing of compiled binaries with AFL++, instrumenting targets via afl-cc/afl-clang-f
+performing-gcp-security-assessment-with-forseti	config	cloud-security	Performing comprehensive security assessments of Google Cloud Platform environments using Forseti Security, Se
+performing-graphql-security-assessment	config	web-application-security	Assessing GraphQL API endpoints for introspection leaks, injection attacks, authorization flaws, and denial-of
+performing-hardware-security-module-integration	config	cryptography	Integrates Hardware Security Modules (HSMs) via the PKCS#11 interface using python-pkcs11, performing key gene
+performing-ics-asset-discovery-with-claroty	defense	ot-ics-security	Performs ICS/OT asset discovery with Claroty xDome, combining passive monitoring and Claroty Edge active queri
+performing-indicator-lifecycle-management	defense	threat-intelligence	Tracks IOCs through discovery, enrichment/validation (VirusTotal, Shodan, passive DNS), deployment to SIEM/IDS
+performing-insider-threat-investigation	defense	incident-response	Investigates insider threat incidents involving employees, contractors, or trusted partners who misuse authori
+performing-ioc-enrichment-automation	defense	soc-operations	Automates Indicator of Compromise (IOC) enrichment by orchestrating lookups across VirusTotal, AbuseIPDB, Shod
+performing-ios-app-security-assessment	config	mobile-security	Performs comprehensive iOS application security assessments using Frida for dynamic instrumentation, Objection
+performing-ip-reputation-analysis-with-shodan	defense	threat-intelligence	Analyze IP address reputation using the Shodan API to identify open ports, running services, known vulnerabili
+performing-kubernetes-cis-benchmark-with-kube-bench	config	container-security	Turns kube-bench output into a finished CIS Kubernetes Benchmark audit: interpreting PASS/FAIL/WARN per contro
+performing-kubernetes-etcd-security-assessment	config	container-security	Assesses the security posture of the etcd cluster backing Kubernetes: encryption at rest, TLS peer and client 
+performing-lateral-movement-detection	defense	soc-operations	Detects lateral movement techniques including Pass-the-Hash, PsExec, WMI execution, RDP pivoting, and SMB-base
+performing-linux-log-forensics-investigation	defense	digital-forensics	Perform forensic investigation of Linux system logs including syslog, auth.log, systemd journal (via journalct
+performing-log-analysis-for-forensic-investigation	defense	digital-forensics	Collect, parse, and correlate system, application, and security logs to reconstruct events and establish timel
+performing-log-source-onboarding-in-siem	defense	soc-operations	Perform structured log source onboarding into SIEM platforms (Splunk, Elastic, Sentinel, QRadar, or similar) b
+performing-malware-hash-enrichment-with-virustotal	defense	threat-intelligence	Enrich malware file hashes (MD5, SHA-1, SHA-256) using the VirusTotal API v3 to retrieve multi-engine detectio
+performing-malware-ioc-extraction	defense	threat-intelligence	Malware IOC extraction is the process of analyzing malicious software to identify actionable indicators of com
+performing-malware-persistence-investigation	defense	digital-forensics	Systematically investigate all persistence mechanisms on Windows and Linux systems to identify how malware sur
+performing-malware-triage-with-yara	defense	malware-analysis	Performs rapid malware triage and classification using YARA rules that match file patterns, strings, byte sequ
+performing-memory-forensics-with-volatility3	defense	digital-forensics	Analyze volatile memory (RAM) dumps using the Volatility 3 framework to extract running processes, network con
+performing-memory-forensics-with-volatility3-plugins	defense	malware-analysis	Analyze memory dumps using Volatility3 plugins to detect injected code, rootkits, credential theft, and malwar
+performing-mobile-device-forensics-with-cellebrite	defense	digital-forensics	Acquire and analyze mobile device data using Cellebrite UFED Touch/4PC, UFED Physical Analyzer, and open-sourc
+performing-network-forensics-with-wireshark	defense	digital-forensics	Capture and analyze network traffic using Wireshark and tshark to reconstruct network events from PCAP/PCAPNG 
+performing-network-packet-capture-analysis	defense	digital-forensics	Perform forensic analysis of network packet captures (PCAP/PCAPNG) using Wireshark, tshark, and tcpdump to rec
+performing-network-traffic-analysis-with-tshark	defense	network-security	Automate network traffic analysis using tshark (Wireshark CLI) and pyshark to compute protocol distribution st
+performing-network-traffic-analysis-with-zeek	defense	network-security	Deploy Zeek (formerly Bro) as a passive network security monitor to generate structured logs of protocol metad
+performing-nist-csf-maturity-assessment	defense	compliance-governance	Conduct a NIST Cybersecurity Framework (CSF) 2.0 maturity assessment across the six core Functions (Govern, Id
+performing-oauth-scope-minimization-review	source	identity-access-management	Performs OAuth 2.0 scope minimization review to identify over-permissioned third-party application integration
+performing-oil-gas-cybersecurity-assessment	defense	ot-ics-security	Conduct cybersecurity assessments of upstream, midstream, and downstream oil and gas operations, covering pipe
+performing-osint-with-spiderfoot	defense	threat-intelligence	Automate OSINT collection with the SpiderFoot REST API and CLI (sf.py/spiderfoot-cli) across 200+ modules, sel
+performing-ot-network-security-assessment	defense	ot-ics-security	This skill covers conducting comprehensive security assessments of Operational Technology (OT) networks includ
+performing-ot-vulnerability-assessment-with-claroty	defense	ot-ics-security	Perform OT vulnerability assessments using the Claroty xDome platform for asset discovery, risk scoring, and v
+performing-ot-vulnerability-scanning-safely	defense	ot-ics-security	Perform vulnerability scanning in OT/ICS environments safely using passive monitoring, native protocol queries
+performing-paste-site-monitoring-for-credentials	defense	threat-intelligence	Monitor paste sites like Pastebin and GitHub Gists for leaked credentials, API keys, and sensitive data dumps 
+performing-plc-firmware-security-analysis	defense	ot-ics-security	This skill covers analyzing Programmable Logic Controller (PLC) firmware for security vulnerabilities includin
+performing-post-quantum-cryptography-migration	source	cryptography	Assesses organizational readiness for post-quantum cryptography migration per NIST FIPS 203/204/205 standards.
+performing-power-grid-cybersecurity-assessment	defense	ot-ics-security	Conduct cybersecurity assessments of power grid infrastructure spanning generation, transmission substations, 
+performing-privacy-impact-assessment	defense	privacy-compliance	Automates the Privacy Impact Assessment (PIA) workflow including data flow mapping, privacy risk scoring matri
+performing-privileged-account-access-review	config	identity-access-management	Conducts systematic reviews of privileged accounts to validate access rights, identify excessive or stale perm
+performing-privileged-account-discovery	config	identity-access-management	Discovers and inventories privileged accounts across enterprise infrastructure, including domain admins, local
+performing-purple-team-exercise	defense	soc-operations	Performs purple team exercises by coordinating red team adversary emulation with blue team detection validatio
+performing-ransomware-response	defense	incident-response	Executes a structured ransomware incident response from detection through containment, forensic analysis, decr
+performing-ransomware-tabletop-exercise	defense	ransomware-defense	Plans and facilitates tabletop exercises simulating ransomware incidents, using realistic scenarios based on t
+performing-s7comm-protocol-security-analysis	defense	ot-ics-security	Perform security analysis of Siemens S7comm and S7CommPlus protocols used by SIMATIC S7 PLCs to identify vulne
+performing-sca-dependency-scanning-with-snyk	config	devsecops	This skill covers implementing Software Composition Analysis (SCA) using Snyk to detect vulnerable open-source
+performing-scada-hmi-security-assessment	defense	ot-ics-security	Perform security assessments of SCADA Human-Machine Interface (HMI) systems to identify vulnerabilities in web
+performing-second-order-sql-injection	source	web-application-security	Detect and exploit second-order SQL injection vulnerabilities where malicious input is stored in a database an
+performing-security-headers-audit	source	web-application-security	Auditing HTTP security headers including CSP, HSTS, X-Frame-Options, and cookie attributes to identify missing
+performing-serverless-function-security-review	config	cloud-security	Performing security reviews of serverless functions across AWS Lambda, Azure Functions, and GCP Cloud Function
+performing-service-account-audit	config	identity-access-management	Audit service accounts across enterprise infrastructure to identify orphaned, over-privileged, and non-complia
+performing-service-account-credential-rotation	config	identity-access-management	Automates credential rotation for service accounts across Active Directory, cloud platforms, and application d
+performing-soap-web-service-security-testing	config	api-security	Performs security testing of SOAP web services by analyzing WSDL definitions and testing for XML injection, XX
+performing-soc-tabletop-exercise	defense	soc-operations	Performs tabletop exercises for SOC teams simulating security incidents through discussion-based scenarios to 
+performing-soc2-type2-audit-preparation	defense	governance-risk-compliance	Automates SOC 2 Type II audit preparation including gap assessment against AICPA Trust Services Criteria (CC1-
+performing-sqlite-database-forensics	defense	digital-forensics	Performs forensic analysis of SQLite databases by examining B-tree page structures, recovering deleted records
+performing-ssl-certificate-lifecycle-management	config	cryptography	Automates the full SSL/TLS certificate lifecycle, including generating Certificate Signing Requests, issuing, 
+performing-ssl-tls-inspection-configuration	defense	network-security	Configure SSL/TLS break-and-inspect on next-generation firewalls and forward proxies to decrypt, inspect, and 
+performing-ssl-tls-security-assessment	defense	network-security	Assess SSL/TLS server configurations using the sslyze Python scanning library to evaluate supported protocol v
+performing-static-malware-analysis-with-pe-studio	defense	malware-analysis	Performs static analysis of Windows PE malware samples using PEStudio to examine file headers, imports, string
+performing-steganography-detection	defense	digital-forensics	Detects and extracts hidden data embedded in images, audio, and other media files using steganalysis tools suc
+performing-subdomain-enumeration-with-subfinder	config	web-application-security	Enumerate subdomains of target domains using ProjectDiscovery's Subfinder passive reconnaissance tool to map t
+performing-threat-emulation-with-atomic-red-team	defense	threat-intelligence	Executes Atomic Red Team tests for MITRE ATT&CK technique validation using the atomic-operator Python framewor
+performing-threat-hunting-with-elastic-siem	defense	soc-operations	Performs proactive threat hunting in Elastic Security SIEM using KQL/EQL queries, detection rules, and Timelin
+performing-threat-hunting-with-yara-rules	defense	threat-hunting	Use YARA pattern-matching rules to hunt for malware, suspicious files, and indicators of compromise across fil
+performing-threat-intelligence-sharing-with-misp	defense	threat-intelligence	Uses PyMISP (the official MISP REST API library) to create events with structured IOCs (IPs, domains, hashes, 
+performing-threat-landscape-assessment-for-sector	defense	threat-intelligence	Conducts a sector-specific threat landscape assessment (financial, healthcare, energy, government, etc.) by pr
+performing-threat-modeling-with-owasp-threat-dragon	config	devsecops	Uses OWASP Threat Dragon (web or desktop) to build data flow diagrams, identify threats with STRIDE, LINDDUN, 
+performing-timeline-reconstruction-with-plaso	defense	digital-forensics	Builds comprehensive forensic super-timelines using Plaso (log2timeline and psort) to correlate events across 
+performing-user-behavior-analytics	defense	soc-operations	Performs User and Entity Behavior Analytics (UEBA) to detect anomalous user activities including impossible tr
+performing-vulnerability-scanning-with-nessus	defense	penetration-testing	Performs authenticated and unauthenticated vulnerability scanning using Tenable Nessus to identify known vulne
+performing-web-application-scanning-with-nikto	defense	vulnerability-management	Runs Nikto, an open-source web server and web application scanner, to test over 7,000 potentially dangerous fi
+performing-web-application-vulnerability-triage	defense	vulnerability-management	Triages web application vulnerability findings from DAST/SAST scanners such as Burp Suite and ZAP, using the O
+performing-windows-artifact-analysis-with-eric-zimmerman-tools	defense	digital-forensics	Performs comprehensive Windows forensic artifact analysis using Eric Zimmerman's open-source EZ Tools suite (K
+performing-wireless-security-assessment-with-kismet	defense	network-security	Conduct wireless network security assessments using Kismet to detect rogue access points, hidden SSIDs, weak e
+performing-yara-rule-development-for-detection	defense	malware-analysis	Develops precise YARA and YARA-X rules for malware detection by identifying unique strings, byte sequences, PE
+prioritizing-vulnerabilities-with-cvss-scoring	defense	vulnerability-management	The Common Vulnerability Scoring System (CVSS) is the industry standard framework maintained by FIRST (Forum o
+processing-stix-taxii-feeds	defense	threat-intelligence	Processes STIX 2.1 threat intelligence bundles delivered via TAXII 2.1 servers, normalizing objects into platf
+profiling-threat-actor-groups	defense	threat-intelligence	Develops comprehensive threat actor profiles for APT groups, criminal organizations, and hacktivist collective
+recovering-deleted-files-with-photorec	defense	digital-forensics	Recovers deleted files from disk images and storage media using PhotoRec's file signature-based carving engine
+recovering-from-ransomware-attack	defense	ransomware-defense	Executes structured ransomware incident recovery following NIST/CISA frameworks: environment isolation, forens
+red-teaming-llms-with-garak	config	ai-security	Runs NVIDIA garak probe suites (jailbreak, prompt injection, data leakage, toxicity, and more) against an LLM 
+remediating-s3-bucket-misconfiguration	config	cloud-security	Provides step-by-step procedures for remediating Amazon S3 bucket misconfigurations that expose sensitive data
+reverse-engineering-android-malware-with-jadx	defense	malware-analysis	Reverse engineers malicious Android APK files using the JADX decompiler to read Java/Kotlin source, inspect ma
+reverse-engineering-dotnet-malware-with-dnspy	defense	malware-analysis	Reverse engineers .NET malware samples using the dnSpy decompiler and debugger to read C#/VB.NET source, deobf
+reverse-engineering-ios-app-with-frida	config	mobile-security	Reverse engineers iOS applications using Frida dynamic instrumentation to understand internal logic, extract e
+reverse-engineering-malware-with-ghidra	defense	malware-analysis	Reverse engineers malware binaries using NSA's Ghidra disassembler and decompiler to study internal logic, cry
+reverse-engineering-ransomware-encryption-routine	defense	malware-analysis	Reverse engineer ransomware encryption routines to identify cryptographic algorithms, key generation flaws, an
+reverse-engineering-rust-malware	defense	malware-analysis	Reverse engineers Rust-compiled malware using IDA Pro and Ghidra, covering techniques for non-null-terminated 
+scanning-container-images-with-grype	config	container-security	Scans container images, filesystems, and SBOMs for known CVEs with Anchore Grype, matching Syft-generated SBOM
+scanning-containers-with-trivy-in-cicd	config	devsecops	Integrates Aqua Security's Trivy scanner into CI/CD pipelines to detect OS package and application dependency 
+scanning-docker-images-with-trivy	config	container-security	Scans a Docker image with Trivy for vulnerabilities in OS packages and language dependencies, misconfiguration
+scanning-iac-and-images-with-trivy	config	devsecops	Scans container images, Infrastructure-as-Code (Terraform, CloudFormation, Kubernetes manifests, Dockerfile, H
+scanning-infrastructure-with-nessus	defense	vulnerability-management	Tenable Nessus is the industry-leading vulnerability scanner used to identify security weaknesses across netwo
+scanning-kubernetes-manifests-with-kubesec	config	container-security	Scores Kubernetes resource manifests with Kubesec to flag misconfiguration and privilege-escalation risk befor
+scanning-network-with-nmap-advanced	defense	network-security	Performs advanced network recon using Nmap's Scripting Engine (NSE), timing controls, firewall/IDS evasion, an
+securing-agentic-ai-tool-invocation	config	ai-security	Implements defense-in-depth controls at an AI agent's tool-invocation boundary using tool allowlisting, least-
+securing-api-gateway-with-aws-waf	config	cloud-security	Secures AWS API Gateway endpoints with AWS WAF by configuring managed rule groups for OWASP Top 10 protection,
+securing-aws-iam-permissions	config	cloud-security	Hardens AWS IAM configurations to enforce least-privilege access, covering IAM policy scoping, permission boun
+securing-aws-lambda-execution-roles	config	cloud-security	Hardens AWS Lambda execution roles by writing least-privilege IAM policies, applying permission boundaries, re
+securing-azure-with-microsoft-defender	config	cloud-security	Deploys and configures Microsoft Defender for Cloud as a CNAPP for Azure, multi-cloud, and hybrid environments
+securing-container-registry-images	config	cloud-security	Secures container registry images (ECR, ACR, GCR, Docker Hub) by scanning with Trivy and Grype, signing with C
+securing-container-registry-with-harbor	config	container-security	Configures the security features of the Harbor open-source container registry - integrated Trivy scanning, Cos
+securing-github-actions-workflows	config	devsecops	Hardens GitHub Actions workflows against supply chain attacks, credential theft, and privilege escalation: pin
+securing-helm-chart-deployments	config	container-security	Secures Helm chart deployments by verifying chart signatures and provenance, rendering and linting templates f
+securing-historian-server-in-ot-environment	defense	ot-ics-security	Audits and hardens process historian servers (OSIsoft PI, Honeywell PHD, GE Proficy, AVEVA Historian) in OT en
+securing-kubernetes-on-cloud	config	cloud-security	Hardens managed Kubernetes clusters on EKS, AKS, and GKE by implementing Pod Security Standards, network polic
+securing-remote-access-to-ot-environment	defense	ot-ics-security	Designs and configures secure remote access to OT/ICS environments for operators, engineers, and vendors: jump
+securing-serverless-functions	config	cloud-security	Hardens serverless compute platforms (AWS Lambda, Azure Functions, Google Cloud Functions): least-privilege IA
+testing-android-intents-for-vulnerabilities	config	mobile-security	Tests Android inter-process communication (IPC) through intents for vulnerabilities including intent injection
+testing-api-authentication-weaknesses	config	api-security	Tests API authentication mechanisms for weaknesses including broken token validation, missing authentication o
+testing-api-for-broken-object-level-authorization	source	api-security	Tests REST and GraphQL APIs for Broken Object Level Authorization (BOLA/IDOR, OWASP API1:2023) by intercepting
+testing-api-for-mass-assignment-vulnerability	source	api-security	Tests APIs for mass assignment (auto-binding), OWASP API3:2023, by identifying writable endpoints, adding undo
+testing-api-security-with-owasp-top-10	config	web-application-security	Systematically assesses REST, GraphQL, and gRPC API endpoints against the OWASP API Security Top 10 (2023) usi
+testing-cors-misconfiguration	source	web-application-security	Test Cross-Origin Resource Sharing misconfigurations that allow unauthorized cross-domain data access and cred
+testing-for-broken-access-control	source	web-application-security	Systematically tests web applications and APIs for broken access control (OWASP A01:2021), including privilege
+testing-for-business-logic-vulnerabilities	source	web-application-security	Manually identifies flaws in application business logic - price manipulation, multi-step workflow bypass, and 
+testing-for-email-header-injection	source	web-application-security	Tests web application email functionality (contact forms, password reset, newsletter subscriptions) for CRLF/S
+testing-for-host-header-injection	source	web-application-security	Test web applications for HTTP Host header injection vulnerabilities to identify password reset poisoning, web
+testing-for-json-web-token-vulnerabilities	source	web-application-security	Tests JWT implementations for algorithm confusion, "none" algorithm bypass, kid/jku parameter injection, and w
+testing-for-open-redirect-vulnerabilities	source	web-application-security	Test open redirect vulnerabilities by analyzing URL redirection parameters (next, url, redirect, return, goto)
+testing-for-sensitive-data-exposure	source	web-application-security	Identifying sensitive data exposure vulnerabilities including API key leakage, PII in responses, insecure stor
+testing-for-system-prompt-leakage	config	ai-security	Extracts LLM system prompts using direct requests, jailbreak/instruction-override framing, translation/encodin
+testing-for-xml-injection-vulnerabilities	source	web-application-security	Test web applications for XML injection vulnerabilities including XXE, XPath injection, and XML entity attacks
+testing-for-xss-vulnerabilities	source	penetration-testing	Tests web applications for reflected, stored, and DOM-based Cross-Site Scripting by injecting JavaScript paylo
+testing-for-xss-vulnerabilities-with-burpsuite	source	web-application-security	Identifying and validating cross-site scripting vulnerabilities using Burp Suite's scanner, intruder, and repe
+testing-for-xxe-injection-vulnerabilities	source	web-application-security	Discovering and exploiting XML External Entity injection vulnerabilities to read server files, perform SSRF, a
+testing-jwt-token-security	source	web-application-security	Assessing JSON Web Token implementations for cryptographic weaknesses, algorithm confusion attacks, and author
+testing-mobile-api-authentication	config	mobile-security	Tests authentication and authorization mechanisms in mobile application APIs to identify broken authentication
+testing-oauth2-implementation-flaws	source	api-security	Tests OAuth 2.0 and OpenID Connect implementations for authorization code interception, redirect URI manipulat
+testing-prompt-injection-in-rag-pipelines	source	ai-security	Probes Retrieval-Augmented Generation pipelines for indirect prompt injection via poisoned retrieved documents
+testing-ransomware-recovery-procedures	defense	incident-response	Tests and validates ransomware recovery procedures - backup restore operations (e.g.
+testing-websocket-api-security	source	api-security	Tests WebSocket API implementations for missing upgrade-handshake authentication, Cross-Site WebSocket Hijacki
+tracking-threat-actor-infrastructure	defense	threat-intelligence	Discovers and maps adversary-controlled infrastructure (C2 servers, phishing domains, exploit-kit hosts, bulle
+triaging-security-alerts-in-splunk	defense	soc-operations	Triages security alerts in Splunk Enterprise Security by classifying severity, investigating notable events, c
+triaging-security-incident	defense	incident-response	Performs initial triage of security incidents using the NIST SP 800-61r3 and SANS PICERL frameworks, classifyi
+triaging-security-incident-with-ir-playbook	defense	incident-response	Classifies and prioritizes security incidents using structured IR playbooks and SIEM/case-management queries (
+triaging-vulnerabilities-with-ssvc-framework	defense	vulnerability-management	Triages and prioritizes vulnerabilities with CISA's Stakeholder-Specific Vulnerability Categorization (SSVC) d
+triaging-windows-with-kape	defense	digital-forensics	Runs KAPE (Kroll Artifact Parser and Extractor) to collect targeted forensic artifacts (registry hives, $MFT, 
+validating-backup-integrity-for-recovery	defense	incident-response	Validates backup integrity through cryptographic hash verification, automated restore testing, corruption dete
+validating-tpm-measured-boot-attestation	defense	hardware-firmware-security	Verifies TPM 2.0 measured-boot integrity and remote attestation with tpm2-tools -- reading PCRs (tpm2_pcrread)
+verifying-build-provenance-with-slsa-sigstore	config	supply-chain-security	Verifies artifact signatures and SLSA provenance using Sigstore's cosign (verify, verify-attestation, verify-b

@@ -41,6 +41,7 @@ local code graph and an output squeezer, and drops everything that costs tokens 
 | subagent | `wesh-scout` | caveman-explore | cheap read-only locator, `path:line` output |
 | hook | squeeze | caveman "read less" | trims long build/test/install output |
 | built in | codegraph | colbymchenry/codegraph | local code graph per project, built and synced automatically |
+| `/` + auto | `wesh-security-review` | Anthropic-Cybersecurity-Skills | on-demand pack of 698 defensive security skills; one loads at a time |
 
 Left out on purpose (cost more than they save): caveman's cloud/proxy/MCP products and builder subagent, ponytail's
 dashboards, mattpocock's issue-tracker workflows, teaching and writing skills. Each extra listed skill costs tokens on
@@ -128,6 +129,29 @@ The CLI reads the index as of the last sync: before deleting, renaming or callin
 `codegraph sync` and confirms an empty result with grep. codegraph does not see string or dynamic references, config
 or fixtures; grep still does. Known limit of codegraph 1.6.2 on Windows: its file watcher fails when a project is
 opened through an 8.3 short path (`C:\Users\ABCDEF~1\...`).
+
+## Security review
+
+`wesh-security-review` is an on-demand pack of 698 defensive security skills, derived from
+[Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills). Say "security
+review", "harden this", "scan for vulnerabilities", or run `/wesh-security-review`. One skill loads at a time: the
+agent greps `pack/INDEX.tsv`, reads the one `pack/<name>.md` it needs, and follows it — nothing else is pulled into
+context, so the whole pack costs almost nothing until used.
+
+Each skill keeps its MITRE ATT&CK / NIST CSF ids, an `upstream:` line pointing at the source commit, and its commands,
+configs and code verbatim; the prose is cavemanised and the padding (overviews, "when to use") dropped, with each
+skill's "do not use" negative trigger preserved. Skills are tagged by `facing`: the **34 `source`** skills (editing or
+testing vulnerable code — XSS, XXE, SQLi, CORS, access control, mass assignment, business logic, JWT/OAuth, crypto
+implementation, LLM guardrails, SAST rules) open with a **class-specific `## Codegraph` recipe**: a tailored
+`codegraph_explore` query for that vulnerability's sinks, then `callers`/`impact` before editing shared code and
+`affected` for tests — and their own "grep the codebase" steps route through codegraph. The **234 `config`** skills
+(running scanners like trivy/snyk/gitleaks/semgrep, or hardening IaC/containers/Kubernetes/cloud/CI-CD/TLS) and the
+**430 `defense`** skills (forensics, incident response, SOC, threat hunting, detection, compliance) are
+grep-and-procedure — no codegraph noise where it would not help.
+
+Scope is defensive and own-system only; a live target needs written authorization. Offensive skills (exploitation,
+credential access, C2, lateral movement, penetration-test engagements, phishing, offensive recon) were deliberately
+not vendored — they stay in the upstream repository.
 
 ## Squeeze
 

@@ -1,0 +1,167 @@
+---
+name: performing-sca-dependency-scanning-with-snyk
+description: This skill covers implementing Software Composition Analysis (SCA) using Snyk to detect vulnerable open-source dependencies in CI/CD pipelines.
+subdomain: devsecops
+facing: config
+mitre_attack:
+- T1195
+- T1554
+- T1059.004
+nist_csf:
+- PR.PS-01
+- GV.SC-07
+- ID.IM-04
+- PR.PS-04
+upstream: performing-sca-dependency-scanning-with-snyk@54a7988 Apache-2.0, modified by wesh
+---
+Not for: scanning proprietary application code for logic vulnerabilities (use SAST), for runtime vulnerability detection (use DAST), or for container OS package scanning alone (use Trivy for a free alternative).
+
+## Prerequisites
+
+- Snyk account (free tier covers up to 200 tests per month for open source)
+- Snyk CLI installed or Snyk GitHub/GitLab integration configured
+- SNYK_TOKEN environment variable set with API authentication token
+- Project with supported package manifests: package.json, requirements.txt, pom.xml, go.mod, Gemfile, etc.
+
+## Workflow
+
+### Step 1: Install and Authenticate Snyk CLI
+
+```bash
+# Install Snyk CLI
+npm install -g snyk
+# Authenticate with Snyk
+snyk auth $SNYK_TOKEN
+# Test the connection
+snyk test --json | jq '.summary'
+```
+
+### Step 2: Scan Dependencies in CI/CD Pipeline
+
+```yaml
+# .github/workflows/dependency-scan.yml
+name: Dependency Security Scan
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 8 * * 1'  # Weekly Monday 8am
+jobs:
+  snyk-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: >
+            --severity-threshold=high
+            --fail-on=upgradable
+            --json-file-output=snyk-results.json
+      - name: Upload results to Snyk
+        if: always()
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor
+          args: --project-name=${{ github.repository }}
+      - name: Upload SARIF
+        if: always()
+        run: |
+          npx snyk-to-html -i snyk-results.json -o snyk-report.html
+```
+
+### Step 3: Configure Snyk for Multiple Languages
+
+```bash
+# Python project scanning
+snyk test --file=requirements.txt --severity-threshold=high --json > snyk-python.json
+# Java/Maven project
+snyk test --file=pom.xml --severity-threshold=medium --json > snyk-java.json
+# Go module scanning
+snyk test --file=go.mod --severity-threshold=high --json > snyk-go.json
+# Docker image dependency scanning
+snyk container test myapp:latest --severity-threshold=high --json > snyk-container.json
+# Monorepo: scan all projects
+snyk test --all-projects --severity-threshold=high --json > snyk-all.json
+# IaC scanning (bonus)
+snyk iac test terraform/ --severity-threshold=medium --json > snyk-iac.json
+```
+
+### Step 4: Configure Snyk Policies for Organization
+
+```yaml
+# .snyk policy file
+version: v1.25.0
+ignore:
+  SNYK-JS-LODASH-1018905:
+    - '*':
+        reason: "Prototype pollution in lodash. Not exploitable in our usage - no user input reaches affected function."
+        expires: 2026-06-01T00:00:00.000Z
+        created: 2026-02-23T00:00:00.000Z
+  SNYK-PYTHON-REQUESTS-6241864:
+    - '*':
+        reason: "SSRF in requests redirect handling. Mitigated by allowlist at proxy layer."
+        expires: 2026-04-01T00:00:00.000Z
+patch: {}
+# Severity threshold for CI failures
+failOnSeverity: high
+```
+
+### Step 5: Enable Automated Fix Pull Requests
+
+```bash
+# Snyk fix: generate fix PRs for vulnerable dependencies
+snyk fix --dry-run  # Preview changes
+# Apply fixes locally
+snyk fix
+# Enable auto-fix PRs via Snyk dashboard:
+# 1. Navigate to Organization Settings > Integrations > GitHub
+# 2. Enable "Automatic fix pull requests"
+# 3. Set "Fix only direct dependencies" or "Fix direct and transitive"
+# 4. Configure branch target (main or develop)
+```
+
+### Step 6: License Compliance Scanning
+
+```bash
+# Check license compliance
+snyk test --json | jq '.licensesPolicy'
+# Snyk license policy configuration via organization settings:
+# - Approved licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC
+# - Restricted licenses: GPL-3.0, AGPL-3.0 (copyleft risk)
+# - Unknown licenses: Flag for manual review
+```
+
+## Key Concepts
+
+| Term | Definition |
+|------|------------|
+| SCA | Software Composition Analysis — identifies vulnerabilities and license risks in open-source dependencies |
+| Transitive Dependency | dependency of direct dependency, often invisible to developers but still vulnerability vector |
+| Fix PR | Automated pull request generated by Snyk that upgrades vulnerable dependency to patched version |
+| Snyk Monitor | Continuous monitoring mode that watches deployed projects for newly disclosed vulnerabilities |
+| Exploit Maturity | Snyk's assessment of whether vulnerability has known exploits, proof-of-concept, or no known exploit |
+| Reachable Vulnerability | vulnerability in function i.e. called by application code, not present in dependency |
+| License Policy | Organization-level rules defining which open-source licenses are approved, restricted, or require review |
+
+## Tools & Systems
+
+- **Snyk Open Source**: SCA tool for scanning dependencies across 10+ language ecosystems
+- **Snyk CLI**: Command-line interface for local and CI/CD scanning of dependencies
+- **Snyk Advisor**: Package health scoring tool evaluating maintenance, popularity, and security signals
+- **OWASP Dependency-Check**: Free alternative SCA tool using NVD data for vulnerability matching
+- **npm audit / pip-audit**: Language-specific built-in audit tools for basic vulnerability checking
+
+Not vendored (scripts/, references/, assets/): https://github.com/mukul975/Anthropic-Cybersecurity-Skills/tree/54a798831d2266a3ca61ce68a7acb80b81160d57/skills/performing-sca-dependency-scanning-with-snyk

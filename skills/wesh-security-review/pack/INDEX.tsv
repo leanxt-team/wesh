@@ -32,7 +32,7 @@ analyzing-linux-system-artifacts	defense	digital-forensics	Examine Linux system 
 analyzing-lnk-file-and-jump-list-artifacts	defense	digital-forensics	Analyze Windows LNK shortcut files and Jump List artifacts with LECmd, JLECmd, and manual Shell Link Binary Fo
 analyzing-macro-malware-in-office-documents	defense	malware-analysis	Analyzes malicious VBA macros embedded in Microsoft Office documents (Word, Excel, PowerPoint) to identify dow
 analyzing-malicious-pdf-with-peepdf	defense	malware-analysis	Perform static analysis of malicious PDF documents using peepdf, pdfid, and pdf-parser to extract embedded Jav
-analyzing-malicious-url-with-urlscan	defense	phishing-defense	URLScan.io is a free service for scanning and analyzing suspicious URLs.
+analyzing-malicious-url-with-urlscan	defense	phishing-defense	URLScan.io is a free service for scanning and analyzing suspicious URLs. It captures screenshots, DOM content,
 analyzing-malware-behavior-with-cuckoo-sandbox	defense	malware-analysis	Detonate malware samples in Cuckoo Sandbox to observe runtime behavior — process creation, file system and reg
 analyzing-malware-family-relationships-with-malpedia	defense	threat-intelligence	Query the Malpedia API to look up malware family aliases and naming (platform.family_name), pull community/ven
 analyzing-malware-persistence-with-autoruns	defense	malware-analysis	Use Sysinternals Autoruns to systematically enumerate and analyze malware persistence mechanisms across Window
@@ -199,7 +199,7 @@ detecting-container-drift-at-runtime	config	container-security	Detects unauthori
 detecting-container-escape-attempts	config	container-security	Detects container escape at runtime across tooling - namespace manipulation, capability abuse, kernel exploits
 detecting-container-escape-with-falco-rules	config	container-security	Writes and tunes Falco rule syntax for container escape detection - conditions, macros, lists, priorities, and
 detecting-container-runtime-threats-with-falco	config	container-security	Deploys and operates Falco with the modern eBPF driver in Kubernetes and Docker, covering driver selection, He
-detecting-credential-dumping-techniques	defense	threat-detection	Detect LSASS credential dumping, SAM database extraction, and NTDS.dit theft (e.g.
+detecting-credential-dumping-techniques	defense	threat-detection	Detect LSASS credential dumping, SAM database extraction, and NTDS.dit theft (e.g. via Mimikatz) using Sysmon 
 detecting-cryptomining-in-cloud	config	cloud-security	This skill teaches security teams how to detect and respond to unauthorized cryptocurrency mining operations i
 detecting-data-and-model-poisoning	config	ai-security	Identify poisoned training data and backdoored ML models across the pipeline using IBM's Adversarial Robustnes
 detecting-dcsync-attack-in-active-directory	defense	threat-hunting	Detect DCSync attacks (MITRE T1003.006) where adversaries abuse Active Directory replication privileges to ext
@@ -216,7 +216,7 @@ detecting-exfiltration-over-dns-with-zeek	defense	network-security	Detect DNS-ba
 detecting-fileless-attacks-on-endpoints	config	endpoint-security	Detects fileless malware and in-memory attacks that execute entirely in RAM without writing persistent files t
 detecting-fileless-malware-techniques	defense	malware-analysis	Detects and analyzes fileless malware that operates entirely in memory using PowerShell, WMI, .NET reflection,
 detecting-golden-ticket-attacks-in-kerberos-logs	defense	threat-hunting	Detect Golden Ticket attacks in Active Directory using Splunk and KQL queries against domain controller event 
-detecting-golden-ticket-forgery	defense	threat-detection	Detect Kerberos Golden Ticket forgery (e.g.
+detecting-golden-ticket-forgery	defense	threat-detection	Detect Kerberos Golden Ticket forgery (e.g. Mimikatz-forged tickets) by analyzing Windows Event ID 4769 for RC
 detecting-indirect-prompt-injection	config	ai-security	Detect and defend against indirect prompt injection hidden in web pages, documents, and images consumed by an 
 detecting-insider-data-exfiltration-via-dlp	defense	security-operations	Detects insider data exfiltration by analyzing DLP policy violations, file access patterns, upload volume anom
 detecting-insider-threat-behaviors	defense	threat-hunting	Detect insider threat behavioral indicators including unusual data access, off-hours activity, mass file downl
@@ -304,7 +304,7 @@ hunting-for-defense-evasion-via-timestomping	defense	threat-hunting	Detect NTFS 
 hunting-for-dns-based-persistence	defense	threat-hunting	Hunts for DNS-based persistence mechanisms such as DNS hijacking, dangling CNAME records enabling subdomain ta
 hunting-for-dns-tunneling-with-zeek	defense	threat-hunting	Detects DNS tunneling and covert-channel data exfiltration by analyzing Zeek dns.log for high-entropy subdomai
 hunting-for-domain-fronting-c2-traffic	defense	threat-hunting	Detects domain fronting C2 traffic by analyzing SNI-vs-HTTP-Host-header mismatches in proxy logs and inspectin
-hunting-for-lateral-movement-via-wmi	defense	threat-hunting	Detects WMI-based lateral movement (e.g.
+hunting-for-lateral-movement-via-wmi	defense	threat-hunting	Detects WMI-based lateral movement (e.g. wmic process call create, Win32_Process.Create()) by analyzing Window
 hunting-for-living-off-the-cloud-techniques	defense	threat-hunting	Hunts for adversary abuse of legitimate cloud services (Azure, AWS, GCP, and SaaS platforms) for command-and-c
 hunting-for-living-off-the-land-binaries	defense	threat-hunting	Proactively hunts for adversary abuse of legitimate, signed system binaries (LOLBins) used to execute maliciou
 hunting-for-lolbins-execution-in-endpoint-logs	defense	threat-hunting	Hunts for LOLBins (Living Off the Land Binaries) abuse, mapped to MITRE T1218, by analyzing endpoint process-c
@@ -686,7 +686,7 @@ testing-jwt-token-security	source	web-application-security	Assessing JSON Web To
 testing-mobile-api-authentication	config	mobile-security	Tests authentication and authorization mechanisms in mobile application APIs to identify broken authentication
 testing-oauth2-implementation-flaws	source	api-security	Tests OAuth 2.0 and OpenID Connect implementations for authorization code interception, redirect URI manipulat
 testing-prompt-injection-in-rag-pipelines	source	ai-security	Probes Retrieval-Augmented Generation pipelines for indirect prompt injection via poisoned retrieved documents
-testing-ransomware-recovery-procedures	defense	incident-response	Tests and validates ransomware recovery procedures - backup restore operations (e.g.
+testing-ransomware-recovery-procedures	defense	incident-response	Tests and validates ransomware recovery procedures - backup restore operations (e.g. with Restic), RTO/RPO tar
 testing-websocket-api-security	source	api-security	Tests WebSocket API implementations for missing upgrade-handshake authentication, Cross-Site WebSocket Hijacki
 tracking-threat-actor-infrastructure	defense	threat-intelligence	Discovers and maps adversary-controlled infrastructure (C2 servers, phishing domains, exploit-kit hosts, bulle
 triaging-security-alerts-in-splunk	defense	soc-operations	Triages security alerts in Splunk Enterprise Security by classifying severity, investigating notable events, c

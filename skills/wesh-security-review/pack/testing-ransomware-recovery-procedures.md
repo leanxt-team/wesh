@@ -1,6 +1,6 @@
 ---
 name: testing-ransomware-recovery-procedures
-description: Tests and validates ransomware recovery procedures - backup restore operations (e.g.
+description: Tests and validates ransomware recovery procedures - backup restore operations (e.g. with Restic), RTO/RPO target verification, recovery sequencing, and clean-restore validation - to confirm organizational resilience against destructive ransomware attacks.
 subdomain: incident-response
 facing: defense
 mitre_attack:

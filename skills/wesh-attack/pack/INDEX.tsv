@@ -1,0 +1,121 @@
+name	facing	subdomain	description
+abusing-dpapi-for-credential-access	config	red-teaming	Extract and decrypt Windows DPAPI-protected secrets (Credential Manager, browser logins/cookies, Wi-Fi credent
+abusing-shadow-credentials-for-privesc	config	red-teaming	Take over Active Directory accounts by writing attacker-controlled public keys to msDS-KeyCredentialLink (Shad
+attacking-entra-id-with-roadtools	config	identity-access-management	Enumerate Microsoft Entra ID (Azure AD) tenants with ROADrecon and acquire, exchange, and abuse tokens (includ
+attacking-oauth-with-device-code-phishing	config	identity-access-management	Run OAuth 2.0 device-code and illicit-consent phishing attacks against Microsoft Entra ID, using TokenTactics-
+building-c2-infrastructure-with-sliver-framework	config	red-teaming	Deploy and harden a Sliver C2 team server (BishopFox's Go-based adversary emulation framework) with multi-prot
+building-c2-redirector-infrastructure	config	red-teaming	Build dumb-pipe and traffic-filtering C2 redirectors with nginx (proxy_pass) and Apache (mod_rewrite), derivin
+building-red-team-c2-infrastructure-with-havoc	config	red-teaming	Deploy and configure the Havoc C2 framework (teamserver, HTTPS/HTTP/SMB listeners, Nginx redirectors, and Demo
+bypassing-authentication-with-forced-browsing	source	web-application-security	Discovering and accessing unprotected pages, APIs, and administrative interfaces by enumerating URLs and bypas
+coercing-authentication-with-coercer-petitpotam	config	red-teaming	Trigger machine account authentication with PetitPotam (MS-EFSR) and Coercer (MS-RPRN, MS-DFSNM, MS-FSRVP, MS-
+conducting-api-security-testing	config	penetration-testing	Conducts security testing of REST, GraphQL, and gRPC APIs to identify vulnerabilities in authentication, autho
+conducting-cloud-penetration-testing	config	cloud-security	This skill outlines methodologies for performing authorized penetration testing against AWS, Azure, and GCP cl
+conducting-domain-persistence-with-dcsync	config	red-teaming	Perform DCSync attacks by abusing MS-DRSR replication rights (DS-Replication-Get-Changes/-All) to impersonate 
+conducting-external-reconnaissance-with-osint	config	penetration-testing	Conduct external recon using OSINT techniques to map an organization's external attack surface without touchin
+conducting-full-scope-red-team-engagement	config	red-teaming	Plan and execute a comprehensive, MITRE ATT&CK-aligned red team engagement spanning threat modeling, reconnais
+conducting-internal-network-penetration-test	config	penetration-testing	Execute an internal network penetration test simulating an insider threat or post-breach attacker to identify 
+conducting-internal-reconnaissance-with-bloodhound-ce	config	red-teaming	Conduct internal Active Directory reconnaissance using BloodHound Community Edition's graph database with the 
+conducting-man-in-the-middle-attack-simulation	config	network-security	Simulates man-in-the-middle attacks using Ettercap, mitmproxy, and Bettercap in authorized environments to int
+conducting-mobile-app-penetration-test	config	penetration-testing	Conducts penetration testing of iOS and Android mobile applications following the OWASP Mobile Application Sec
+conducting-network-penetration-test	config	penetration-testing	Conducts comprehensive network penetration tests against authorized target environments by performing host dis
+conducting-pass-the-ticket-attack	config	red-teaming	Perform Pass-the-Ticket (PtT) lateral movement by extracting Kerberos TGT/TGS tickets from LSASS memory on a c
+conducting-social-engineering-penetration-test	config	penetration-testing	Design and execute a social engineering penetration test combining OSINT-driven target profiling with phishing
+conducting-social-engineering-pretext-call	config	red-teaming	Plan and execute authorized vishing (voice phishing) pretext calls to assess employee susceptibility to social
+conducting-spearphishing-simulation-campaign	config	red-teaming	Run a targeted spearphishing simulation for initial access by developing OSINT-derived pretexts, building payl
+conducting-wireless-network-penetration-test	config	penetration-testing	Conducts authorized wireless network penetration tests to assess the security of WiFi infrastructure by testin
+emulating-cloud-attacks-with-stratus-red-team	config	cloud-security	Install and run Stratus Red Team to detonate granular, MITRE ATT&CK-mapped AWS, Azure, GCP, and Kubernetes att
+executing-active-directory-attack-simulation	config	penetration-testing	Executes authorized attack simulations against Active Directory environments to identify misconfigurations, we
+executing-phishing-simulation-campaign	config	penetration-testing	Executes authorized phishing simulation campaigns to assess an organization's susceptibility to email-based so
+executing-red-team-engagement-planning	config	red-teaming	Build the foundational red team engagement plan - scope definition, Rules of Engagement (restrictions, communi
+executing-red-team-exercise	config	penetration-testing	Run a stealthy, MITRE ATT&CK-mapped adversary emulation against an organization's people, processes, and techn
+exploiting-active-directory-certificate-services-esc1	config	red-teaming	Exploit misconfigured Active Directory Certificate Services (AD CS) ESC1 vulnerability to request certificates
+exploiting-active-directory-with-bloodhound	config	red-teaming	BloodHound is a graph-based Active Directory reconnaissance tool that uses graph theory to reveal hidden and u
+exploiting-adcs-with-certipy	config	red-teaming	Use Certipy to enumerate AD CS certificate authorities and templates over LDAP/RPC, then exploit ESC1-ESC16 mi
+exploiting-api-injection-vulnerabilities	source	api-security	Tests API parameters, headers, and request bodies for injection flaws — SQL injection, NoSQL injection, OS com
+exploiting-aws-with-pacu	config	cloud-security	Runs the Pacu AWS exploitation framework end-to-end — session and credential setup, IAM enumeration, automated
+exploiting-bgp-hijacking-vulnerabilities	config	network-security	Analyzes and simulates BGP hijacking scenarios in authorized lab environments to assess route origin validatio
+exploiting-broken-function-level-authorization	source	api-security	Tests APIs for Broken Function Level Authorization (OWASP API5:2023) by identifying admin and privileged endpo
+exploiting-broken-link-hijacking	source	web-application-security	Discovers and exploits broken link hijacking by spidering a site (Burp Suite Spider, Scrapy, curl scraping), e
+exploiting-constrained-delegation-abuse	config	red-teaming	Exploits Kerberos Constrained Delegation misconfigurations in Active Directory using Impacket's findDelegation
+exploiting-deeplink-vulnerabilities	source	mobile-security	Tests and exploits deep link (URL scheme and App Link) vulnerabilities in Android and iOS mobile applications 
+exploiting-excessive-data-exposure-in-api	source	api-security	Tests APIs for excessive data exposure (OWASP API3:2023) by intercepting raw API responses and comparing them 
+exploiting-http-request-smuggling	source	web-application-security	Detects and exploits HTTP request smuggling caused by Content-Length/Transfer-Encoding parsing discrepancies b
+exploiting-idor-vulnerabilities	source	web-application-security	Identifies and exploits Insecure Direct Object Reference (IDOR) vulnerabilities by manipulating object identif
+exploiting-insecure-data-storage-in-mobile	source	mobile-security	Identifies and exploits insecure local data storage vulnerabilities in Android and iOS mobile applications inc
+exploiting-insecure-deserialization	source	web-application-security	Identifying and exploiting insecure deserialization vulnerabilities in Java, PHP, Python, and .NET application
+exploiting-ipv6-vulnerabilities	config	network-security	Identifies and exploits IPv6-specific vulnerabilities including SLAAC spoofing, Router Advertisement flooding,
+exploiting-jwt-algorithm-confusion-attack	source	api-security	Exploits JWT algorithm confusion where the server's verification library trusts the alg named in the token hea
+exploiting-kerberoasting-with-impacket	config	red-teaming	Performs Kerberoasting (MITRE ATT&CK T1558.003) using Impacket's GetUserSPNs.py to request Kerberos TGS ticket
+exploiting-mass-assignment-in-rest-apis	source	web-application-security	Discovers and exploits mass assignment (autobinding) in REST APIs by injecting unexpected or hidden parameters
+exploiting-ms17-010-eternalblue-vulnerability	config	red-teaming	Detects and exploits MS17-010 (EternalBlue), a critical remote code execution flaw in Microsoft's SMBv1 implem
+exploiting-nopac-cve-2021-42278-42287	config	red-teaming	Exploits the noPac Active Directory privilege-escalation chain (CVE-2021-42278 sAMAccountName spoofing plus CV
+exploiting-nosql-injection-vulnerabilities	source	web-application-security	Detects and exploits NoSQL injection vulnerabilities in MongoDB, CouchDB, and similar databases to demonstrate
+exploiting-oauth-misconfiguration	source	web-application-security	Identifying and exploiting OAuth 2.0 and OpenID Connect misconfigurations including redirect URI manipulation,
+exploiting-prototype-pollution-in-javascript	source	web-application-security	Detects and exploits JavaScript prototype pollution vulnerabilities in client-side and server-side (Node.js) a
+exploiting-race-condition-vulnerabilities	source	web-application-security	Detects and exploits race condition (TOCTOU) vulnerabilities in web applications using Burp Suite's Turbo Intr
+exploiting-server-side-request-forgery	source	web-application-security	Identifying and exploiting SSRF vulnerabilities to access internal services, cloud metadata, and restricted ne
+exploiting-smb-vulnerabilities-with-metasploit	config	network-security	Identifies and exploits SMB protocol vulnerabilities using Metasploit Framework during authorized penetration 
+exploiting-sql-injection-vulnerabilities	source	penetration-testing	Identifies and exploits SQL injection vulnerabilities in web applications during authorized penetration tests 
+exploiting-sql-injection-with-sqlmap	config	web-application-security	Detecting and exploiting SQL injection vulnerabilities using sqlmap to extract database contents during author
+exploiting-template-injection-vulnerabilities	source	web-application-security	Detects and exploits Server-Side Template Injection (SSTI) vulnerabilities across Jinja2, Twig, Freemarker, an
+exploiting-type-juggling-vulnerabilities	source	web-application-security	Exploits PHP type juggling vulnerabilities caused by loose (==) comparison operators to bypass authentication,
+exploiting-vulnerabilities-with-metasploit-framework	config	vulnerability-management	Uses the Metasploit Framework (msfconsole and its exploit, auxiliary, and post-exploitation modules) to valida
+exploiting-websocket-vulnerabilities	source	web-application-security	Testing WebSocket implementations for authentication bypass, cross-site hijacking, injection attacks, and inse
+exploiting-zerologon-vulnerability-cve-2020-1472	config	red-teaming	Exploits the Zerologon vulnerability (CVE-2020-1472) in the Netlogon Remote Protocol using Impacket to reset a
+implementing-mitre-attack-coverage-mapping	config	soc-operations	Implement MITRE ATT&CK coverage mapping to identify detection gaps, prioritize rule development, and measure S
+implementing-threat-modeling-with-mitre-attack	config	soc-operations	Implements threat modeling using the MITRE ATT&CK framework to map adversary TTPs against organizational asset
+mapping-attack-paths-with-bloodhound-ce	config	red-teaming	Collect Active Directory data with SharpHound and Entra ID data with AzureHound, ingest into BloodHound Commun
+mapping-mitre-attack-techniques	config	threat-intelligence	Maps observed adversary behaviors, security alerts, and detection rules to MITRE ATT&CK techniques and sub-tec
+moving-laterally-with-netexec	config	penetration-testing	Use NetExec (nxc) to validate credentials, enumerate SMB shares/users/policy, password-spray safely across loc
+operating-havoc-c2	config	red-teaming	Deploy a Havoc C2 team server with Yaotl malleable profiles, generate evasive Demon agents using indirect sysc
+operating-sliver-c2	config	red-teaming	Stand up a Sliver C2 server and mTLS listeners, generate cross-platform implants and beacons, and run post-exp
+orchestrating-llm-attacks-with-pyrit	config	ai-security	Build automated multi-turn adversarial attacks against conversational LLM targets using Microsoft PyRIT's RedT
+performing-active-directory-bloodhound-analysis	config	red-teaming	Use BloodHound and SharpHound (or AzureHound) to enumerate Active Directory relationships and graph attack pat
+performing-active-directory-forest-trust-attack	config	red-team	Enumerate and audit Active Directory forest trust relationships using Impacket for SID filtering analysis, tru
+performing-active-directory-penetration-test	config	penetration-testing	Conduct a focused Active Directory penetration test using BloodHound, Impacket, Certipy, Rubeus, and NetExec t
+performing-api-rate-limiting-bypass	source	api-security	Tests API rate limiting for bypass vulnerabilities using Python (requests/aiohttp) and Burp Suite Turbo Intrud
+performing-arp-spoofing-attack-simulation	config	network-security	Simulates ARP spoofing/cache-poisoning attacks in authorized lab or pentest environments using arpspoof, Etter
+performing-aws-privilege-escalation-assessment	config	cloud-security	Performing authorized privilege escalation assessments in AWS environments to identify IAM misconfigurations t
+performing-bandwidth-throttling-attack-simulation	config	network-security	Simulate bandwidth throttling and network degradation attacks using tc, iperf3, and Scapy in authorized lab en
+performing-binary-exploitation-analysis	source	offensive-security	Analyze ELF binaries for memory-corruption vulnerabilities and build proof-of-concept exploits using pwntools,
+performing-blind-ssrf-exploitation	source	web-application-security	Detect and exploit blind Server-Side Request Forgery (SSRF) using out-of-band techniques such as Burp Collabor
+performing-clickjacking-attack-test	source	web-application-security	Testing web applications for clickjacking vulnerabilities by assessing frame embedding controls and crafting p
+performing-cloud-penetration-testing-with-pacu	config	cloud-security	Run authorized AWS penetration tests with Pacu, the open-source AWS exploitation framework, to enumerate IAM c
+performing-content-security-policy-bypass	source	web-application-security	Analyze Content-Security-Policy headers and bypass them to achieve cross-site scripting by exploiting unsafe-i
+performing-credential-access-with-lazagne	config	red-teaming	Extract stored credentials from compromised endpoints using the LaZagne post-exploitation tool to recover pass
+performing-csrf-attack-simulation	source	web-application-security	Testing web applications for Cross-Site Request Forgery vulnerabilities by crafting forged requests that explo
+performing-external-network-penetration-test	config	penetration-testing	Conduct a comprehensive external network penetration test to identify vulnerabilities in internet-facing infra
+performing-gcp-penetration-testing-with-gcpbucketbrute	config	cloud-security	Performs authorized GCP security testing using GCPBucketBrute to enumerate publicly accessible storage buckets
+performing-graphql-depth-limit-attack	source	api-security	Execute and test GraphQL depth limit attacks using deeply nested recursive queries to identify denial-of-servi
+performing-graphql-introspection-attack	source	api-security	Performs GraphQL introspection attacks that extract the full API schema (types, queries, mutations, subscripti
+performing-hash-cracking-with-hashcat	config	cryptography	Cracks password hashes with Hashcat, covering hash-type identification, dictionary/brute-force/rule-based atta
+performing-http-parameter-pollution-attack	source	web-application-security	Executes HTTP Parameter Pollution attacks that inject duplicate request parameters to bypass input validation,
+performing-initial-access-with-evilginx3	config	red-teaming	Perform authorized initial access using EvilGinx3 adversary-in-the-middle phishing framework to capture sessio
+performing-iot-security-assessment	config	penetration-testing	Performs comprehensive security assessments of IoT devices and their ecosystems by testing hardware interfaces
+performing-jwt-none-algorithm-attack	source	api-security	Execute and test the JWT none algorithm attack, crafting tokens with the alg header set to none using PyJWT an
+performing-kerberoasting-attack	config	red-teaming	Perform Kerberoasting, a post-exploitation technique that enumerates Active Directory service accounts with Se
+performing-kubernetes-penetration-testing	config	container-security	Evaluates Kubernetes cluster security by actively simulating attacker techniques against the API server, kubel
+performing-lateral-movement-with-wmiexec	config	red-teaming	Perform lateral movement across Windows networks using WMI-based remote execution techniques including Impacke
+performing-mobile-app-certificate-pinning-bypass	source	mobile-security	Bypasses SSL/TLS certificate pinning implementations in Android and iOS applications to enable traffic interce
+performing-open-source-intelligence-gathering	config	red-teaming	Open Source Intelligence (OSINT) gathering is the first active phase of a red team engagement, where operators
+performing-packet-injection-attack	config	network-security	Crafts and injects custom network packets using Scapy, hping3, and Nemesis during authorized security assessme
+performing-phishing-simulation-with-gophish	config	phishing-defense	Deploy and run authorized phishing awareness campaigns with GoPhish, covering admin panel setup, SMTP sending 
+performing-physical-intrusion-assessment	config	red-teaming	Conduct authorized physical penetration testing against facilities, server rooms, and restricted areas using t
+performing-privilege-escalation-assessment	config	penetration-testing	Performs privilege escalation assessments on compromised Linux and Windows systems to identify paths from low-
+performing-privilege-escalation-on-linux	config	red-teaming	Guides manual enumeration and automated tooling to escalate from a low-privilege Linux user to root by exploit
+performing-purple-team-atomic-testing	config	purple-team	Executes Atomic Red Team tests mapped to MITRE ATT&CK via Invoke-AtomicRedTeam PowerShell, generates ATT&CK Na
+performing-red-team-phishing-with-gophish	config	security-operations	Automates GoPhish phishing simulation campaigns using the Python gophish library, creating email templates wit
+performing-red-team-with-covenant	config	red-team	Conducts red team operations using the Covenant C2 framework for authorized adversary simulation, covering lis
+performing-ssl-stripping-attack	config	network-security	Simulates SSL stripping / HTTPS downgrade attacks using sslstrip, Bettercap, and mitmproxy in authorized lab e
+performing-ssrf-vulnerability-exploitation	source	security-operations	Tests web application URL parameters for Server-Side Request Forgery by probing cloud metadata endpoints (AWS/
+performing-supply-chain-attack-simulation	config	application-security	Simulates and detects software supply chain attacks: typosquatting detection via Levenshtein distance against 
+performing-thick-client-application-penetration-test	config	penetration-testing	Conduct a thick client application penetration test to identify insecure local storage, hardcoded credentials,
+performing-vlan-hopping-attack	config	network-security	Simulates VLAN hopping attacks using switch spoofing and 802.1Q double tagging techniques in authorized lab en
+performing-web-application-firewall-bypass	config	web-application-security	Bypasses Web Application Firewall protections using encoding tricks, HTTP method manipulation, parameter pollu
+performing-web-application-penetration-test	config	penetration-testing	Performs systematic security testing of web applications following the OWASP Web Security Testing Guide (WSTG)
+performing-web-cache-deception-attack	source	web-application-security	Executes web cache deception attacks by exploiting path normalization discrepancies between CDN/reverse-proxy 
+performing-web-cache-poisoning-attack	source	web-application-security	Exploiting web cache mechanisms to serve malicious content to other users by poisoning cached responses throug
+performing-wifi-password-cracking-with-aircrack	config	network-security	Captures WPA/WPA2 handshakes and performs offline password cracking using aircrack-ng, hashcat, and dictionary
+performing-wireless-network-penetration-test	config	penetration-testing	Execute a wireless network penetration test to assess WiFi security by capturing handshakes, cracking WPA2/WPA
+post-exploiting-microsoft-graph-with-graphrunner	config	identity-access-management	Runs GraphRunner, a PowerShell post-exploitation toolset built on the Microsoft Graph API, to perform tenant r
+relaying-ntlm-for-adcs-esc8	config	red-teaming	Uses Impacket's ntlmrelayx.py with a coercion tool (PetitPotam, Coercer, printerbug) to relay NTLM authenticat

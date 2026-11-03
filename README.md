@@ -42,6 +42,7 @@ local code graph and an output squeezer, and drops everything that costs tokens 
 | hook | squeeze | caveman "read less" | trims long build/test/install output |
 | built in | codegraph | colbymchenry/codegraph | local code graph per project, built and synced automatically |
 | `/` + auto | `wesh-security-review` | Anthropic-Cybersecurity-Skills | on-demand pack of 698 defensive security skills; one loads at a time |
+| `/` + auto | `wesh-attack` | Anthropic-Cybersecurity-Skills | on-demand pack of 120 offensive security skills, authorized engagements only |
 
 Left out on purpose (cost more than they save): caveman's cloud/proxy/MCP products and builder subagent, ponytail's
 dashboards, mattpocock's issue-tracker workflows, teaching and writing skills. Each extra listed skill costs tokens on
@@ -149,9 +150,27 @@ implementation, LLM guardrails, SAST rules) open with a **class-specific `## Cod
 **430 `defense`** skills (forensics, incident response, SOC, threat hunting, detection, compliance) are
 grep-and-procedure — no codegraph noise where it would not help.
 
-Scope is defensive and own-system only; a live target needs written authorization. Offensive skills (exploitation,
-credential access, C2, lateral movement, penetration-test engagements, phishing, offensive recon) were deliberately
-not vendored — they stay in the upstream repository.
+Scope is defensive and own-system only; a live target needs written authorization.
+
+## Attack
+
+`wesh-attack` is the other half of the same upstream: 120 offensive skills — exploitation, credential access, C2,
+lateral movement, phishing simulation, red-team and pentest engagements. Say "attack simulation", "pentest", "red
+team", "exploit chain", or run `/wesh-attack`. Same shape: the agent greps `pack/INDEX.tsv`, reads one
+`pack/<name>.md`, follows it, and nothing else enters the context.
+
+These were deliberately not vendored before. They are now, split into their own skill so the defensive pack stays
+defensive: `wesh-attack` holds the 120, `wesh-security-review` the other 698, and the master manifest
+(`skills/wesh-security-review/MANIFEST.csv`) records where each of the 818 upstream skills went. Every file in
+`wesh-attack` opens with the authorization line and carries its own legal notice, and the skill refuses targets
+outside the rules of engagement.
+
+The **35 `source`** skills write the attack against the target's own code (SSTI, SQLi, NoSQLi, deserialization,
+prototype pollution, JWT confusion, SSRF, request smuggling, IDOR, mass assignment, race conditions, type juggling,
+cache poisoning and deception, CSP bypass, CSRF, clickjacking, GraphQL, parameter pollution, cert pinning, rate-limit
+bypass, binary exploitation) and carry a class-specific `## Codegraph` recipe for that vulnerability's sinks. The
+**85 `config`** skills are the tooling and the engagement (Metasploit, impacket, certipy, BloodHound, Sliver, pacu,
+gophish, evilginx, hashcat, netexec, DCSync, PetitPotam, OSINT, wireless) — procedure only.
 
 ## Squeeze
 

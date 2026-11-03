@@ -1,6 +1,6 @@
 ---
 name: performing-log-source-onboarding-in-siem
-description: Perform structured log source onboarding into SIEM platforms (Splunk, Elastic, Sentinel, QRadar, or similar) by prioritizing sources with a tiered value framework, configuring collectors, building parsers, normalizing fields to a common schema (e.g.
+description: Perform structured log source onboarding into SIEM platforms (Splunk, Elastic, Sentinel, QRadar, or similar) by prioritizing sources with a tiered value framework, configuring collectors, building parsers, normalizing fields to a common schema (e.g. CIM), and validating data quality.
 subdomain: soc-operations
 facing: defense
 mitre_attack:

@@ -1,6 +1,6 @@
 skill,decision,bucket,facing,subdomain,reason
-abusing-dpapi-for-credential-access,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-abusing-shadow-credentials-for-privesc,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+abusing-dpapi-for-credential-access,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+abusing-shadow-credentials-for-privesc,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 achieving-cmmc-level-2-compliance,INCLUDED,wesh-security-review,defense,compliance-governance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 acquiring-disk-image-with-dd-and-dcfldd,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 analyzing-active-directory-acl-abuse,INCLUDED,wesh-security-review,defense,identity-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -80,8 +80,8 @@ analyzing-windows-prefetch-with-python,INCLUDED,wesh-security-review,defense,dig
 analyzing-windows-registry-for-artifacts,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 analyzing-windows-shellbag-artifacts,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 assessing-vector-and-embedding-weaknesses,INCLUDED,wesh-security-review,config,ai-security,"scanner/infra-config: cavemanised, no codegraph"
-attacking-entra-id-with-roadtools,EXCLUDED,(not built - offensive/forbidden),,identity-access-management,offensive/forbidden
-attacking-oauth-with-device-code-phishing,EXCLUDED,(not built - offensive/forbidden),,identity-access-management,offensive/forbidden
+attacking-entra-id-with-roadtools,INCLUDED,wesh-attack,config,identity-access-management,"offensive: authorized engagement only; cavemanised, no codegraph"
+attacking-oauth-with-device-code-phishing,INCLUDED,wesh-attack,config,identity-access-management,"offensive: authorized engagement only; cavemanised, no codegraph"
 auditing-aws-s3-bucket-permissions,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 auditing-azure-active-directory-configuration,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 auditing-cloud-with-cis-benchmarks,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
@@ -99,8 +99,8 @@ benchmarking-kubernetes-with-kube-bench,INCLUDED,wesh-security-review,config,con
 building-adversary-infrastructure-tracking-system,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-attack-pattern-library-from-cti-reports,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-automated-malware-submission-pipeline,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-building-c2-infrastructure-with-sliver-framework,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-building-c2-redirector-infrastructure,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+building-c2-infrastructure-with-sliver-framework,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+building-c2-redirector-infrastructure,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 building-cloud-siem-with-sentinel,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 building-detection-rule-with-splunk-spl,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-detection-rules-with-sigma,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -116,7 +116,7 @@ building-malware-incident-communication-template,INCLUDED,wesh-security-review,d
 building-patch-tuesday-response-process,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-phishing-reporting-button-workflow,INCLUDED,wesh-security-review,defense,phishing-defense,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-ransomware-playbook-with-cisa-framework,INCLUDED,wesh-security-review,defense,ransomware-defense,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-building-red-team-c2-infrastructure-with-havoc,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+building-red-team-c2-infrastructure-with-havoc,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 building-role-mining-for-rbac-optimization,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
 building-soc-escalation-matrix,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-soc-metrics-and-kpi-tracking,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -132,34 +132,34 @@ building-vulnerability-aging-and-sla-tracking,INCLUDED,wesh-security-review,defe
 building-vulnerability-dashboard-with-defectdojo,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-vulnerability-exception-tracking-system,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 building-vulnerability-scanning-workflow,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-bypassing-authentication-with-forced-browsing,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-coercing-authentication-with-coercer-petitpotam,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+bypassing-authentication-with-forced-browsing,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+coercing-authentication-with-coercer-petitpotam,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 collecting-indicators-of-compromise,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 collecting-open-source-intelligence,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 collecting-threat-intelligence-with-misp,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 collecting-volatile-evidence-from-compromised-host,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-api-security-testing,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+conducting-api-security-testing,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 conducting-cloud-incident-response,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-cloud-penetration-testing,EXCLUDED,(not built - offensive/forbidden),,cloud-security,offensive/forbidden
+conducting-cloud-penetration-testing,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 conducting-cyber-risk-assessment-with-nist-800-30,INCLUDED,wesh-security-review,defense,compliance-governance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-domain-persistence-with-dcsync,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-conducting-external-reconnaissance-with-osint,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-conducting-full-scope-red-team-engagement,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+conducting-domain-persistence-with-dcsync,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-external-reconnaissance-with-osint,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-full-scope-red-team-engagement,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 conducting-gdpr-compliance-assessment,INCLUDED,wesh-security-review,defense,compliance-governance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-internal-network-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-conducting-internal-reconnaissance-with-bloodhound-ce,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+conducting-internal-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-internal-reconnaissance-with-bloodhound-ce,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 conducting-malware-incident-response,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-man-in-the-middle-attack-simulation,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
+conducting-man-in-the-middle-attack-simulation,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 conducting-memory-forensics-with-volatility,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-mobile-app-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-conducting-network-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-conducting-pass-the-ticket-attack,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+conducting-mobile-app-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-pass-the-ticket-attack,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 conducting-phishing-incident-response,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 conducting-post-incident-lessons-learned,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-conducting-social-engineering-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-conducting-social-engineering-pretext-call,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-conducting-spearphishing-simulation-campaign,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-conducting-wireless-network-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+conducting-social-engineering-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-social-engineering-pretext-call,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-spearphishing-simulation-campaign,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-wireless-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 configuring-active-directory-tiered-model,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
 configuring-aws-verified-access-for-ztna,INCLUDED,wesh-security-review,config,zero-trust-architecture,"scanner/infra-config: cavemanised, no codegraph"
 configuring-certificate-authority-with-openssl,INCLUDED,wesh-security-review,config,cryptography,"scanner/infra-config: cavemanised, no codegraph"
@@ -293,50 +293,50 @@ detecting-t1548-abuse-elevation-control-mechanism,INCLUDED,wesh-security-review,
 detecting-typosquatting-packages,INCLUDED,wesh-security-review,config,supply-chain-security,"scanner/infra-config: cavemanised, no codegraph"
 detecting-typosquatting-packages-in-npm-pypi,INCLUDED,wesh-security-review,config,supply-chain-security,"scanner/infra-config: cavemanised, no codegraph"
 detecting-wmi-persistence,INCLUDED,wesh-security-review,defense,threat-hunting,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-emulating-cloud-attacks-with-stratus-red-team,EXCLUDED,(not built - offensive/forbidden),,cloud-security,offensive/forbidden
+emulating-cloud-attacks-with-stratus-red-team,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 enumerating-cloud-with-cloudfox,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 eradicating-malware-from-infected-systems,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 escaping-containers-to-host,INCLUDED,wesh-security-review,config,container-security,"scanner/infra-config: cavemanised, no codegraph"
 evaluating-threat-intelligence-platforms,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-executing-active-directory-attack-simulation,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+executing-active-directory-attack-simulation,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 executing-nist-rmf-authorization-to-operate,INCLUDED,wesh-security-review,defense,compliance-governance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-executing-phishing-simulation-campaign,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-executing-red-team-engagement-planning,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-executing-red-team-exercise,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-exploiting-active-directory-certificate-services-esc1,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-active-directory-with-bloodhound,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-adcs-with-certipy,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-api-injection-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
-exploiting-aws-with-pacu,EXCLUDED,(not built - offensive/forbidden),,cloud-security,offensive/forbidden
-exploiting-bgp-hijacking-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
-exploiting-broken-function-level-authorization,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
-exploiting-broken-link-hijacking,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-constrained-delegation-abuse,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-deeplink-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,mobile-security,offensive/forbidden
-exploiting-excessive-data-exposure-in-api,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
-exploiting-http-request-smuggling,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-idor-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-insecure-data-storage-in-mobile,EXCLUDED,(not built - offensive/forbidden),,mobile-security,offensive/forbidden
-exploiting-insecure-deserialization,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-ipv6-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
-exploiting-jwt-algorithm-confusion-attack,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
-exploiting-kerberoasting-with-impacket,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-mass-assignment-in-rest-apis,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-ms17-010-eternalblue-vulnerability,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-nopac-cve-2021-42278-42287,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-exploiting-nosql-injection-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-oauth-misconfiguration,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-prototype-pollution-in-javascript,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-race-condition-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-server-side-request-forgery,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-smb-vulnerabilities-with-metasploit,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
-exploiting-sql-injection-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-exploiting-sql-injection-with-sqlmap,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-template-injection-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-type-juggling-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-vulnerabilities-with-metasploit-framework,EXCLUDED,(not built - offensive/forbidden),,vulnerability-management,offensive/forbidden
-exploiting-websocket-vulnerabilities,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-exploiting-zerologon-vulnerability-cve-2020-1472,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+executing-phishing-simulation-campaign,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+executing-red-team-engagement-planning,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+executing-red-team-exercise,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-active-directory-certificate-services-esc1,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-active-directory-with-bloodhound,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-adcs-with-certipy,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-api-injection-vulnerabilities,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-aws-with-pacu,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-bgp-hijacking-vulnerabilities,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-broken-function-level-authorization,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-broken-link-hijacking,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-constrained-delegation-abuse,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-deeplink-vulnerabilities,INCLUDED,wesh-attack,source,mobile-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-excessive-data-exposure-in-api,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-http-request-smuggling,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-idor-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-insecure-data-storage-in-mobile,INCLUDED,wesh-attack,source,mobile-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-insecure-deserialization,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-ipv6-vulnerabilities,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-jwt-algorithm-confusion-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-kerberoasting-with-impacket,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-mass-assignment-in-rest-apis,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-ms17-010-eternalblue-vulnerability,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-nopac-cve-2021-42278-42287,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-nosql-injection-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-oauth-misconfiguration,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-prototype-pollution-in-javascript,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-race-condition-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-server-side-request-forgery,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-smb-vulnerabilities-with-metasploit,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-sql-injection-vulnerabilities,INCLUDED,wesh-attack,source,penetration-testing,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-sql-injection-with-sqlmap,INCLUDED,wesh-attack,config,web-application-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-template-injection-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-type-juggling-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-vulnerabilities-with-metasploit-framework,INCLUDED,wesh-attack,config,vulnerability-management,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-websocket-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-zerologon-vulnerability-cve-2020-1472,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 extracting-browser-history-artifacts,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 extracting-config-from-agent-tesla-rat,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 extracting-credentials-from-memory-dump,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -481,7 +481,7 @@ implementing-log-integrity-with-blockchain,INCLUDED,wesh-security-review,defense
 implementing-memory-protection-with-dep-aslr,INCLUDED,wesh-security-review,config,endpoint-security,"scanner/infra-config: cavemanised, no codegraph"
 implementing-microsegmentation-with-guardicore,INCLUDED,wesh-security-review,config,zero-trust-architecture,"scanner/infra-config: cavemanised, no codegraph"
 implementing-mimecast-targeted-attack-protection,INCLUDED,wesh-security-review,defense,phishing-defense,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-implementing-mitre-attack-coverage-mapping,EXCLUDED,(not built - offensive/forbidden),,soc-operations,offensive/forbidden
+implementing-mitre-attack-coverage-mapping,INCLUDED,wesh-attack,config,soc-operations,"offensive: authorized engagement only; cavemanised, no codegraph"
 implementing-mobile-application-management,INCLUDED,wesh-security-review,config,mobile-security,"scanner/infra-config: cavemanised, no codegraph"
 implementing-mtls-for-zero-trust-services,INCLUDED,wesh-security-review,defense,security-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 implementing-nerc-cip-compliance-controls,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -539,7 +539,7 @@ implementing-supply-chain-security-with-in-toto,INCLUDED,wesh-security-review,co
 implementing-syslog-centralization-with-rsyslog,INCLUDED,wesh-security-review,defense,security-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 implementing-taxii-server-with-opentaxii,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 implementing-threat-intelligence-lifecycle-management,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-implementing-threat-modeling-with-mitre-attack,EXCLUDED,(not built - offensive/forbidden),,soc-operations,offensive/forbidden
+implementing-threat-modeling-with-mitre-attack,INCLUDED,wesh-attack,config,soc-operations,"offensive: authorized engagement only; cavemanised, no codegraph"
 implementing-ticketing-system-for-incidents,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 implementing-usb-device-control-policy,INCLUDED,wesh-security-review,defense,endpoint-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 implementing-velociraptor-for-ir-collection,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -565,24 +565,24 @@ investigating-ransomware-attack-artifacts,INCLUDED,wesh-security-review,defense,
 managing-cloud-identity-with-okta,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 managing-intelligence-lifecycle,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 managing-third-party-vendor-risk,INCLUDED,wesh-security-review,defense,compliance-governance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-mapping-attack-paths-with-bloodhound-ce,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-mapping-mitre-attack-techniques,EXCLUDED,(not built - offensive/forbidden),,threat-intelligence,offensive/forbidden
+mapping-attack-paths-with-bloodhound-ce,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+mapping-mitre-attack-techniques,INCLUDED,wesh-attack,config,threat-intelligence,"offensive: authorized engagement only; cavemanised, no codegraph"
 migrating-to-post-quantum-cryptography,INCLUDED,wesh-security-review,source,cryptography,code-editing: class-specific codegraph recipe + cavemanised
 modeling-threats-with-opencti,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 monitoring-darkweb-sources,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 monitoring-scada-modbus-traffic-anomalies,INCLUDED,wesh-security-review,defense,ot-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-moving-laterally-with-netexec,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-operating-havoc-c2,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
-operating-sliver-c2,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+moving-laterally-with-netexec,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+operating-havoc-c2,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+operating-sliver-c2,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 operationalizing-misp-threat-feeds,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-orchestrating-llm-attacks-with-pyrit,EXCLUDED,(not built - offensive/forbidden),,ai-security,offensive/forbidden
+orchestrating-llm-attacks-with-pyrit,INCLUDED,wesh-attack,config,ai-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 parsing-artifacts-with-eric-zimmerman-tools,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-access-recertification-with-saviynt,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
 performing-access-review-and-certification,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
-performing-active-directory-bloodhound-analysis,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-active-directory-bloodhound-analysis,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-active-directory-compromise-investigation,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-active-directory-forest-trust-attack,EXCLUDED,(not built - offensive/forbidden),,red-team,offensive/forbidden
-performing-active-directory-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+performing-active-directory-forest-trust-attack,INCLUDED,wesh-attack,config,red-team,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-active-directory-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-active-directory-vulnerability-assessment,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-adversary-in-the-middle-phishing-detection,INCLUDED,wesh-security-review,defense,phishing-defense,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-agentless-vulnerability-scanning,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -591,21 +591,21 @@ performing-alert-triage-with-elastic-siem,INCLUDED,wesh-security-review,defense,
 performing-android-app-static-analysis-with-mobsf,INCLUDED,wesh-security-review,config,mobile-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-api-fuzzing-with-restler,INCLUDED,wesh-security-review,config,api-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-api-inventory-and-discovery,INCLUDED,wesh-security-review,config,api-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-api-rate-limiting-bypass,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
+performing-api-rate-limiting-bypass,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-api-security-testing-with-postman,INCLUDED,wesh-security-review,config,api-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-arp-spoofing-attack-simulation,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
+performing-arp-spoofing-attack-simulation,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-asset-criticality-scoring-for-vulns,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-authenticated-scan-with-openvas,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-authenticated-vulnerability-scan,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-automated-malware-analysis-with-cape,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-aws-account-enumeration-with-scout-suite,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-aws-privilege-escalation-assessment,EXCLUDED,(not built - offensive/forbidden),,cloud-security,offensive/forbidden
-performing-bandwidth-throttling-attack-simulation,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
-performing-binary-exploitation-analysis,EXCLUDED,(not built - offensive/forbidden),,offensive-security,offensive/forbidden
-performing-blind-ssrf-exploitation,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
+performing-aws-privilege-escalation-assessment,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-bandwidth-throttling-attack-simulation,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-binary-exploitation-analysis,INCLUDED,wesh-attack,source,offensive-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-blind-ssrf-exploitation,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-bluetooth-security-assessment,INCLUDED,wesh-security-review,defense,wireless-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-brand-monitoring-for-impersonation,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-clickjacking-attack-test,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
+performing-clickjacking-attack-test,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-cloud-asset-inventory-with-cartography,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-cloud-forensics-investigation,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-cloud-forensics-with-aws-cloudtrail,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
@@ -613,15 +613,15 @@ performing-cloud-incident-containment-procedures,INCLUDED,wesh-security-review,d
 performing-cloud-log-forensics-with-athena,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-cloud-native-forensics-with-falco,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-cloud-native-threat-hunting-with-aws-detective,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-cloud-penetration-testing-with-pacu,EXCLUDED,(not built - offensive/forbidden),,cloud-security,offensive/forbidden
+performing-cloud-penetration-testing-with-pacu,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-cloud-storage-forensic-acquisition,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-container-escape-detection,INCLUDED,wesh-security-review,config,container-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-container-image-hardening,INCLUDED,wesh-security-review,config,devsecops,"scanner/infra-config: cavemanised, no codegraph"
 performing-container-security-scanning-with-trivy,INCLUDED,wesh-security-review,config,container-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-content-security-policy-bypass,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-performing-credential-access-with-lazagne,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-content-security-policy-bypass,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-credential-access-with-lazagne,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-cryptographic-audit-of-application,INCLUDED,wesh-security-review,config,cryptography,"scanner/infra-config: cavemanised, no codegraph"
-performing-csrf-attack-simulation,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
+performing-csrf-attack-simulation,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-cve-prioritization-with-kev-catalog,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-dark-web-monitoring-for-threats,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-deception-technology-deployment,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -636,35 +636,35 @@ performing-dynamic-analysis-with-any-run,INCLUDED,wesh-security-review,defense,m
 performing-endpoint-forensics-investigation,INCLUDED,wesh-security-review,config,endpoint-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-endpoint-vulnerability-remediation,INCLUDED,wesh-security-review,config,endpoint-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-entitlement-review-with-sailpoint-iiq,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
-performing-external-network-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+performing-external-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-false-positive-reduction-in-siem,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-file-carving-with-foremost,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-firmware-extraction-with-binwalk,INCLUDED,wesh-security-review,defense,firmware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-firmware-malware-analysis,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-fuzzing-with-aflplusplus,INCLUDED,wesh-security-review,config,application-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-gcp-penetration-testing-with-gcpbucketbrute,EXCLUDED,(not built - offensive/forbidden),,cloud-security,offensive/forbidden
+performing-gcp-penetration-testing-with-gcpbucketbrute,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-gcp-security-assessment-with-forseti,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-graphql-depth-limit-attack,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
-performing-graphql-introspection-attack,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
+performing-graphql-depth-limit-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-graphql-introspection-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-graphql-security-assessment,INCLUDED,wesh-security-review,config,web-application-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-hardware-security-module-integration,INCLUDED,wesh-security-review,config,cryptography,"scanner/infra-config: cavemanised, no codegraph"
-performing-hash-cracking-with-hashcat,EXCLUDED,(not built - offensive/forbidden),,cryptography,offensive/forbidden
-performing-http-parameter-pollution-attack,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
+performing-hash-cracking-with-hashcat,INCLUDED,wesh-attack,config,cryptography,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-http-parameter-pollution-attack,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-ics-asset-discovery-with-claroty,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-indicator-lifecycle-management,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-initial-access-with-evilginx3,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-initial-access-with-evilginx3,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-insider-threat-investigation,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ioc-enrichment-automation,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ios-app-security-assessment,INCLUDED,wesh-security-review,config,mobile-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-iot-security-assessment,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+performing-iot-security-assessment,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-ip-reputation-analysis-with-shodan,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-jwt-none-algorithm-attack,EXCLUDED,(not built - offensive/forbidden),,api-security,offensive/forbidden
-performing-kerberoasting-attack,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-jwt-none-algorithm-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-kerberoasting-attack,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-kubernetes-cis-benchmark-with-kube-bench,INCLUDED,wesh-security-review,config,container-security,"scanner/infra-config: cavemanised, no codegraph"
 performing-kubernetes-etcd-security-assessment,INCLUDED,wesh-security-review,config,container-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-kubernetes-penetration-testing,EXCLUDED,(not built - offensive/forbidden),,container-security,offensive/forbidden
+performing-kubernetes-penetration-testing,INCLUDED,wesh-attack,config,container-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-lateral-movement-detection,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-lateral-movement-with-wmiexec,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-lateral-movement-with-wmiexec,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-linux-log-forensics-investigation,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-log-analysis-for-forensic-investigation,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-log-source-onboarding-in-siem,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -674,7 +674,7 @@ performing-malware-persistence-investigation,INCLUDED,wesh-security-review,defen
 performing-malware-triage-with-yara,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-memory-forensics-with-volatility3,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-memory-forensics-with-volatility3-plugins,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-mobile-app-certificate-pinning-bypass,EXCLUDED,(not built - offensive/forbidden),,mobile-security,offensive/forbidden
+performing-mobile-app-certificate-pinning-bypass,INCLUDED,wesh-attack,source,mobile-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-mobile-device-forensics-with-cellebrite,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-network-forensics-with-wireshark,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-network-packet-capture-analysis,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -683,29 +683,29 @@ performing-network-traffic-analysis-with-zeek,INCLUDED,wesh-security-review,defe
 performing-nist-csf-maturity-assessment,INCLUDED,wesh-security-review,defense,compliance-governance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-oauth-scope-minimization-review,INCLUDED,wesh-security-review,source,identity-access-management,code-editing: class-specific codegraph recipe + cavemanised
 performing-oil-gas-cybersecurity-assessment,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-open-source-intelligence-gathering,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-open-source-intelligence-gathering,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-osint-with-spiderfoot,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ot-network-security-assessment,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ot-vulnerability-assessment-with-claroty,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ot-vulnerability-scanning-safely,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-packet-injection-attack,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
+performing-packet-injection-attack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-paste-site-monitoring-for-credentials,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-phishing-simulation-with-gophish,EXCLUDED,(not built - offensive/forbidden),,phishing-defense,offensive/forbidden
-performing-physical-intrusion-assessment,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-phishing-simulation-with-gophish,INCLUDED,wesh-attack,config,phishing-defense,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-physical-intrusion-assessment,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-plc-firmware-security-analysis,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-post-quantum-cryptography-migration,INCLUDED,wesh-security-review,source,cryptography,code-editing: class-specific codegraph recipe + cavemanised
 performing-power-grid-cybersecurity-assessment,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-privacy-impact-assessment,INCLUDED,wesh-security-review,defense,privacy-compliance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-privilege-escalation-assessment,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
-performing-privilege-escalation-on-linux,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+performing-privilege-escalation-assessment,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-privilege-escalation-on-linux,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-privileged-account-access-review,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
 performing-privileged-account-discovery,INCLUDED,wesh-security-review,config,identity-access-management,"scanner/infra-config: cavemanised, no codegraph"
-performing-purple-team-atomic-testing,EXCLUDED,(not built - offensive/forbidden),,purple-team,offensive/forbidden
+performing-purple-team-atomic-testing,INCLUDED,wesh-attack,config,purple-team,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-purple-team-exercise,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ransomware-response,INCLUDED,wesh-security-review,defense,incident-response,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ransomware-tabletop-exercise,INCLUDED,wesh-security-review,defense,ransomware-defense,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-red-team-phishing-with-gophish,EXCLUDED,(not built - offensive/forbidden),,security-operations,offensive/forbidden
-performing-red-team-with-covenant,EXCLUDED,(not built - offensive/forbidden),,red-team,offensive/forbidden
+performing-red-team-phishing-with-gophish,INCLUDED,wesh-attack,config,security-operations,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-red-team-with-covenant,INCLUDED,wesh-attack,config,red-team,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-s7comm-protocol-security-analysis,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-sca-dependency-scanning-with-snyk,INCLUDED,wesh-security-review,config,devsecops,"scanner/infra-config: cavemanised, no codegraph"
 performing-scada-hmi-security-assessment,INCLUDED,wesh-security-review,defense,ot-ics-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -719,15 +719,15 @@ performing-soc-tabletop-exercise,INCLUDED,wesh-security-review,defense,soc-opera
 performing-soc2-type2-audit-preparation,INCLUDED,wesh-security-review,defense,governance-risk-compliance,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-sqlite-database-forensics,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ssl-certificate-lifecycle-management,INCLUDED,wesh-security-review,config,cryptography,"scanner/infra-config: cavemanised, no codegraph"
-performing-ssl-stripping-attack,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
+performing-ssl-stripping-attack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-ssl-tls-inspection-configuration,INCLUDED,wesh-security-review,defense,network-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-ssl-tls-security-assessment,INCLUDED,wesh-security-review,defense,network-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-ssrf-vulnerability-exploitation,EXCLUDED,(not built - offensive/forbidden),,security-operations,offensive/forbidden
+performing-ssrf-vulnerability-exploitation,INCLUDED,wesh-attack,source,security-operations,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
 performing-static-malware-analysis-with-pe-studio,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-steganography-detection,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-subdomain-enumeration-with-subfinder,INCLUDED,wesh-security-review,config,web-application-security,"scanner/infra-config: cavemanised, no codegraph"
-performing-supply-chain-attack-simulation,EXCLUDED,(not built - offensive/forbidden),,application-security,offensive/forbidden
-performing-thick-client-application-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+performing-supply-chain-attack-simulation,INCLUDED,wesh-attack,config,application-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-thick-client-application-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-threat-emulation-with-atomic-red-team,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-threat-hunting-with-elastic-siem,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-threat-hunting-with-yara-rules,INCLUDED,wesh-security-review,defense,threat-hunting,"forensics/IR/SOC/detection: cavemanised, no codegraph"
@@ -736,27 +736,27 @@ performing-threat-landscape-assessment-for-sector,INCLUDED,wesh-security-review,
 performing-threat-modeling-with-owasp-threat-dragon,INCLUDED,wesh-security-review,config,devsecops,"scanner/infra-config: cavemanised, no codegraph"
 performing-timeline-reconstruction-with-plaso,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-user-behavior-analytics,INCLUDED,wesh-security-review,defense,soc-operations,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-vlan-hopping-attack,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
+performing-vlan-hopping-attack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-vulnerability-scanning-with-nessus,INCLUDED,wesh-security-review,defense,penetration-testing,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-web-application-firewall-bypass,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-performing-web-application-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+performing-web-application-firewall-bypass,INCLUDED,wesh-attack,config,web-application-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-web-application-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-web-application-scanning-with-nikto,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-web-application-vulnerability-triage,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-web-cache-deception-attack,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-performing-web-cache-poisoning-attack,EXCLUDED,(not built - offensive/forbidden),,web-application-security,offensive/forbidden
-performing-wifi-password-cracking-with-aircrack,EXCLUDED,(not built - offensive/forbidden),,network-security,offensive/forbidden
+performing-web-cache-deception-attack,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-web-cache-poisoning-attack,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-wifi-password-cracking-with-aircrack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-windows-artifact-analysis-with-eric-zimmerman-tools,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-performing-wireless-network-penetration-test,EXCLUDED,(not built - offensive/forbidden),,penetration-testing,offensive/forbidden
+performing-wireless-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
 performing-wireless-security-assessment-with-kismet,INCLUDED,wesh-security-review,defense,network-security,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 performing-yara-rule-development-for-detection,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
-post-exploiting-microsoft-graph-with-graphrunner,EXCLUDED,(not built - offensive/forbidden),,identity-access-management,offensive/forbidden
+post-exploiting-microsoft-graph-with-graphrunner,INCLUDED,wesh-attack,config,identity-access-management,"offensive: authorized engagement only; cavemanised, no codegraph"
 prioritizing-vulnerabilities-with-cvss-scoring,INCLUDED,wesh-security-review,defense,vulnerability-management,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 processing-stix-taxii-feeds,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 profiling-threat-actor-groups,INCLUDED,wesh-security-review,defense,threat-intelligence,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 recovering-deleted-files-with-photorec,INCLUDED,wesh-security-review,defense,digital-forensics,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 recovering-from-ransomware-attack,INCLUDED,wesh-security-review,defense,ransomware-defense,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 red-teaming-llms-with-garak,INCLUDED,wesh-security-review,config,ai-security,"scanner/infra-config: cavemanised, no codegraph"
-relaying-ntlm-for-adcs-esc8,EXCLUDED,(not built - offensive/forbidden),,red-teaming,offensive/forbidden
+relaying-ntlm-for-adcs-esc8,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
 remediating-s3-bucket-misconfiguration,INCLUDED,wesh-security-review,config,cloud-security,"scanner/infra-config: cavemanised, no codegraph"
 reverse-engineering-android-malware-with-jadx,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"
 reverse-engineering-dotnet-malware-with-dnspy,INCLUDED,wesh-security-review,defense,malware-analysis,"forensics/IR/SOC/detection: cavemanised, no codegraph"

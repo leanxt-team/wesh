@@ -86,6 +86,51 @@ test('wesh-security-review pack: index matches files, no offensive skills, only 
   assert.ok(rows.some(r => r[1] === 'source'), 'some source skills exist');
 });
 
+test('wesh-attack pack: the manifest decides, every skill says who may run it', () => {
+  const dir = path.join(ROOT, 'skills', 'wesh-attack', 'pack');
+  if (!fs.existsSync(dir)) return; // pack is optional in a trimmed checkout
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.md'));
+  assert.ok(files.length > 50, `pack has ${files.length} skills`);
+  const lines = read(path.join(dir, 'INDEX.tsv')).trim().split('\n');
+  assert.equal(lines[0], 'name\tfacing\tsubdomain\tdescription');
+  const rows = lines.slice(1).map(l => l.split('\t'));
+  assert.equal(rows.length, files.length, 'one index row per pack file');
+  for (const [name, facing] of rows) {
+    assert.ok(fs.existsSync(path.join(dir, `${name}.md`)), `${name}: file exists`);
+    const body = read(path.join(dir, `${name}.md`));
+    const front = parseSkill(path.join(dir, `${name}.md`));
+    assert.equal(front.front.name, name, `${name}: frontmatter name`);
+    assert.match(body, /upstream:.*Apache-2\.0/, `${name}: keeps upstream attribution`);
+    assert.ok(['source', 'config', 'defense'].includes(facing), `${name}: known facing (${facing})`);
+    // Codegraph guidance belongs only on source (code-editing) skills — nowhere else, so it stays signal not noise.
+    if (facing === 'source') assert.match(body, /## Codegraph \(do this first\)/, `${name}: source skill needs its codegraph recipe`);
+    else assert.doesNotMatch(body, /## Codegraph/, `${name}: ${facing} skill must not carry a codegraph block`);
+    // An offensive skill without the scope line is a footgun: it is the first thing the reader sees.
+    assert.match(body, /^> Authorized use only: written scope \/ rules of engagement first\./m,
+      `${name}: says who may run it`);
+  }
+  assert.ok(rows.some(r => r[1] === 'source'), 'some source skills exist');
+});
+
+test('the manifest is the authority: every upstream skill lands in exactly one pack', () => {
+  const master = path.join(ROOT, 'skills', 'wesh-security-review', 'MANIFEST.csv');
+  if (!fs.existsSync(master)) return;
+  const rows = read(master).trim().split('\n').slice(1).map(l => l.split(','));
+  const buckets = new Map();
+  for (const [name, decision, bucket] of rows) {
+    assert.ok(fs.existsSync(path.join(ROOT, 'skills', bucket, 'pack', `${name}.md`)),
+      `${name}: the manifest says ${bucket}, and that pack has the skill`);
+    assert.ok(!buckets.has(name), `${name}: in one pack only`);
+    buckets.set(name, bucket);
+  }
+  // The two packs together hold every skill the manifest lists, and neither holds the other's.
+  const review = fs.readdirSync(path.join(ROOT, 'skills', 'wesh-security-review', 'pack')).filter(f => f.endsWith('.md')).map(f => f.replace(/\.md$/, ''));
+  const attack = fs.readdirSync(path.join(ROOT, 'skills', 'wesh-attack', 'pack')).filter(f => f.endsWith('.md')).map(f => f.replace(/\.md$/, ''));
+  assert.equal(review.length + attack.length, buckets.size, 'the packs and the manifest cover the same skills');
+  for (const n of review) assert.equal(buckets.get(n), 'wesh-security-review', `${n}: in the defensive pack`);
+  for (const n of attack) assert.equal(buckets.get(n), 'wesh-attack', `${n}: in the attack pack`);
+});
+
 test('install both: files land, user content survives, OpenCode is not duplicated', () => {
   const home = tmp();
   fs.mkdirSync(path.join(home, '.claude'), { recursive: true });

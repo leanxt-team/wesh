@@ -20,20 +20,25 @@ wesh is a derivative work that condenses, merges and rewrites material from:
   Used: diagnosing-bugs, tdd (+ mocking), code-review (spec axis, smells),
   grilling, to-spec, handoff.
 
-The wesh-security-review skill pack (skills/wesh-security-review/pack/) is derived from:
+The wesh-security-review and wesh-attack skill packs (skills/wesh-security-review/pack/,
+skills/wesh-attack/pack/) are derived from:
 
 - Anthropic-Cybersecurity-Skills, Apache License 2.0
   https://github.com/mukul975/Anthropic-Cybersecurity-Skills
-  Used: 698 defensive / normally-permitted skills (secure code review, SAST/SCA,
-  secrets, IaC/container/Kubernetes/cloud hardening, cryptography, API and auth,
-  AI/LLM app defense, detection engineering, forensics, incident response,
-  threat hunting, compliance). Offensive skills (exploitation, credential access,
-  C2, lateral movement, penetration-test engagements, phishing, offensive recon)
-  were deliberately NOT vendored. Each vendored skill was cavemanised and, where
-  code-facing, given a codegraph workflow; commands, configs and code are kept
-  verbatim; scripts/, references/ and assets/ were not vendored (link in each
+  Used: all 818 upstream skills, split by scope. wesh-security-review holds the 698
+  defensive / normally-permitted ones (secure code review, SAST/SCA, secrets,
+  IaC/container/Kubernetes/cloud hardening, cryptography, API and auth, AI/LLM app
+  defense, detection engineering, forensics, incident response, threat hunting,
+  compliance). wesh-attack holds the 120 offensive ones (exploitation, credential
+  access, C2, lateral movement, penetration-test engagements, phishing, offensive
+  recon): they are vendored, not withheld, but only for authorized engagements, and
+  every file in that pack opens with that limit. Each vendored skill was cavemanised
+  and, where code-facing, given a codegraph workflow; commands, configs and code are
+  kept verbatim; scripts/, references/ and assets/ were not vendored (link in each
   file). Every pack file keeps an `upstream:` line with the source commit, and
   the upstream per-skill Apache-2.0 license applies to the material derived from it.
+  The master manifest (skills/wesh-security-review/MANIFEST.csv) records where each
+  of the 818 upstream skills went.
 
 Optional integration (no code copied; wesh writes config pointing at the separately installed tool):
 

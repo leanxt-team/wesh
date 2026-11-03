@@ -1,0 +1,121 @@
+skill,decision,bucket,facing,subdomain,reason
+abusing-dpapi-for-credential-access,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+abusing-shadow-credentials-for-privesc,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+attacking-entra-id-with-roadtools,INCLUDED,wesh-attack,config,identity-access-management,"offensive: authorized engagement only; cavemanised, no codegraph"
+attacking-oauth-with-device-code-phishing,INCLUDED,wesh-attack,config,identity-access-management,"offensive: authorized engagement only; cavemanised, no codegraph"
+building-c2-infrastructure-with-sliver-framework,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+building-c2-redirector-infrastructure,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+building-red-team-c2-infrastructure-with-havoc,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+bypassing-authentication-with-forced-browsing,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+coercing-authentication-with-coercer-petitpotam,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-api-security-testing,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-cloud-penetration-testing,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-domain-persistence-with-dcsync,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-external-reconnaissance-with-osint,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-full-scope-red-team-engagement,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-internal-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-internal-reconnaissance-with-bloodhound-ce,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-man-in-the-middle-attack-simulation,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-mobile-app-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-pass-the-ticket-attack,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-social-engineering-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-social-engineering-pretext-call,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-spearphishing-simulation-campaign,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+conducting-wireless-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+emulating-cloud-attacks-with-stratus-red-team,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+executing-active-directory-attack-simulation,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+executing-phishing-simulation-campaign,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+executing-red-team-engagement-planning,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+executing-red-team-exercise,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-active-directory-certificate-services-esc1,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-active-directory-with-bloodhound,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-adcs-with-certipy,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-api-injection-vulnerabilities,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-aws-with-pacu,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-bgp-hijacking-vulnerabilities,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-broken-function-level-authorization,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-broken-link-hijacking,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-constrained-delegation-abuse,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-deeplink-vulnerabilities,INCLUDED,wesh-attack,source,mobile-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-excessive-data-exposure-in-api,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-http-request-smuggling,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-idor-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-insecure-data-storage-in-mobile,INCLUDED,wesh-attack,source,mobile-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-insecure-deserialization,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-ipv6-vulnerabilities,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-jwt-algorithm-confusion-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-kerberoasting-with-impacket,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-mass-assignment-in-rest-apis,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-ms17-010-eternalblue-vulnerability,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-nopac-cve-2021-42278-42287,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-nosql-injection-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-oauth-misconfiguration,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-prototype-pollution-in-javascript,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-race-condition-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-server-side-request-forgery,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-smb-vulnerabilities-with-metasploit,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-sql-injection-vulnerabilities,INCLUDED,wesh-attack,source,penetration-testing,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-sql-injection-with-sqlmap,INCLUDED,wesh-attack,config,web-application-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-template-injection-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-type-juggling-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-vulnerabilities-with-metasploit-framework,INCLUDED,wesh-attack,config,vulnerability-management,"offensive: authorized engagement only; cavemanised, no codegraph"
+exploiting-websocket-vulnerabilities,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+exploiting-zerologon-vulnerability-cve-2020-1472,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+implementing-mitre-attack-coverage-mapping,INCLUDED,wesh-attack,config,soc-operations,"offensive: authorized engagement only; cavemanised, no codegraph"
+implementing-threat-modeling-with-mitre-attack,INCLUDED,wesh-attack,config,soc-operations,"offensive: authorized engagement only; cavemanised, no codegraph"
+mapping-attack-paths-with-bloodhound-ce,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+mapping-mitre-attack-techniques,INCLUDED,wesh-attack,config,threat-intelligence,"offensive: authorized engagement only; cavemanised, no codegraph"
+moving-laterally-with-netexec,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+operating-havoc-c2,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+operating-sliver-c2,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+orchestrating-llm-attacks-with-pyrit,INCLUDED,wesh-attack,config,ai-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-active-directory-bloodhound-analysis,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-active-directory-forest-trust-attack,INCLUDED,wesh-attack,config,red-team,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-active-directory-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-api-rate-limiting-bypass,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-arp-spoofing-attack-simulation,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-aws-privilege-escalation-assessment,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-bandwidth-throttling-attack-simulation,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-binary-exploitation-analysis,INCLUDED,wesh-attack,source,offensive-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-blind-ssrf-exploitation,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-clickjacking-attack-test,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-cloud-penetration-testing-with-pacu,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-content-security-policy-bypass,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-credential-access-with-lazagne,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-csrf-attack-simulation,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-external-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-gcp-penetration-testing-with-gcpbucketbrute,INCLUDED,wesh-attack,config,cloud-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-graphql-depth-limit-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-graphql-introspection-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-hash-cracking-with-hashcat,INCLUDED,wesh-attack,config,cryptography,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-http-parameter-pollution-attack,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-initial-access-with-evilginx3,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-iot-security-assessment,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-jwt-none-algorithm-attack,INCLUDED,wesh-attack,source,api-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-kerberoasting-attack,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-kubernetes-penetration-testing,INCLUDED,wesh-attack,config,container-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-lateral-movement-with-wmiexec,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-mobile-app-certificate-pinning-bypass,INCLUDED,wesh-attack,source,mobile-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-open-source-intelligence-gathering,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-packet-injection-attack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-phishing-simulation-with-gophish,INCLUDED,wesh-attack,config,phishing-defense,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-physical-intrusion-assessment,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-privilege-escalation-assessment,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-privilege-escalation-on-linux,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-purple-team-atomic-testing,INCLUDED,wesh-attack,config,purple-team,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-red-team-phishing-with-gophish,INCLUDED,wesh-attack,config,security-operations,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-red-team-with-covenant,INCLUDED,wesh-attack,config,red-team,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-ssl-stripping-attack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-ssrf-vulnerability-exploitation,INCLUDED,wesh-attack,source,security-operations,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-supply-chain-attack-simulation,INCLUDED,wesh-attack,config,application-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-thick-client-application-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-vlan-hopping-attack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-web-application-firewall-bypass,INCLUDED,wesh-attack,config,web-application-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-web-application-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-web-cache-deception-attack,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-web-cache-poisoning-attack,INCLUDED,wesh-attack,source,web-application-security,offensive: authorized engagement only; class-specific codegraph recipe + cavemanised
+performing-wifi-password-cracking-with-aircrack,INCLUDED,wesh-attack,config,network-security,"offensive: authorized engagement only; cavemanised, no codegraph"
+performing-wireless-network-penetration-test,INCLUDED,wesh-attack,config,penetration-testing,"offensive: authorized engagement only; cavemanised, no codegraph"
+post-exploiting-microsoft-graph-with-graphrunner,INCLUDED,wesh-attack,config,identity-access-management,"offensive: authorized engagement only; cavemanised, no codegraph"
+relaying-ntlm-for-adcs-esc8,INCLUDED,wesh-attack,config,red-teaming,"offensive: authorized engagement only; cavemanised, no codegraph"

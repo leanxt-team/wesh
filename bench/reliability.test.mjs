@@ -147,7 +147,7 @@ test('install both: files land, user content survives, OpenCode is not duplicate
   const cfg = JSON.parse(read(path.join(oc, 'opencode.json')));
   assert.equal(cfg.instructions.length, 1, 'core via instructions: OpenCode 2 has no CLAUDE.md fallback');
   assert.match(read(cfg.instructions[0]), /Smallest complete change/);
-  for (const n of ['wesh-level', 'wesh-plan', 'wesh-handoff', 'wesh-slim', 'wesh-debt']) assert.equal(cfg.permission.skill[n], 'deny', n);
+  for (const n of ['wesh-level', 'wesh-plan', 'wesh-plan-view-mode', 'wesh-handoff', 'wesh-slim', 'wesh-debt']) assert.equal(cfg.permission.skill[n], 'deny', n);
   assert.equal(cfg.permission.skill['wesh-debug'], undefined);
   const agent = read(path.join(oc, 'agents', 'wesh-scout.md'));
   assert.match(agent, /mode: subagent/);
@@ -195,7 +195,7 @@ test('an upgrade takes the skills wesh shipped under an old name away', () => {
   const after = JSON.parse(read(cfgFile));
   assert.equal(after.permission.skill.wesh, undefined, 'the deny rule wesh added is gone');
   assert.equal(after.permission.skill['wesh-compress'], undefined, 'and the other one too');
-  for (const n of ['wesh-level', 'wesh-plan', 'wesh-handoff', 'wesh-slim', 'wesh-debt']) assert.equal(after.permission.skill[n], 'deny', n);
+  for (const n of ['wesh-level', 'wesh-plan', 'wesh-plan-view-mode', 'wesh-handoff', 'wesh-slim', 'wesh-debt']) assert.equal(after.permission.skill[n], 'deny', n);
   const st = JSON.parse(read(path.join(oc, 'wesh', 'state.json')));
   assert.ok(!st.options.skills.includes('wesh') && !st.options.skills.includes('wesh-compress'), 'the old names are off the list');
 });
@@ -448,7 +448,7 @@ test('opencode-only: skills copied, core added via instructions, existing config
   assert.match(read(path.join(oc, 'wesh', 'CORE.md')), /Smallest complete change/);
   assert.doesNotMatch(read(path.join(oc, 'wesh', 'CORE.md')), /wesh:begin/);
   for (const n of names) assert.equal(fs.existsSync(path.join(oc, 'skills', n, 'SKILL.md')),
-    !['wesh-level', 'wesh-plan', 'wesh-handoff', 'wesh-slim', 'wesh-debt'].includes(n), `${n}: only model skills copied`);
+    !['wesh-level', 'wesh-plan', 'wesh-plan-view-mode', 'wesh-handoff', 'wesh-slim', 'wesh-debt'].includes(n), `${n}: only model skills copied`);
   assert.ok(!fs.existsSync(path.join(home, '.claude')), 'claude untouched');
 });
 

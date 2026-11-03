@@ -29,7 +29,7 @@ import { forbidden } from './hooks/autoindex.mjs';
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const BEGIN = '<!-- wesh:begin (managed by wesh/install.mjs; edit the level line only) -->';
 const END = '<!-- wesh:end -->';
-const USER_ONLY = ['wesh-level', 'wesh-plan', 'wesh-handoff', 'wesh-slim', 'wesh-debt'];
+const USER_ONLY = ['wesh-level', 'wesh-plan', 'wesh-plan-view-mode', 'wesh-handoff', 'wesh-slim', 'wesh-debt'];
 // Skills wesh shipped under a name it no longer uses: the new install takes the old ones away.
 const RETIRED = ['wesh', 'wesh-compress'];
 // wesh's own files in a project: they are not the project's code, so the code graph must not index them.

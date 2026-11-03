@@ -35,6 +35,9 @@ local code graph and an output squeezer, and drops everything that costs tokens 
 | auto | `wesh-commit` | caveman-commit | Conventional Commits message |
 | `/` only | `/wesh-level` | ponytail levels | `lite` / `full` / `ultra` / `off` / `help` |
 | `/` only | `/wesh-plan` | grilling + to-spec | questions with recommended answers, then a short spec |
+| `/` only | `/wesh-plan-view-mode` | WeshCraft | plan on a FigCraft prototype over MCP; parallel front/back specs that match it; live in the browser; PR/MR |
+| auto | `wesh-spec-front` | WeshCraft | enrich generated front specs: states, a11y, analytics, questions |
+| auto | `wesh-spec-back` | WeshCraft | enrich generated back specs: validation, authz, errors, data |
 | `/` only | `/wesh-handoff` | handoff | compress a long session into a handoff file for a fresh one |
 | `/` only | `/wesh-slim` | caveman-compress | shrink `CLAUDE.md` / `AGENTS.md`, every fact kept |
 | `/` only | `/wesh-debt` | ponytail-debt | ledger of `shortcut:` comments |
@@ -47,6 +50,16 @@ local code graph and an output squeezer, and drops everything that costs tokens 
 Left out on purpose (cost more than they save): caveman's cloud/proxy/MCP products and builder subagent, ponytail's
 dashboards, mattpocock's issue-tracker workflows, teaching and writing skills. Each extra listed skill costs tokens on
 every request.
+
+## View mode (WeshCraft)
+
+`/wesh-plan-view-mode` plans on a visual prototype instead of prose. It needs the WeshCraft MCP server, which wraps FigCraft's MCP:
+
+```bash
+npx weshcraft init            # writes .mcp.json: WeshCraft + live FigCraft (figcraft-cli on PATH)
+```
+
+Decisions become FigCraft edits; WeshCraft regenerates front and back specs in parallel, checks them against the prototype (copy, interactions, components, tokens, entities, operations) and shows everything live at the URL it prints. `weshcraft_publish` opens a GitHub PR or GitLab MR with the prototype, the specs and a CI parity check.
 
 ## Install
 

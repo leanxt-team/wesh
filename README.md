@@ -53,7 +53,7 @@ every request.
 
 ## View mode (WeshCraft)
 
-`/wesh-plan-view-mode` plans on a visual prototype instead of prose. It needs the WeshCraft MCP server, which wraps FigCraft's MCP:
+`/wesh-plan-view-mode` plans on a visual prototype instead of prose and writes an **advanced spec** (format: `skills/wesh-plan-view-mode/FORMAT.md`): the FigCraft design, a clickable prototype, contract-checked front and back specs, front ⇄ back links and a design changelog, kept in git. Modes: `new`, `update` (what changed in the design since the committed spec), `sync` and `push` (`git`, `github:owner/repo` or `gitlab:group/project`). It needs the WeshCraft MCP server, which wraps FigCraft's MCP:
 
 ```bash
 npx weshcraft init            # writes .mcp.json: WeshCraft + live FigCraft (figcraft-cli on PATH)

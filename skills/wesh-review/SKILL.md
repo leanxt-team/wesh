@@ -8,7 +8,7 @@ Review like the senior dev who gets paged when it breaks. Priority: correct, saf
 
 ## 1. Target
 Named target: uncommitted/staged changes, a branch or ref (`git diff <ref>...HEAD`), a PR, files, a folder, or `repo`. Nothing named: uncommitted changes, else the last commit. Bad ref or empty diff: say so and stop.
-Spec: the `--spec` path, issue refs in commit messages, or a matching file under `docs/`/`specs/`. None found: skip the spec axis.
+Spec: the `--spec` path, issue refs in commit messages, or a matching file under `docs/`/`specs/`. None found: skip the spec axis. WeshCraft advanced spec (`specs/manifest.json`, schema `weshcraft/manifest@*`): run `weshcraft check` first (out of sync is a finding); the spec is each screen's §Acceptance criteria, `specs/back/api.md`, `specs/back/openapi.json` and `specs/LINKS.md`; cite layers as `#id`.
 
 ## 2. Read what the change touches
 Diff, then callers of every changed function, functions it calls, tests, README. Signature or behavior changed: find every caller (`codegraph callers <fn>` per changed function when the project has an index, else grep; plus grep for string or dynamic references). The CLI reads the last synced index: run `codegraph sync` first when the answer decides a delete, a rename or "unused". Find the expected load (README, deploy config) and state it.

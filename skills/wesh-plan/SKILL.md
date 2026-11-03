@@ -22,6 +22,7 @@ Wait for answers. Recompute the frontier. A question depending on another open q
 Apply wesh scope rules while asking: propose the smallest version that does the core job; list cut options as explicit non-goals.
 
 ## 3. Write the spec
+UI work with a FigCraft prototype, or a repo that already holds `specs/manifest.json` (WeshCraft advanced spec): suggest `/wesh-plan-view-mode` instead; it writes design, prototype and contract-checked front/back specs and keeps them in git.
 Give it in the reply. Save it to a file only where the repo already keeps specs, or publish it to the issue tracker, when the user wants that. Keep it under ~60 lines:
 
 ```

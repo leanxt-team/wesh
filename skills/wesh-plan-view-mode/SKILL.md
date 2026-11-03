@@ -8,9 +8,9 @@ argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.su
 `/wesh-plan`, but decisions land in the prototype, not in prose. Output is the **WeshCraft advanced spec**: design + clickable prototype + contract-checked front/back specs + front ⇄ back links + changelog, in git. Format: `FORMAT.md` next to this file. Building the wrong screen is the most expensive token spend.
 
 ## 0. Setup and mode
-- `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude|opencode|both` (writes `.mcp.json` / `opencode.json`: WeshCraft MCP + live FigCraft; `--sync git` keeps this repo in step), restart, rerun. Stop.
+- `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude` (Claude Code: `.mcp.json`) or `npx weshcraft init --client opencode --global` (OpenCode 2 / OpenChamber: native plugin, tools under `weshcraft_*`, `/weshcraft`; in OpenChamber also add the WeshCraft folder in Settings → Extensions for its panel); `--sync git` keeps this repo in step, restart, rerun. Stop.
 - `sourceKind: mcp`: `figcraft_*` tools design live. `file`: read-only here; user edits in FigCraft, WeshCraft regenerates on save. `none` with a surface: the product's front is an MCP server and/or a public API (no screens); `init --surface openapi.yaml` or `--mcp-server "cmd"` sets that up.
-- Give user the live view URL from `weshcraft_status` (`web`): prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch; you work.
+- Give user the live view URL from `weshcraft_status` (`web`): prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch; you work. In OpenChamber they can also follow the WeshCraft panel.
 - Mode from the argument, else from the repo:
   - `new` (no `specs/manifest.json`): steps 1-7.
   - `update` (an advanced spec exists: `specs/manifest.json`, schema `weshcraft/manifest@*`): step U, then 2-7 for what changed.

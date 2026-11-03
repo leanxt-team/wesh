@@ -623,8 +623,11 @@ test('Claude session-start hook and OpenCode plugin index the project; uninstall
   assert.ok(await waitFor(() => fs.existsSync(path.join(projB, '.codegraph'))), 'OpenCode 2 plugin');
   assert.equal(typeof (await plugin.server({ directory: projB })).event, 'function', 'OpenCode 1 entry');
   const mine = project(); fs.mkdirSync(path.join(mine, '.codegraph')); // an index the user built: never touched
-  run(['--home', home, '--uninstall']);
-  assert.ok(!fs.existsSync(path.join(projA, '.codegraph')) && !fs.existsSync(path.join(projB, '.codegraph')), 'wesh-built indexes removed');
+  const out2 = run(['--home', home, '--uninstall']);
+  // Which index survived, what the uninstall said and which CLI calls it made: a bare "removed" hides all three.
+  const left = [projA, projB].filter(p => fs.existsSync(path.join(p, '.codegraph')));
+  assert.deepEqual(left.map(p => path.basename(p)), [],
+    `wesh-built indexes removed; still there: ${left.join(', ')}\nuninstall said:\n${out2}\ncodegraph calls:\n${cg.calls()}`);
   assert.ok(fs.existsSync(path.join(mine, '.codegraph')), 'user index kept');
   assert.ok(!fs.existsSync(path.join(home, '.claude', 'settings.json')), 'hooks and permissions gone');
 });

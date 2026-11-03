@@ -16,6 +16,14 @@ The spec (`weshcraft_read_spec`), the screens it links, `weshcraft_manifest {scr
 - `### Analytics`: one event per user decision (`screen_viewed`, `<action>_clicked`), properties, no personal data.
 - `### Open questions`: numbered, each with a recommended answer; prefer "add a state/frame in FigCraft" over prose decisions.
 
+## MCP tools and API endpoints (specs/front/mcp, specs/front/api)
+The user is an agent (tools) or a developer (endpoints). Write, when they apply:
+- `### When to use`: the situations an agent should pick this tool, and the near-miss tools it should not be confused with.
+- `### Errors`: each failure as the tool result / status + body the caller gets, worded so an agent can recover.
+- `### Safety`: confirmation needed (destructive), side effects outside the service (open world), rate limits, idempotency keys.
+- `### Compatibility`: what would break callers (renames, new required arguments, enum changes); versioning.
+Never contradict the schema or annotations; to change them, change the server or the OpenAPI document.
+
 ## Rules
 - Cite layers as `#id` in backticks, only ids present in the spec. No new copy, colours or sizes: those come from the design.
 - Under 60 lines per spec. No preamble, no summary of the tables.

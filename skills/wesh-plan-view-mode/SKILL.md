@@ -2,14 +2,14 @@
 name: wesh-plan-view-mode
 description: Plan in view mode. Iterate on a FigCraft prototype through WeshCraft MCP, generate front and back specs in parallel that match it exactly, then update, sync or push the advanced spec in a git repo. Use for /wesh-plan-view-mode.
 disable-model-invocation: true
-argument-hint: "[design.figcraft | --attach <port>] [new | update | sync | push] [github:owner/repo | gitlab:group/project | git]"
+argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.surface.json] [new | update | sync | push] [github:owner/repo | gitlab:group/project | git]"
 ---
 
 `/wesh-plan`, but decisions land in the prototype, not in prose. Output is the **WeshCraft advanced spec**: design + clickable prototype + contract-checked front/back specs + front ⇄ back links + changelog, in git. Format: `FORMAT.md` next to this file. Building the wrong screen is the most expensive token spend.
 
 ## 0. Setup and mode
 - `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude|opencode|both` (writes `.mcp.json` / `opencode.json`: WeshCraft MCP + live FigCraft; `--sync git` keeps this repo in step), restart, rerun. Stop.
-- `sourceKind: mcp`: `figcraft_*` tools design live. `file`: read-only here; user edits in FigCraft, WeshCraft regenerates on save.
+- `sourceKind: mcp`: `figcraft_*` tools design live. `file`: read-only here; user edits in FigCraft, WeshCraft regenerates on save. `none` with a surface: the product's front is an MCP server and/or a public API (no screens); `init --surface openapi.yaml` or `--mcp-server "cmd"` sets that up.
 - Give user the live view URL from `weshcraft_status` (`web`): prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch; you work.
 - Mode from the argument, else from the repo:
   - `new` (no `specs/manifest.json`): steps 1-7.
@@ -32,6 +32,8 @@ Same rounds as `/wesh-plan` (numbered, recommended answer, "yes" accepts). Route
 - Back-end call → Dev Mode annotation on the trigger layer: `POST /trails → Trail` (`figcraft_run_command annotation.add`). Data a screen loads → annotate the screen frame: `GET /users/me → User`. Explicit operation, linked to the layers that trigger it, submit to it, show what it returns.
 - Not visual (rule, limit, perf, security, analytics) → `weshcraft_write_notes` on the owning spec.
 Edits through `figcraft_*` regenerate specs automatically (debounced). Never write a fact into notes that the design contradicts: change the design.
+
+No screens (MCP server / API): the source of truth is `design/openapi.yaml`, the MCP tool list (or the server's code) and `weshcraft.surface.json`. Answers land there instead: a tool's name, description, input schema and annotations (`readOnlyHint`, `destructiveHint`…), an endpoint's parameters, body and responses, and `links` from tools to endpoints. Agents are the users of MCP tools: settle descriptions and safety hints as carefully as copy on a screen.
 
 ## 3. Generate in parallel
 `weshcraft_generate`. Fan out: one subagent per group, max 6 at once, each told to use `wesh-spec-front` (screens, components, tokens, flows) or `wesh-spec-back` (domain, API, conventions), read with `weshcraft_read_spec`, write only Notes with `weshcraft_write_notes`. Update mode: changed specs only. Headless alternative: `weshcraft serve --agent`.

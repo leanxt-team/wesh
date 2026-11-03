@@ -7,8 +7,12 @@ Identify it by `specs/manifest.json` with `"schema": "weshcraft/manifest@2"` (v1
 ## Layout
 
 ```
-design/<name>.figcraft            source of truth: the FigCraft prototype (the only file people edit by design)
-prototype/index.html              clickable prototype rendered from the design; every element has data-node="<id>"
+design/<name>.figcraft            source of truth for screens: the FigCraft prototype
+design/weshcraft.surface.json     source of truth for non-visual fronts (optional): names an OpenAPI
+design/openapi.yaml|json          document and an MCP tool list, and pins tool ⇄ endpoint links
+design/<server>.mcp.json          an MCP server's tools/resources/prompts (snapshot of a live server)
+prototype/index.html              clickable prototype rendered from the design (data-node="<id>"), plus a
+                                  catalog of MCP tools (data-node="tool:<name>") and endpoints (data-node="ep:<METHOD path>")
 prototype/tokens.css              design tokens as CSS custom properties
 prototype/screens/*.png           FigCraft renders, when generated from a live FigCraft (visual reference)
 specs/manifest.json               the extracted inventory (below); generated
@@ -18,7 +22,9 @@ specs/CHANGES.md                  design changelog, newest first
 specs/LINKS.md                    front ⇄ back map
 specs/front/screens/<key>.md      one per screen
 specs/front/components/<key>.md   one per component (set)
-specs/front/tokens.md, tokens.css, flows.md
+specs/front/tokens.md, tokens.css, flows.md   (only with screens)
+specs/front/mcp/README.md, tool-<name>.md     (only with an MCP server)
+specs/front/api/README.md, ep-<method>-<path>.md   (only with a public API)
 specs/back/domain.md, api.md, openapi.json, conventions.md
 .github/workflows/weshcraft-parity.yml | ci/weshcraft.gitlab-ci.yml   CI parity gate
 ```
@@ -44,7 +50,11 @@ Each generated markdown file has three parts:
  "links":[{"rel":"triggers","node":10,"op":"op-create-account-10"},{"rel":"submits","node":6,"op":"op-create-account-10"}]}
 ```
 
-Kinds: `front-screen`, `front-component`, `front-tokens`, `front-flows`, `back-domain`, `back-api`, `back-conventions`, `links`.
+Kinds: `front-screen`, `front-component`, `front-tokens`, `front-flows`, `front-mcp`, `front-mcp-tool` (`name`, `fingerprint`, `input`, `op`), `front-api`, `front-endpoint` (`key`, `fingerprint`, `op`), `back-domain`, `back-api`, `back-conventions`, `links`.
+
+## Non-visual fronts
+
+A product's front can be an MCP server, a public API, or both, with or without screens. `manifest.surface` holds `{name, mcp: {server, tools[], resources[], prompts[]}, api: {title, servers, auth, endpoints[], schemas{}}}`. Each tool has `hints` (read-only, destructive, idempotent, open world, from MCP annotations), flattened `input` fields and a `fingerprint` over description, schemas and annotations; each endpoint has `params`, `body`, `responses`, `security` and a `fingerprint`. API schemas returned by endpoints become entities; each endpoint is an operation; links: `exposes` (endpoint → operation), `invokes` (tool → operation, from `weshcraft.surface.json` links or matching `operationId`).
 
 ## Front ⇄ back links
 
@@ -54,7 +64,7 @@ Explicit sources in the design (preferred over inference): text `{{entity.field[
 
 ## Parity (`weshcraft check`)
 
-Fails (exit 1) when any of these differ between a fresh extraction of `design/*.figcraft` and the files: screen and component fingerprints, copy (verbatim on its own Copy row), interactions and destinations, instances, inputs, frame sizes, tokens and values, navigation edges, entities and fields, operations (spec and OpenAPI), front ⇄ back links, the prototype's source hash; plus any `#id` cited that does not exist. Gaps and source-hash drift are warnings.
+Fails (exit 1) when any of these differ between a fresh extraction of the design inputs and the files: MCP tool and endpoint fingerprints, tool arguments and links, the lists of tools, resources, prompts and endpoints; screen and component fingerprints, copy (verbatim on its own Copy row), interactions and destinations, instances, inputs, frame sizes, tokens and values, navigation edges, entities and fields, operations (spec and OpenAPI), front ⇄ back links, the prototype's source hash; plus any `#id` cited that does not exist. Gaps and source-hash drift are warnings.
 
 ## Lifecycle in git
 

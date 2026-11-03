@@ -265,16 +265,21 @@ const scoutForClaude = codegraph => {
 };
 
 const AUTOINDEX_FILES = ['autoindex.mjs'];
+// The auto-indexer reads this in wesh's own folder to know wesh is on its way out: it builds no index for nobody.
+const UNINSTALLED = 'uninstalled';
 // node: the background index jobs run on this Node, also from inside OpenCode (whose own runtime is not Node).
 function writeAutoindex(dir, cmd) {
   for (const f of AUTOINDEX_FILES) write(path.join(dir, f), srcText('hooks', f));
   write(path.join(dir, 'codegraph.json'), JSON.stringify({ cmd, node: process.execPath }, null, 2) + '\n');
+  remove(path.join(dir, UNINSTALLED)); // a fresh install wants indexes again
 }
 // Indexes wesh built (listed by the auto-indexer) go away with codegraph; ones you built yourself stay.
 // A root that failed (index in use) stays listed, so a later --no-codegraph or uninstall can try again.
 function removeAutoIndexes(dirs, cmd) {
   const roots = new Set();
   for (const d of dirs) { try { for (const l of fs.readFileSync(path.join(d, 'autoindex.log'), 'utf8').split('\n')) if (l.trim()) roots.add(l.trim()); } catch {} }
+  // Say it before the indexes go: a build that starts from here on belongs to nobody and must not put one back.
+  if (!DRY) for (const d of dirs) { try { fs.writeFileSync(path.join(d, UNINSTALLED), ''); } catch {} }
   const left = [];
   for (const r of roots) {
     if (forbidden(r)) { log(`  skipped ${r}: wesh never removes a code graph from a home, temp or drive-root folder`); continue; }

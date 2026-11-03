@@ -14,6 +14,11 @@ import { fileURLToPath } from 'node:url';
 
 const THIS = fileURLToPath(import.meta.url);
 const HERE = path.dirname(THIS);
+// The uninstall leaves this in wesh's own folder before it takes the indexes away. A build that starts after that
+// belongs to nobody: it must not put an index back, and a build that was already running must undo itself.
+const TOMBSTONE = 'uninstalled';
+// Wesh still wants indexes here: its files are in place and no uninstall is under way.
+const wanted = () => fs.existsSync(HERE) && !fs.existsSync(path.join(HERE, TOMBSTONE));
 // A folder counts as a project only with one of these at its root: no indexing of random folders.
 const MARKERS = ['.git', 'package.json', 'pyproject.toml', 'setup.py', 'requirements.txt', 'go.mod', 'Cargo.toml', 'pom.xml',
   'build.gradle', 'build.gradle.kts', 'composer.json', 'Gemfile', 'mix.exs', 'pubspec.yaml', 'Package.swift', 'CMakeLists.txt', 'deno.json'];
@@ -200,6 +205,7 @@ function record(ledger, root) {
 // Returns what happened: indexed | syncing | started | building | backoff | not-a-project | too-big | off | missing | failed.
 export function autoIndex(dir, { cmd = config().cmd || 'codegraph', ledger = path.join(HERE, 'autoindex.log') } = {}) {
   if (process.env.WESH_AUTOINDEX === '0') return 'off';
+  if (!wanted()) return 'uninstalled'; // wesh is gone, or on its way out: no index for nobody
   let root;
   try { root = fs.realpathSync.native(path.resolve(dir)); } catch { return 'missing'; } // long path: codegraph's Windows watcher fails on 8.3 names
   // Before the index check: codegraph keeps its own settings in ~/.codegraph, which is not a project index.
@@ -246,9 +252,12 @@ export function autoIndexDetached(dir) {
 
 function job([root, lock, unlock, cmd, ...args]) {
   try {
+    if (!wanted()) return; // wesh was uninstalled while this job waited: build nothing
     if (unlock === '1') try { run(cmd, ['unlock'], root, RUN_TIMEOUT, true); } catch {}
     try { run(cmd, args, root, JOB_TIMEOUT, true); fs.rmSync(failedPath(root), { force: true }); }
     catch { if (args[0] !== 'sync') try { fs.writeFileSync(failedPath(root), new Date().toISOString()); } catch {} }
+    // The uninstall took the indexes away while this ran: the one just built belongs to nobody.
+    if (!wanted()) try { run(cmd, ['uninit', '--force', root], root, RUN_TIMEOUT, true); } catch {}
   } finally { try { fs.rmSync(lock, { force: true }); } catch {} }
 }
 

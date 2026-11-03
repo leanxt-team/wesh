@@ -595,6 +595,21 @@ test('auto-index: real projects only, never home/root, one build at a time, opt-
   try { assert.equal(autoIndex(project(), { cmd: cg.bin, ledger }), 'off'); } finally { delete process.env.WESH_AUTOINDEX; }
 });
 
+test('an uninstalled wesh builds no index: the build that starts during the uninstall must not put one back', async () => {
+  // wesh's own folder, as an install has it: the uninstall says in there that it is on its way out.
+  const dir = tmp();
+  fs.cpSync(path.join(ROOT, 'hooks'), dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'uninstalled'), '');
+  const { autoIndex } = await import(pathToFileURL(path.join(dir, 'autoindex.mjs')).href);
+  const cg = fakeCodegraph(), ledger = path.join(tmp(), 'log'), proj = project();
+  assert.equal(autoIndex(proj, { cmd: cg.bin, ledger }), 'uninstalled');
+  assert.ok(!fs.existsSync(path.join(proj, '.codegraph')), 'nothing was built');
+  assert.ok(!fs.existsSync(ledger), 'nothing was listed for an uninstall to clean up');
+  // A job that was already queued when the uninstall started must build nothing either.
+  execFileSync(process.execPath, [path.join(dir, 'autoindex.mjs'), '--job', proj, path.join(tmp(), 'lock'), '0', cg.bin, 'init', '--yes'], { encoding: 'utf8' });
+  assert.ok(!fs.existsSync(path.join(proj, '.codegraph')), 'no index from a queued job');
+});
+
 test('a huge repository is left to the user', async () => {
   const { autoIndex } = await import('../hooks/autoindex.mjs');
   const cg = fakeCodegraph(), ledger = path.join(tmp(), 'log');

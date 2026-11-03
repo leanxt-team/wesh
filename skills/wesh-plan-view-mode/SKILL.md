@@ -1,6 +1,6 @@
 ---
 name: wesh-plan-view-mode
-description: Plan in view mode. Iterate on a FigCraft prototype through WeshCraft MCP, generate front and back specs in parallel that match it exactly, try them in simulation, then update, sync or push the advanced spec in a git repo. Use for /wesh-plan-view-mode.
+description: Plan in view mode. Iterate on a FigCraft prototype through WeshCraft MCP, generate front and back specs in parallel that match it exactly, then update, sync or push the advanced spec in a git repo. Use for /wesh-plan-view-mode.
 disable-model-invocation: true
 argument-hint: "[design.figcraft | --attach <port>] [new | update | sync | push] [github:owner/repo | gitlab:group/project | git]"
 ---
@@ -10,11 +10,11 @@ argument-hint: "[design.figcraft | --attach <port>] [new | update | sync | push]
 ## 0. Setup and mode
 - `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude|opencode|both` (writes `.mcp.json` / `opencode.json`: WeshCraft MCP + live FigCraft; `--sync git` keeps this repo in step), restart, rerun. Stop.
 - `sourceKind: mcp`: `figcraft_*` tools design live. `file`: read-only here; user edits in FigCraft, WeshCraft regenerates on save.
-- Give user the live view URL from `weshcraft_status` (`web`): prototype, spec builder filling in parallel, Front ⇄ back map, Simulate, parity. They watch; you work.
+- Give user the live view URL from `weshcraft_status` (`web`): prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch; you work.
 - Mode from the argument, else from the repo:
-  - `new` (no `specs/manifest.json`): steps 1-8.
-  - `update` (an advanced spec exists: `specs/manifest.json`, schema `weshcraft/manifest@*`): step U, then 2-8 for what changed.
-  - `sync` / `push`: step 8 only, with the given target. `push` pushes; confirm first.
+  - `new` (no `specs/manifest.json`): steps 1-7.
+  - `update` (an advanced spec exists: `specs/manifest.json`, schema `weshcraft/manifest@*`): step U, then 2-7 for what changed.
+  - `sync` / `push`: step 7 only, with the given target. `push` pushes; confirm first.
 
 ## U. Update an existing spec
 1. Branch state: `git status`, `git fetch`. Behind its upstream → fast-forward only (`git merge --ff-only @{u}`); diverged or dirty spec paths → stop, tell user. Never rebase, reset or force.
@@ -42,13 +42,10 @@ Edits through `figcraft_*` regenerate specs automatically (debounced). Never wri
 - operation nothing reaches → wire it to a layer or cut it.
 - inferred operation or field → confirm by binding/annotating in the design.
 
-## 5. Simulate
-Ask user to try the flows in the browser's **Simulate** tab (phone: **Try**): real inputs, mock API from `specs/back/openapi.json`, scenarios Normal / Slow / Errors / Empty / Offline. Each surprise ("no empty state", "error hides my input", "nothing loads the plan") is a design edit (step 2) or a Note, never a code change.
-
-## 6. Parity gate
+## 5. Parity gate
 `weshcraft_check` must be `ok`. Stale or missing → `weshcraft_generate`. Drift → design changed: regenerate, never hand-edit generated sections.
 
-## 7. Spec summary
+## 6. Spec summary
 Reply in `/wesh-plan` shape, under ~60 lines, pointing at files instead of restating them:
 ```
 # <feature>
@@ -61,7 +58,7 @@ Links: specs/LINKS.md — <n> operation links, <n> data links, gaps: <none | lis
 Test seams · Non-goals · Slices (vertical, each = screens + operations it needs)
 ```
 
-## 8. Sync / push (outward, confirm first)
+## 7. Sync / push (outward, confirm first)
 Only an in-sync state is synced. On user yes:
 - keep in sync: `weshcraft_sync {target: "git" | "github:owner/repo" | "gitlab:group/project", auto: true}`. `git` commits only the spec paths on the current branch, hooks run; `push: true` only when user asked (mode `push`). Remote targets commit to a branch through the API and open/update one PR/MR whose description carries the latest changelog.
 - one-off PR/MR: `weshcraft_publish {provider, repo, branch?, base?}`.

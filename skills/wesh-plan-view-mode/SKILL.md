@@ -8,7 +8,7 @@ argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.su
 `/wesh-plan`, but decisions land in the prototype, not in prose. Output is the **WeshCraft advanced spec**: design + clickable prototype + contract-checked front/back specs + front ⇄ back links + changelog, in git. Format: `FORMAT.md` next to this file. Building the wrong screen is the most expensive token spend.
 
 ## 0. Setup and mode
-- `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude` (Claude Code: `.mcp.json`) or `npx weshcraft init --client opencode` (OpenCode: `opencode.json`); `--sync git` keeps this repo in step, restart, rerun. Stop.
+- `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude` (Claude Code: `.mcp.json`) or `npx weshcraft init --client opencode --global` (OpenCode / OpenChamber plugin; in OpenChamber add the WeshCraft folder in Settings → Extensions for the sync panel and the full interface); `--sync git` keeps this repo in step, restart, rerun. Stop.
 - `design_*` tools present: you edit the design (the project's `.figcraft`) directly; user edits the same document in the browser's Design tab at the same time (shared undo). `design_new` only: no design yet, start one if the feature has screens. `sourceKind: mcp`: a live FigCraft, use `figcraft_*` instead. Neither, with a surface: the product's front is an MCP server and/or a public API (no screens); `init --surface openapi.yaml` or `--mcp-server "cmd"` sets that up.
 - Give user the live view URL from `weshcraft_status` (`web`): design editor, prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch and can adjust by hand; you work.
 - Mode from the argument, else from the repo:
@@ -63,7 +63,7 @@ Test seams · Non-goals · Slices (vertical, each = screens + operations it need
 
 ## 7. Sync / push (outward, confirm first)
 Only an in-sync state is synced. On user yes:
-- keep in sync: `weshcraft_sync {target: "git" | "github:owner/repo" | "gitlab:group/project", auto: true}`. `git` commits only the spec paths on the current branch, hooks run; `push: true` only when user asked (mode `push`). Remote targets commit to a branch through the API and open/update one PR/MR whose description carries the latest changelog.
+- keep in sync: `weshcraft_sync {target: "git" | "github:owner/repo" | "gitlab:group/project", auto: true}`. `git` commits only the spec paths on the current branch, hooks run; `push: true` only when user asked (mode `push`). Remote targets commit to a branch through the API and open/update one PR/MR whose description carries the latest changelog; access is inherited (OpenChamber account, gh/glab login, git credentials), never ask user for a token unless sync reports none.
 - one-off PR/MR: `weshcraft_publish {provider, repo, branch?, base?}`.
 Commit messages come from the changelog (`docs(specs): <name>: <summary>`); do not rewrite them. Give the commit or URL. Later code review: `wesh-review --spec specs/README.md`.
 

@@ -28,6 +28,13 @@ As `/wesh-plan`: repo entry points, existing API, models, components, `GLOSSARY.
 ## 1b. How the product works
 `design_functions`: the product's functions (suggested from the prototype until declared). Settle them in the first round: a handful (not one per screen), each a verb phrase the user would say ("Find a trail", "Pay"), a one-line purpose, its screens; API-only operations and MCP tools that no screen reaches go to the function they serve. Declare with `design_functions {functions:[…]}` (or `set` for one). Every later round says which function it changes; a new screen goes into a function in the same batch. `specs/FUNCTIONS.md` is the first thing a reader opens: keep it true.
 
+## 1c. Every aspect
+After the functions, settle what the design cannot show, one round each, only where it matters for the feature:
+- Logic: `design_logic` lists inferred rules and lifecycles. Declare the real ones: rules with their kind and what they apply to (`rule:{name, kind, text, applies}`), lifecycles of data that changes state (`states:{entity, states, transitions:[{from, to, via}]}`); resolve every open transition. `specs/LOGIC.md`.
+- Data: bind layers to data in the design (`bind`), API schemas for services; check `specs/DATA.md` relations and who writes what.
+- API & MCP: operations come from the design (`api` ops) or the surface; `specs/API.md` shows each by function, where it is called from and what it returns.
+- Architecture: `design_architecture` shows the suggestion; declare the real components with technologies and links (`keep:true`, then `component` / `link`), and the code folders they live in. `specs/ARCHITECTURE.md`.
+
 ## 2. Frontier rounds, answered in the design
 Same rounds as `/wesh-plan` (numbered, recommended answer, "yes" accepts). Route each settled answer:
 - Changes what user sees or does (screen, copy, state, flow, field, button) → one `design_edit` per settled round: all its ops in one batch (one undo step for user), `ref` to wire new layers (`{op:"screen",ref:"s"}`, `{op:"create",parent:"s",…}`, `{op:"link",id:…,to:"s"}`). Reuse components (`instance`) and tokens (`useToken`); auto layout (`layout`, `sizing`) over x/y. `design_text` for copy-only rounds. `design_screenshot` (if available) or the live URL so user confirms. Live FigCraft instead: `figcraft_batch`, `figcraft_set_properties`, `figcraft_run_command`.
@@ -65,6 +72,8 @@ Changed: <weshcraft diff summary, update mode only>
 Acceptance: specs/front/screens/*.md §Acceptance criteria (+ the 3-5 that matter most)
 Decisions: entities, operations, components reused (specs/back/domain.md, api.md)
 Functions: specs/FUNCTIONS.md — <name: purpose> per function, nothing outside a function
+Logic: specs/LOGIC.md — <n> rules, lifecycles: <entity: states>, open transitions: <none | list>
+Architecture: specs/ARCHITECTURE.md — <components with tech>
 Code: specs/TRACE.md — <traced>/<total> elements have code; untraced: <list or none>
 Links: specs/LINKS.md — <n> operation links, <n> data links, gaps: <none | list>
 Test seams · Non-goals · Slices (vertical, each = screens + operations it needs)

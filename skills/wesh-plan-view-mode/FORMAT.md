@@ -20,6 +20,10 @@ specs/README.md                   index + traceability
 specs/PARITY.md, parity.json      last parity result
 specs/CHANGES.md                  design changelog, newest first
 specs/FUNCTIONS.md                how the product works: functions → screens, operations, data, journey
+specs/LOGIC.md                    rules and lifecycles
+specs/DATA.md                     entities, relations, use
+specs/API.md                      operations, endpoints, MCP tools by function
+specs/ARCHITECTURE.md             components, technologies, links
 specs/LINKS.md                    front ⇄ back map
 specs/TRACE.md, trace.json        spec ⇄ code: element → code tagged `@weshcraft <ref>`
 design/weshcraft.graph.mjs        product graph for code graphs (codegraph): functions → screens → operations → entities → code
@@ -96,3 +100,14 @@ From the tags, every run (and `weshcraft trace`, `weshcraft_trace`) writes:
 - `specs/TRACE.md` and `specs/trace.json`: per function, each element with its tag and code locations; what has no code yet; tags that name nothing.
 
 Parity (warnings): `trace-unknown` (a tag that names nothing in the design), `trace-stale` / `trace-missing` (the product graph does not match the design and the tagged code: `weshcraft generate` or `weshcraft trace`).
+
+## Logic, data, API & MCP, architecture
+
+Four overview specs complete `FUNCTIONS.md`, each with a contract (kinds `logic`, `data`, `api-overview`, `architecture`) and a Notes block.
+
+- `LOGIC.md`: rules `{name, kind: validation|permission|calculation|policy|event, text, applies}` and lifecycles `{entity, field, states, initial, transitions: [{from (state or *), to, via}]}`. Declared in the design (`pluginData.weshcraft.logic`, edited with `design_logic` or the Logic view) or in `weshcraft.surface.json` (`"logic"`); otherwise inferred and marked so: a validation rule per operation with required request fields (or submitted inputs), a permission rule for the public API's auth, a lifecycle per `status`/`state`/`stage` enum, with the create operation and the operations whose last path segment matches a state (`/void` → `void`); an operation that changes the entity without a matching state is an open transition (warning `logic-open-transition`).
+- `DATA.md`: per entity its fields, relations (a field typed as another entity, or named `<entity>Id`), the functions that write and read it, the screens that show it, its operations and lifecycle; an `erDiagram`.
+- `API.md`: operations by function with where they are called from and what they return, the MCP tools with their behaviour and operation, the API's auth.
+- `ARCHITECTURE.md`: components `{name, kind: client|frontend|interface|service|queue|store|external, tech, description, implements, code}` and links `{from, to, label}`. Declared (`pluginData.weshcraft.architecture`, `design_architecture`, the Architecture view, or `"architecture"` in the surface file) or suggested from the design and the surface (people → front end → back end → database; agents → MCP server; integrations → API).
+
+Parity: `<kind>-differs` (error) when a spec no longer matches; `logic-unknown-ref`, `architecture-unknown-ref` (a reference to nothing) and `logic-open-transition` (warnings).

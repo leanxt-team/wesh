@@ -7,6 +7,7 @@ Entities, fields and operations are derived from the prototype (explicit binding
 
 
 Read `specs/FUNCTIONS.md` first: an operation's function (and the data it reads and writes) frames its validation, authorization and errors.
+Rules (`specs/LOGIC.md`), entities and relations (`specs/DATA.md`) and components (`specs/ARCHITECTURE.md`) frame validation, transitions, authorization and where the code goes.
 Existing code for an operation or entity: `weshcraft_trace` (or `specs/TRACE.md`) lists what is tagged `@weshcraft METHOD /path` or `@weshcraft Entity`; `codegraph_explore "<METHOD /path> handler"` shows it with callers. Name the file you would extend.
 
 ## Read first

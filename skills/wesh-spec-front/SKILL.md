@@ -7,6 +7,7 @@ Spec facts (layout, copy, typography, colours, interactions, components, sizes) 
 
 
 Read the screen's function in `specs/FUNCTIONS.md` first: its purpose frames the screen's states, empty cases and acceptance criteria.
+Rules and lifecycles that touch the screen are in `specs/LOGIC.md` (what it applies to): states and errors follow them.
 Existing code for the screen: `weshcraft_trace` (or `specs/TRACE.md`) lists what is tagged `@weshcraft <key>`; `codegraph_explore "<screen name> screen"` shows it with its calls. Notes that name code cite `file:symbol`.
 
 ## Read first

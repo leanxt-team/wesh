@@ -2,3 +2,8 @@ bench/node_modules/
 bench/results/live-*.json
 .codegraph/
 *.zip
+
+# A WeshCraft run inside this repository: generated workspace output, never source.
+/prototype/
+/specs/
+/design/

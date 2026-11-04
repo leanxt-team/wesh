@@ -7,6 +7,7 @@ Spec facts (layout, copy, typography, colours, interactions, components, sizes) 
 
 
 Read the screen's function in `specs/FUNCTIONS.md` first: its purpose frames the screen's states, empty cases and acceptance criteria.
+Existing code for the screen: `weshcraft_trace` (or `specs/TRACE.md`) lists what is tagged `@weshcraft <key>`; `codegraph_explore "<screen name> screen"` shows it with its calls. Notes that name code cite `file:symbol`.
 
 ## Read first
 The spec (`weshcraft_read_spec`), the screens it links, `weshcraft_manifest {screen}` for ids. Existing code for the same screen or component, when the repo has it: match its patterns.

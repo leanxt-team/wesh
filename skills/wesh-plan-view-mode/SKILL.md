@@ -48,6 +48,10 @@ No screens (MCP server / API): the source of truth is `design/openapi.yaml`, the
 - operation nothing reaches → wire it to a layer or cut it.
 - inferred operation or field → confirm by binding/annotating in the design.
 
+## 4b. Code ⇄ spec (codegraph)
+Existing code first: `codegraph_explore "how does <function> work"` (the product graph `design/weshcraft.graph.mjs` links functions → screens, components → operations → entities → the code tagged for them), `weshcraft_trace {untraced:true}` for what has no code yet.
+Writing or changing code from the specs (now, or in a later `/wesh-tdd`, `/wesh-refactor`): put the element's tag in a comment on the symbol that implements it, the `Code tag` from the spec header: `// @weshcraft scr-sign-up` on the screen component, `// @weshcraft POST /users` on the client call and on the route handler, `# @weshcraft User` on the model; several refs: `@weshcraft fn-join, User`. One tag per implementing symbol, in every language of the repo. Then `weshcraft_trace`: it rewrites the product graph and `specs/TRACE.md`; `codegraph sync` and the graph links each element to its code. Before changing shared code: `codegraph impact <symbol> --depth 4` names the screens and functions it touches. A `trace-unknown` warning (a tag naming nothing) after a design change: move the tag to the new key.
+
 ## 5. Parity gate
 `weshcraft_check` must be `ok`, with no `functions-suggested` or `not-in-a-function` warning left. Stale or missing → `weshcraft_generate`. Drift → design changed: regenerate, never hand-edit generated sections.
 
@@ -61,6 +65,7 @@ Changed: <weshcraft diff summary, update mode only>
 Acceptance: specs/front/screens/*.md §Acceptance criteria (+ the 3-5 that matter most)
 Decisions: entities, operations, components reused (specs/back/domain.md, api.md)
 Functions: specs/FUNCTIONS.md — <name: purpose> per function, nothing outside a function
+Code: specs/TRACE.md — <traced>/<total> elements have code; untraced: <list or none>
 Links: specs/LINKS.md — <n> operation links, <n> data links, gaps: <none | list>
 Test seams · Non-goals · Slices (vertical, each = screens + operations it needs)
 ```

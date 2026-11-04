@@ -21,6 +21,8 @@ specs/PARITY.md, parity.json      last parity result
 specs/CHANGES.md                  design changelog, newest first
 specs/FUNCTIONS.md                how the product works: functions → screens, operations, data, journey
 specs/LINKS.md                    front ⇄ back map
+specs/TRACE.md, trace.json        spec ⇄ code: element → code tagged `@weshcraft <ref>`
+design/weshcraft.graph.mjs        product graph for code graphs (codegraph): functions → screens → operations → entities → code
 specs/front/screens/<key>.md      one per screen
 specs/front/components/<key>.md   one per component (set)
 specs/front/tokens.md, tokens.css, flows.md   (only with screens)
@@ -84,3 +86,13 @@ Commit messages: `docs(specs): <name>: <change summary>`, body = prototype hash,
 Functions are declared in the design: the first page's `pluginData.weshcraft` holds `{"functions": [{"name", "summary", "screens": [node ids], "operations": ["METHOD /path"], "tools": ["name"]}]}` (`operations` and `tools` only for those no screen reaches). A service without screens declares them in `weshcraft.surface.json` (`"functions"`, same shape, no screens). Until declared, they are suggested from the prototype: flows, canvas sections, wizard steps (one way in, one way on), screens about the same entity, variants of one screen, API tags; the spec says so.
 
 The other specs follow them: a screen spec's header names its function (contract field `function`), `back/api.md` gives each operation's function, and `front/flows.md` and `LINKS.md` group screens by function. Parity: `functions-differ` (error) when FUNCTIONS.md no longer matches; warnings `functions-suggested`, `not-in-a-function` (a screen, operation or tool in none), `function-unknown-ref` (a declared screen or operation that is gone) and `empty-function`; `function-differs` (error) when a screen spec names another function.
+
+## Spec ⇄ code
+
+Code says what it implements with a tag in a comment next to the symbol: `// @weshcraft scr-sign-up`, `# @weshcraft POST /users`, `/** @weshcraft fn-join, User */`. Refs: a key (`fn-…`, `scr-…`, `cmp-…`, `op-…`), `METHOD /path`, an entity name, an MCP tool name; each spec header gives its element's tag (`Code tag`). Any language; dependencies, build output, `prototype/` and `specs/` are not scanned.
+
+From the tags, every run (and `weshcraft trace`, `weshcraft_trace`) writes:
+- `weshcraft.graph.mjs` next to the design file (usually `design/weshcraft.graph.mjs`; `design/` for a service without one): the product as JavaScript that is never imported or run, one exported function per product function (`fn…`), screen (`screen…`), component (`component…`), operation (`op…`), entity (`entity…`) and MCP tool (`tool…`), each documented (purpose, spec link, tag, non-JS code locations) and calling what it is made of: the product its functions in journey order, a function its screens, operations and tools, a screen its components, operations and the entities it shows, an operation the entity it returns, a tool its operation. Each one also imports and calls the exported JavaScript/TypeScript symbols tagged for it; code in other languages is named in its comment. Code graphs index it like the rest of the code: `codegraph explore "how does Sign up work"` returns the function, its screens and operations and the code behind them; `codegraph callers SignUpPage` names the screen it implements; `codegraph impact fetchMe --depth 4` reaches the screens and functions a change touches. Kept out of paths code graphs treat as tests (`specs/`, `test/`).
+- `specs/TRACE.md` and `specs/trace.json`: per function, each element with its tag and code locations; what has no code yet; tags that name nothing.
+
+Parity (warnings): `trace-unknown` (a tag that names nothing in the design), `trace-stale` / `trace-missing` (the product graph does not match the design and the tagged code: `weshcraft generate` or `weshcraft trace`).

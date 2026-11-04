@@ -3,15 +3,15 @@ name: wesh-spec-front
 description: Enrich WeshCraft front specs (specs/front/*.md) from a FigCraft prototype: states, a11y, analytics, open questions. Never changes generated facts. Use for "enrich/complete front spec".
 ---
 
-Spec facts (layout, copy, typography, colours, interactions, components, sizes) are generated from the prototype and contract-checked. Do not restate, reword or "fix" them. You write only the Notes block (`weshcraft_write_notes`, or between the `weshcraft:notes` markers when editing files).
+Spec facts (layout, copy, typography, colours, interactions, components, sizes) are generated from the prototype and contract-checked. Do not restate, reword or "fix" them. You write only the Notes block (`weshcraft_notes`, or between the `weshcraft:notes` markers when editing files).
 
 
 Read the screen's function in `specs/FUNCTIONS.md` first: its purpose frames the screen's states, empty cases and acceptance criteria.
 Rules and lifecycles that touch the screen are in `specs/LOGIC.md` (what it applies to): states and errors follow them.
-Existing code for the screen: `weshcraft_trace` (or `specs/TRACE.md`) lists what is tagged `@weshcraft <key>`; `codegraph_explore "<screen name> screen"` shows it with its calls. Notes that name code cite `file:symbol`.
+Existing code for the screen: `weshcraft_read {what:"trace"}` (or `specs/TRACE.md`) lists what is tagged `@weshcraft <key>`; `codegraph_explore "<screen name> screen"` shows it with its calls. Notes that name code cite `file:symbol`.
 
 ## Read first
-The spec (`weshcraft_read_spec`), the screens it links, `weshcraft_manifest {screen}` for ids. Existing code for the same screen or component, when the repo has it: match its patterns.
+The spec (`weshcraft_read {what:"spec", path}`), the screens it links, `weshcraft_read {what:"manifest", screen}` for ids. Existing code for the same screen or component, when the repo has it: match its patterns.
 
 ## Write, only what applies, under these headings
 - `### States`: loading, empty, error, disabled, offline, permission denied, long content (copy 2× longer, 1 item, 0 items, 1 000 items). Tie each to its back-end link from §Front ⇄ back links: loading/empty/error of the operation that loads a ◉ field or fills a ☰ list; pending/failure of the operation a ▶ layer triggers. Say what the prototype shows; where it shows nothing, it is an open question, not your invention.

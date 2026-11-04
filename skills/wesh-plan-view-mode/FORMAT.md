@@ -47,7 +47,7 @@ specs/back/domain.md, api.md, openapi.json, conventions.md
 Each generated markdown file has three parts:
 
 1. **Generated sections** (tables, layout tree, acceptance criteria…): facts from the design only. Regenerated; never edit by hand.
-2. **Notes** between `<!-- weshcraft:notes:start -->` and `<!-- weshcraft:notes:end -->`: the only free-form part (states, edge cases, a11y, analytics, security, open questions). Kept across regenerations; written by humans or agents (`weshcraft_write_notes`, wesh-spec-front/back).
+2. **Notes** between `<!-- weshcraft:notes:start -->` and `<!-- weshcraft:notes:end -->`: the only free-form part (states, edge cases, a11y, analytics, security, open questions). Kept across regenerations; written by humans or agents (`weshcraft_notes`, wesh-spec-front/back).
 3. **Contract**: an HTML comment `<!-- weshcraft:contract {json} -->` listing exactly which facts the file covers, e.g. for a screen:
 
 ```json
@@ -67,7 +67,7 @@ A product's front can be an MCP server, a public API, or both, with or without s
 
 `manifest.links.edges[]`: `{rel, node, screen, label, op | field, via?}` with `rel` one of `triggers` (▶ layer calls operation), `submits` (⇢ input is a request field), `lists` (☰ repeated layer filled by a list operation), `displays` (◉ layer shows `Entity.field`; `via` = the operation on that screen that loads it). `manifest.links.gaps[]`: `unloaded-data` (shown, nothing loads it), `unused-operation` (nothing reaches it).
 
-Explicit sources in the design (preferred over inference; WeshCraft's editor and `design_bind` / `design_api` write the layer-name and annotation forms): text `{{entity.field[:type]}}`, layer name `@entity.field[:type]`, layer data `pluginData.weshcraft = {"entity","field","type"}` or `{"action":"POST /x","returns":"X"}`, Dev Mode annotation `METHOD /path [→ Entity]` on a trigger layer, or on a screen frame for data the screen loads. Everything else is marked `inferred` and listed under Open questions.
+Explicit sources in the design (preferred over inference; WeshCraft's editor and `weshcraft_edit` (`bind`, `api` ops) write the layer-name and annotation forms): text `{{entity.field[:type]}}`, layer name `@entity.field[:type]`, layer data `pluginData.weshcraft = {"entity","field","type"}` or `{"action":"POST /x","returns":"X"}`, Dev Mode annotation `METHOD /path [→ Entity]` on a trigger layer, or on a screen frame for data the screen loads. Everything else is marked `inferred` and listed under Open questions.
 
 ## Parity (`weshcraft check`)
 
@@ -75,7 +75,7 @@ Fails (exit 1) when any of these differ between a fresh extraction of the design
 
 ## Lifecycle in git
 
-1. **Iterate**: change the design (WeshCraft's Design tab, agents through the `design_*` MCP tools, or FigCraft itself) → specs regenerate in parallel → parity.
+1. **Iterate**: change the design (WeshCraft's Design tab, agents through `weshcraft_edit`, or FigCraft itself) → specs regenerate in parallel → parity.
 2. **Update**: on an existing spec folder, `weshcraft diff --against <ref>` (or `specs/CHANGES.md`) says what changed in the design; only changed specs are rewritten; Notes survive.
 3. **Sync**: `weshcraft_sync` / `--sync`: `git` (commit only these paths, current branch, hooks run, optional push) or `github:` / `gitlab:` (commit to a branch through the API; PR/MR opened once, then updated with the latest changelog). Only in-sync states are synced.
 4. **Gate**: the CI job re-runs `weshcraft check` on every push touching `design/`, `specs/` or `prototype/`.
@@ -95,7 +95,7 @@ The other specs follow them: a screen spec's header names its function (contract
 
 Code says what it implements with a tag in a comment next to the symbol: `// @weshcraft scr-sign-up`, `# @weshcraft POST /users`, `/** @weshcraft fn-join, User */`. Refs: a key (`fn-…`, `scr-…`, `cmp-…`, `op-…`), `METHOD /path`, an entity name, an MCP tool name; each spec header gives its element's tag (`Code tag`). Any language; dependencies, build output, `prototype/` and `specs/` are not scanned.
 
-From the tags, every run (and `weshcraft trace`, `weshcraft_trace`) writes:
+From the tags, every run (and `weshcraft trace`, `weshcraft_generate`) writes:
 - `weshcraft.graph.mjs` next to the design file (usually `design/weshcraft.graph.mjs`; `design/` for a service without one): the product as JavaScript that is never imported or run, one exported function per product function (`fn…`), screen (`screen…`), component (`component…`), operation (`op…`), entity (`entity…`) and MCP tool (`tool…`), each documented (purpose, spec link, tag, non-JS code locations) and calling what it is made of: the product its functions in journey order, a function its screens, operations and tools, a screen its components, operations and the entities it shows, an operation the entity it returns, a tool its operation. Each one also imports and calls the exported JavaScript/TypeScript symbols tagged for it; code in other languages is named in its comment. Code graphs index it like the rest of the code: `codegraph explore "how does Sign up work"` returns the function, its screens and operations and the code behind them; `codegraph callers SignUpPage` names the screen it implements; `codegraph impact fetchMe --depth 4` reaches the screens and functions a change touches. Kept out of paths code graphs treat as tests (`specs/`, `test/`).
 - `specs/TRACE.md` and `specs/trace.json`: per function, each element with its tag and code locations; what has no code yet; tags that name nothing.
 
@@ -105,9 +105,9 @@ Parity (warnings): `trace-unknown` (a tag that names nothing in the design), `tr
 
 Four overview specs complete `FUNCTIONS.md`, each with a contract (kinds `logic`, `data`, `api-overview`, `architecture`) and a Notes block.
 
-- `LOGIC.md`: rules `{name, kind: validation|permission|calculation|policy|event, text, applies}` and lifecycles `{entity, field, states, initial, transitions: [{from (state or *), to, via}]}`. Declared in the design (`pluginData.weshcraft.logic`, edited with `design_logic` or the Logic view) or in `weshcraft.surface.json` (`"logic"`); otherwise inferred and marked so: a validation rule per operation with required request fields (or submitted inputs), a permission rule for the public API's auth, a lifecycle per `status`/`state`/`stage` enum, with the create operation and the operations whose last path segment matches a state (`/void` → `void`); an operation that changes the entity without a matching state is an open transition (warning `logic-open-transition`).
+- `LOGIC.md`: rules `{name, kind: validation|permission|calculation|policy|event, text, applies}` and lifecycles `{entity, field, states, initial, transitions: [{from (state or *), to, via}]}`. Declared in the design (`pluginData.weshcraft.logic`, edited with `weshcraft_edit` or the Logic view) or in `weshcraft.surface.json` (`"logic"`); otherwise inferred and marked so: a validation rule per operation with required request fields (or submitted inputs), a permission rule for the public API's auth, a lifecycle per `status`/`state`/`stage` enum, with the create operation and the operations whose last path segment matches a state (`/void` → `void`); an operation that changes the entity without a matching state is an open transition (warning `logic-open-transition`).
 - `DATA.md`: per entity its fields, relations (a field typed as another entity, or named `<entity>Id`), the functions that write and read it, the screens that show it, its operations and lifecycle; an `erDiagram`.
 - `API.md`: operations by function with where they are called from and what they return, the MCP tools with their behaviour and operation, the API's auth.
-- `ARCHITECTURE.md`: components `{name, kind: client|frontend|interface|service|queue|store|external, tech, description, implements, code}` and links `{from, to, label}`. Declared (`pluginData.weshcraft.architecture`, `design_architecture`, the Architecture view, or `"architecture"` in the surface file) or suggested from the design and the surface (people → front end → back end → database; agents → MCP server; integrations → API).
+- `ARCHITECTURE.md`: components `{name, kind: client|frontend|interface|service|queue|store|external, tech, description, implements, code}` and links `{from, to, label}`. Declared (`pluginData.weshcraft.architecture`, `weshcraft_edit`, the Architecture view, or `"architecture"` in the surface file) or suggested from the design and the surface (people → front end → back end → database; agents → MCP server; integrations → API).
 
 Parity: `<kind>-differs` (error) when a spec no longer matches; `logic-unknown-ref`, `architecture-unknown-ref` (a reference to nothing) and `logic-open-transition` (warnings).

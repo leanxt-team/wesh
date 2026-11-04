@@ -53,13 +53,13 @@ every request.
 
 ## View mode (WeshCraft)
 
-`/wesh-plan-view-mode` plans on a visual prototype instead of prose and writes an **advanced spec** (format: `skills/wesh-plan-view-mode/FORMAT.md`): the FigCraft design, a clickable prototype, contract-checked front and back specs, front ⇄ back links and a design changelog, kept in git. Modes: `new`, `update` (what changed in the design since the committed spec), `sync` and `push` (`git`, `github:owner/repo` or `gitlab:group/project`). It needs the WeshCraft MCP server, which wraps FigCraft's MCP:
+`/wesh-plan-view-mode` plans on a visual prototype instead of prose and writes an **advanced spec** (format: `skills/wesh-plan-view-mode/FORMAT.md`): the FigCraft design, a clickable prototype, contract-checked front and back specs, front ⇄ back links and a design changelog, kept in git. Modes: `new`, `update` (what changed in the design since the committed spec), `sync` and `push` (`git`, `github:owner/repo` or `gitlab:group/project`). It needs the WeshCraft MCP server (one small tool set, `weshcraft_*`):
 
 ```bash
-npx weshcraft init            # writes .mcp.json: WeshCraft + live FigCraft (figcraft-cli on PATH)
+npx weshcraft init            # writes .mcp.json: WeshCraft on the project's design/*.figcraft
 ```
 
-Decisions become FigCraft edits; WeshCraft regenerates front and back specs in parallel, checks them against the prototype (copy, interactions, components, tokens, entities, operations) and shows everything live at the URL it prints. `weshcraft_publish` opens a GitHub PR or GitLab MR with the prototype, the specs and a CI parity check.
+Decisions become design edits (`weshcraft_edit`); WeshCraft regenerates front and back specs in parallel, checks them against the prototype (copy, interactions, components, tokens, entities, operations) and shows everything live at the URL it prints. `weshcraft_sync` keeps a branch in step or opens a GitHub PR or GitLab MR with the prototype, the specs and a CI parity check.
 
 ## Install
 

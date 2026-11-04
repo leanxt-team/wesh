@@ -7,7 +7,7 @@ Identify it by `specs/manifest.json` with `"schema": "weshcraft/manifest@2"` (v1
 ## Layout
 
 ```
-design/<name>.figcraft            source of truth for screens: the FigCraft prototype
+design/<name>.figcraft            source of truth for screens: a FigCraft document (edited in WeshCraft or FigCraft)
 design/weshcraft.surface.json     source of truth for non-visual fronts (optional): names an OpenAPI
 design/openapi.yaml|json          document and an MCP tool list, and pins tool ⇄ endpoint links
 design/<server>.mcp.json          an MCP server's tools/resources/prompts (snapshot of a live server)
@@ -60,7 +60,7 @@ A product's front can be an MCP server, a public API, or both, with or without s
 
 `manifest.links.edges[]`: `{rel, node, screen, label, op | field, via?}` with `rel` one of `triggers` (▶ layer calls operation), `submits` (⇢ input is a request field), `lists` (☰ repeated layer filled by a list operation), `displays` (◉ layer shows `Entity.field`; `via` = the operation on that screen that loads it). `manifest.links.gaps[]`: `unloaded-data` (shown, nothing loads it), `unused-operation` (nothing reaches it).
 
-Explicit sources in the design (preferred over inference): text `{{entity.field[:type]}}`, layer name `@entity.field[:type]`, layer data `pluginData.weshcraft = {"entity","field","type"}` or `{"action":"POST /x","returns":"X"}`, Dev Mode annotation `METHOD /path [→ Entity]` on a trigger layer, or on a screen frame for data the screen loads. Everything else is marked `inferred` and listed under Open questions.
+Explicit sources in the design (preferred over inference; WeshCraft's editor and `design_bind` / `design_api` write the layer-name and annotation forms): text `{{entity.field[:type]}}`, layer name `@entity.field[:type]`, layer data `pluginData.weshcraft = {"entity","field","type"}` or `{"action":"POST /x","returns":"X"}`, Dev Mode annotation `METHOD /path [→ Entity]` on a trigger layer, or on a screen frame for data the screen loads. Everything else is marked `inferred` and listed under Open questions.
 
 ## Parity (`weshcraft check`)
 
@@ -68,7 +68,7 @@ Fails (exit 1) when any of these differ between a fresh extraction of the design
 
 ## Lifecycle in git
 
-1. **Iterate**: change the design (FigCraft, or agents through `figcraft_*` MCP tools) → specs regenerate in parallel → parity.
+1. **Iterate**: change the design (WeshCraft's Design tab, agents through the `design_*` MCP tools, or FigCraft itself) → specs regenerate in parallel → parity.
 2. **Update**: on an existing spec folder, `weshcraft diff --against <ref>` (or `specs/CHANGES.md`) says what changed in the design; only changed specs are rewritten; Notes survive.
 3. **Sync**: `weshcraft_sync` / `--sync`: `git` (commit only these paths, current branch, hooks run, optional push) or `github:` / `gitlab:` (commit to a branch through the API; PR/MR opened once, then updated with the latest changelog). Only in-sync states are synced.
 4. **Gate**: the CI job re-runs `weshcraft check` on every push touching `design/`, `specs/` or `prototype/`.

@@ -1,6 +1,6 @@
 ---
 name: wesh-plan-view-mode
-description: Plan in view mode. Iterate on a FigCraft prototype through WeshCraft MCP, generate front and back specs in parallel that match it exactly, then update, sync or push the advanced spec in a git repo. Use for /wesh-plan-view-mode.
+description: Plan in view mode. Design the prototype through WeshCraft MCP (a spec-oriented FigCraft), generate front and back specs in parallel that match it exactly, then update, sync or push the advanced spec in a git repo. Use for /wesh-plan-view-mode.
 disable-model-invocation: true
 argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.surface.json] [new | update | sync | push] [github:owner/repo | gitlab:group/project | git]"
 ---
@@ -9,8 +9,8 @@ argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.su
 
 ## 0. Setup and mode
 - `weshcraft_status` tool missing: tell user to run `npx weshcraft init --client claude` (Claude Code: `.mcp.json`) or `npx weshcraft init --client opencode` (OpenCode: `opencode.json`); `--sync git` keeps this repo in step, restart, rerun. Stop.
-- `sourceKind: mcp`: `figcraft_*` tools design live. `file`: read-only here; user edits in FigCraft, WeshCraft regenerates on save. `none` with a surface: the product's front is an MCP server and/or a public API (no screens); `init --surface openapi.yaml` or `--mcp-server "cmd"` sets that up.
-- Give user the live view URL from `weshcraft_status` (`web`): prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch; you work.
+- `design_*` tools present: you edit the design (the project's `.figcraft`) directly; user edits the same document in the browser's Design tab at the same time (shared undo). `design_new` only: no design yet, start one if the feature has screens. `sourceKind: mcp`: a live FigCraft, use `figcraft_*` instead. Neither, with a surface: the product's front is an MCP server and/or a public API (no screens); `init --surface openapi.yaml` or `--mcp-server "cmd"` sets that up.
+- Give user the live view URL from `weshcraft_status` (`web`): design editor, prototype, spec builder filling in parallel, Front ⇄ back map, parity. They watch and can adjust by hand; you work.
 - Mode from the argument, else from the repo:
   - `new` (no `specs/manifest.json`): steps 1-7.
   - `update` (an advanced spec exists: `specs/manifest.json`, schema `weshcraft/manifest@*`): step U, then 2-7 for what changed.
@@ -23,15 +23,16 @@ argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.su
 4. Continue at step 2 for open questions the change raises; else step 5.
 
 ## 1. Facts first, yourself
-As `/wesh-plan`: repo entry points, existing API, models, components, `GLOSSARY.md`, ADRs (`codegraph_explore` or `wesh-scout`). Then `weshcraft_manifest`: screens, copy, interactions, components, tokens, entities, operations. Never ask user what manifest or repo answers.
+As `/wesh-plan`: repo entry points, existing API, models, components, `GLOSSARY.md`, ADRs (`codegraph_explore` or `wesh-scout`). Then `design_tree` (ids, layout, links, API annotations; one line per layer) and `weshcraft_manifest` for entities and operations. Never ask user what tree, manifest or repo answers.
 
 ## 2. Frontier rounds, answered in the design
 Same rounds as `/wesh-plan` (numbered, recommended answer, "yes" accepts). Route each settled answer:
-- Changes what user sees or does (screen, copy, state, flow, field, button) → edit FigCraft: `figcraft_batch` (one undo step), `figcraft_create_node`, `figcraft_set_properties`, `figcraft_run_command` (`proto.interaction.add`, `component.*`, `variable.*`). Reuse existing components and variables. Then `figcraft_screenshot` so user confirms.
-- Data a layer shows → bind it: text `{{trail.name}}` / `{{trail.distance:number}}`, or layer name `@trail.rating:number`. Becomes an explicit entity field.
-- Back-end call → Dev Mode annotation on the trigger layer: `POST /trails → Trail` (`figcraft_run_command annotation.add`). Data a screen loads → annotate the screen frame: `GET /users/me → User`. Explicit operation, linked to the layers that trigger it, submit to it, show what it returns.
+- Changes what user sees or does (screen, copy, state, flow, field, button) → one `design_edit` per settled round: all its ops in one batch (one undo step for user), `ref` to wire new layers (`{op:"screen",ref:"s"}`, `{op:"create",parent:"s",…}`, `{op:"link",id:…,to:"s"}`). Reuse components (`instance`) and tokens (`useToken`); auto layout (`layout`, `sizing`) over x/y. `design_text` for copy-only rounds. `design_screenshot` (if available) or the live URL so user confirms. Live FigCraft instead: `figcraft_batch`, `figcraft_set_properties`, `figcraft_run_command`.
+- Data a layer shows → `{op:"bind", id, entity:"trail", field:"rating", type:"number"}`. Becomes an explicit entity field.
+- Back-end call → `{op:"api", id: <button>, method:"POST", path:"/trails", returns:"Trail"}`; data a screen loads → same op on the screen frame (`GET /users/me → User`). Explicit operation, linked to the layers that trigger it, submit to it, show what it returns.
+- Pass `wait:true` on the last edit of a round: parity, design changes and gaps come back in the reply.
 - Not visual (rule, limit, perf, security, analytics) → `weshcraft_write_notes` on the owning spec.
-Edits through `figcraft_*` regenerate specs automatically (debounced). Never write a fact into notes that the design contradicts: change the design.
+Every design edit (yours, user's in the browser, FigCraft saving the file) regenerates the specs automatically. Never write a fact into notes that the design contradicts: change the design. User edited by hand meanwhile: `design_tree` again before batching on stale ids.
 
 No screens (MCP server / API): the source of truth is `design/openapi.yaml`, the MCP tool list (or the server's code) and `weshcraft.surface.json`. Answers land there instead: a tool's name, description, input schema and annotations (`readOnlyHint`, `destructiveHint`…), an endpoint's parameters, body and responses, and `links` from tools to endpoints. Agents are the users of MCP tools: settle descriptions and safety hints as carefully as copy on a screen.
 

@@ -5,6 +5,9 @@ description: Enrich WeshCraft front specs (specs/front/*.md) from a FigCraft pro
 
 Spec facts (layout, copy, typography, colours, interactions, components, sizes) are generated from the prototype and contract-checked. Do not restate, reword or "fix" them. You write only the Notes block (`weshcraft_write_notes`, or between the `weshcraft:notes` markers when editing files).
 
+
+Read the screen's function in `specs/FUNCTIONS.md` first: its purpose frames the screen's states, empty cases and acceptance criteria.
+
 ## Read first
 The spec (`weshcraft_read_spec`), the screens it links, `weshcraft_manifest {screen}` for ids. Existing code for the same screen or component, when the repo has it: match its patterns.
 

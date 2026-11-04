@@ -25,6 +25,9 @@ argument-hint: "[design.figcraft | --attach <port> | openapi.yaml | weshcraft.su
 ## 1. Facts first, yourself
 As `/wesh-plan`: repo entry points, existing API, models, components, `GLOSSARY.md`, ADRs (`codegraph_explore` or `wesh-scout`). Then `design_tree` (ids, layout, links, API annotations; one line per layer) and `weshcraft_manifest` for entities and operations. Never ask user what tree, manifest or repo answers.
 
+## 1b. How the product works
+`design_functions`: the product's functions (suggested from the prototype until declared). Settle them in the first round: a handful (not one per screen), each a verb phrase the user would say ("Find a trail", "Pay"), a one-line purpose, its screens; API-only operations and MCP tools that no screen reaches go to the function they serve. Declare with `design_functions {functions:[…]}` (or `set` for one). Every later round says which function it changes; a new screen goes into a function in the same batch. `specs/FUNCTIONS.md` is the first thing a reader opens: keep it true.
+
 ## 2. Frontier rounds, answered in the design
 Same rounds as `/wesh-plan` (numbered, recommended answer, "yes" accepts). Route each settled answer:
 - Changes what user sees or does (screen, copy, state, flow, field, button) → one `design_edit` per settled round: all its ops in one batch (one undo step for user), `ref` to wire new layers (`{op:"screen",ref:"s"}`, `{op:"create",parent:"s",…}`, `{op:"link",id:…,to:"s"}`). Reuse components (`instance`) and tokens (`useToken`); auto layout (`layout`, `sizing`) over x/y. `design_text` for copy-only rounds. `design_screenshot` (if available) or the live URL so user confirms. Live FigCraft instead: `figcraft_batch`, `figcraft_set_properties`, `figcraft_run_command`.
@@ -46,7 +49,7 @@ No screens (MCP server / API): the source of truth is `design/openapi.yaml`, the
 - inferred operation or field → confirm by binding/annotating in the design.
 
 ## 5. Parity gate
-`weshcraft_check` must be `ok`. Stale or missing → `weshcraft_generate`. Drift → design changed: regenerate, never hand-edit generated sections.
+`weshcraft_check` must be `ok`, with no `functions-suggested` or `not-in-a-function` warning left. Stale or missing → `weshcraft_generate`. Drift → design changed: regenerate, never hand-edit generated sections.
 
 ## 6. Spec summary
 Reply in `/wesh-plan` shape, under ~60 lines, pointing at files instead of restating them:
@@ -57,6 +60,7 @@ Prototype: prototype/index.html (<n> screens) · parity <score>% · live: <url>
 Changed: <weshcraft diff summary, update mode only>
 Acceptance: specs/front/screens/*.md §Acceptance criteria (+ the 3-5 that matter most)
 Decisions: entities, operations, components reused (specs/back/domain.md, api.md)
+Functions: specs/FUNCTIONS.md — <name: purpose> per function, nothing outside a function
 Links: specs/LINKS.md — <n> operation links, <n> data links, gaps: <none | list>
 Test seams · Non-goals · Slices (vertical, each = screens + operations it needs)
 ```

@@ -19,6 +19,7 @@ specs/manifest.json               the extracted inventory (below); generated
 specs/README.md                   index + traceability
 specs/PARITY.md, parity.json      last parity result
 specs/CHANGES.md                  design changelog, newest first
+specs/FUNCTIONS.md                how the product works: functions → screens, operations, data, journey
 specs/LINKS.md                    front ⇄ back map
 specs/front/screens/<key>.md      one per screen
 specs/front/components/<key>.md   one per component (set)
@@ -75,3 +76,11 @@ Fails (exit 1) when any of these differ between a fresh extraction of the design
 5. **Build**: code is reviewed against `specs/front/screens/*.md` §Acceptance criteria, `specs/back/api.md` and `openapi.json` (`wesh-review --spec specs/README.md`).
 
 Commit messages: `docs(specs): <name>: <change summary>`, body = prototype hash, parity, changelog lines.
+
+## Product functions
+
+`specs/FUNCTIONS.md` (contract kind `functions`) describes the product as a handful of functions. Each has a key (`fn-<slug>`), a name, a one-line purpose, who uses it (`user`: people in the app, `agent`: AI agents through MCP tools, `api`: integrations through the public API), its screens (in journey order), operations, MCP tools and public endpoints, the entities it reads and writes, and the functions it leads to (navigation from one of its screens to another function's). A Mermaid diagram shows who → functions → data, with ⇒ for where each function leads.
+
+Functions are declared in the design: the first page's `pluginData.weshcraft` holds `{"functions": [{"name", "summary", "screens": [node ids], "operations": ["METHOD /path"], "tools": ["name"]}]}` (`operations` and `tools` only for those no screen reaches). A service without screens declares them in `weshcraft.surface.json` (`"functions"`, same shape, no screens). Until declared, they are suggested from the prototype: flows, canvas sections, wizard steps (one way in, one way on), screens about the same entity, variants of one screen, API tags; the spec says so.
+
+The other specs follow them: a screen spec's header names its function (contract field `function`), `back/api.md` gives each operation's function, and `front/flows.md` and `LINKS.md` group screens by function. Parity: `functions-differ` (error) when FUNCTIONS.md no longer matches; warnings `functions-suggested`, `not-in-a-function` (a screen, operation or tool in none), `function-unknown-ref` (a declared screen or operation that is gone) and `empty-function`; `function-differs` (error) when a screen spec names another function.

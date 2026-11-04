@@ -5,6 +5,9 @@ description: Enrich WeshCraft back specs (specs/back/*.md) from a FigCraft proto
 
 Entities, fields and operations are derived from the prototype (explicit bindings and annotations, or inferred from repeated components and action labels) and contract-checked. Do not add, rename or drop them in prose. You write only the Notes block (`weshcraft_write_notes`).
 
+
+Read `specs/FUNCTIONS.md` first: an operation's function (and the data it reads and writes) frames its validation, authorization and errors.
+
 ## Read first
 `specs/back/domain.md`, `api.md`, `openapi.json`, `conventions.md`, the public API and MCP specs under `specs/front/api` and `specs/front/mcp` when present, `specs/LINKS.md` (or `weshcraft_links`): which layers trigger, submit to and show each operation's data; the screens each operation cites. Existing back-end code: models, routes, auth, validation library, error format, migrations. Reuse them; name the file you would extend.
 

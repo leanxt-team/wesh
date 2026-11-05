@@ -33,7 +33,7 @@ After the functions, settle what the design cannot show, one round each, only wh
 - Logic: `weshcraft_read {what:"logic"}` lists inferred rules and lifecycles. Declare the real ones with `weshcraft_edit`: `{op:"keepLogic"}`, rules with their kind and what they apply to (`{op:"rule", name, kind, text, applies}`), lifecycles of data that changes state (`{op:"lifecycle", entity, states, transitions:[{from, to, via}]}`); resolve every open transition. `specs/LOGIC.md`.
 - Data: bind layers to data in the design (`bind`), API schemas for services; check `specs/DATA.md` relations and who writes what.
 - API & MCP: operations come from the design (`api` ops) or the surface; `specs/API.md` shows each by function, where it is called from and what it returns.
-- Architecture: `weshcraft_read {what:"architecture"}` shows the suggestion; declare the real components with technologies and links (`{op:"keepArchitecture"}`, then `{op:"component", name, kind, tech, code}` / `{op:"connect", from, to, label}`), and the code folders they live in. `specs/ARCHITECTURE.md`.
+- Architecture: `weshcraft_read {what:"architecture"}` shows the suggestion; declare the real components with technologies and links (`{op:"keepArchitecture"}`, then `{op:"component", name, kind, tech, code}` / `{op:"connect", from, to, label}`), and the code folders they live in. `specs/ARCHITECTURE.md`. Name the technologies the way the catalog knows them (`weshcraft_read {what:"technologies", query:"queue"}` lists candidates with their alternatives): settle each choice with the user, citing one or two alternatives and why not.
 
 ## 2. Frontier rounds, answered in the design
 Same rounds as `/wesh-plan` (numbered, recommended answer, "yes" accepts). Route each settled answer:
